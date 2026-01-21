@@ -1,3 +1,4 @@
+
 import ContactForm from "../components/contact/contact";
 
 function Contact() {
