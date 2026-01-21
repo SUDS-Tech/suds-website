@@ -2,7 +2,7 @@
 
 import  { useState, useEffect } from 'react';
 import { Atom, Shield, Cloud, Bot} from 'lucide-react';
-import Typewriter from './type-writer';
+import {Typewriter }from './type-writer';
 import ParticleBackground from './particle-background';
 
 

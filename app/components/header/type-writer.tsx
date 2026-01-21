@@ -1,3 +1,5 @@
+"use client";
+
 /**
  * Copyright (c) 2026 SUDS Technologies Ltd.
  *
@@ -27,37 +29,30 @@ export function Typewriter ({ phrases, typingSpeed = 100, deletingSpeed = 50, pa
   useEffect(() => {
     const currentPhrase = phrases[currentPhraseIndex];
 
-    
-    if (currentText === currentPhrase && !isDeleting && !isPaused) {
-      setIsPaused(true);
+    if (!isDeleting && currentText === currentPhrase) {
+      if (isPaused) return; 
+      
       const pauseTimer = setTimeout(() => {
-        setIsPaused(false);
         setIsDeleting(true);
       }, pauseDuration);
+      
       return () => clearTimeout(pauseTimer);
     }
 
     
-    if (isPaused) return;
-
-    const timeout = setTimeout(
-      () => {
-        if (isDeleting) {
-          
-          setCurrentText((prev) => prev.slice(0, -1));
-          
-          
-          if (currentText === '') {
-            setIsDeleting(false);
-            setCurrentPhraseIndex((prev) => (prev + 1) % phrases.length);
-          }
-        } else {
-          
-          setCurrentText(currentPhrase.slice(0, currentText.length + 1));
-        }
-      },
-      isDeleting ? deletingSpeed : typingSpeed
-    );
+    if (isDeleting && currentText === '') {
+      setIsDeleting(false);
+      setCurrentPhraseIndex((prev) => (prev + 1) % phrases.length);
+      return; 
+    }
+    
+    const timeout = setTimeout(() => {
+      if (isDeleting) {
+        setCurrentText((prev) => prev.slice(0, -1));
+      } else {
+        setCurrentText(currentPhrase.slice(0, currentText.length + 1));
+      }
+    }, isDeleting ? deletingSpeed : typingSpeed);
 
     return () => clearTimeout(timeout);
   }, [currentText, isDeleting, isPaused, currentPhraseIndex, phrases, typingSpeed, deletingSpeed, pauseDuration]);
