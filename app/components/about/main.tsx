@@ -2,10 +2,10 @@ import Image from "next/image";
 import image from "./images/world.jpg";
 export default function Overview() {
   return (
-    <div className="relative w-full min-h-screen bg-linear-to-b from-gray-800 to-gray-950 px-4 md:px-16 lg:px-20 py-10">
+    <div className="relative w-full bg-linear-to-b from-gray-800 to-gray-950 px-4 md:px-16 lg:px-20 py-7">
       {/* Header */}
       <div className="flex justify-between items-center">
-        <h3 className="text-white tracking-wider text-sm md:text-base font-medium">
+        <h3 className="text-white tracking-wider text-sm sm:text-2xl font-bold border-b border-amber-50">
           Future Outlook & Growth Vision
         </h3>
       </div>
@@ -14,7 +14,7 @@ export default function Overview() {
       <div className="mt-8 md:mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="flex flex-col justify-center">
           <div className="flex justify-between items-center">
-            <p className="text-white font-medium text-sm sm:text-3xl">
+            <p className="text-white font-medium text-sm sm:text-2xl">
               As we look toward the future, SUDS Technologies Ltd is committed
               to expanding its global footprint. We are investing heavily in
               AI-driven automation and sustainable tech practices. Our goal is
