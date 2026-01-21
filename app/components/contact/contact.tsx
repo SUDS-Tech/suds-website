@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin } from "lucide-react";
 import { ChangeEvent, useState } from "react";
 import { Form, FormErrors } from "./types";
 
-export default function ContactInformation() {
+export default function ContactForm() {
   const [form, setForm] = useState<Form>({
     name: "",
     email: "",
@@ -137,7 +137,7 @@ export default function ContactInformation() {
 
           <div className="relative rounded-2xl overflow-hidden  min-h-125 shadow-2xl shadow-cyan-800">
             {/* Form content */}
-            <div className="relative z-10 bg-transparent border  shadow-2xl shadow-blue-400 p-8 backdrop-blur-sm">
+            <div className="relative z-10 bg-transparent shadow-2xl shadow-blue-400 p-8 backdrop-blur-sm">
               <h2 className="text-3xl font-bold text-white mb-8">Contact us</h2>
 
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -199,7 +199,7 @@ export default function ContactInformation() {
 
                 <button
                   type="submit"
-                  className="w-full h-12 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg transition-colors duration-200"
+                  className="w-full h-12 bg-linear-to-r from-green-600 to-green-950 hover:bg-green-600 text-white font-semibold rounded-lg transition-colors duration-200"
                 >
                   Send Message
                 </button>
