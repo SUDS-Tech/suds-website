@@ -1,76 +1,178 @@
 "use client";
-import { motion } from "motion/react";
-import HeroImage from "./heroImage";
 
-export default function BusinessProcess() {
-  const text =
-    "Whether you're looking to streamline your business processes or enhance your team's productivity, SUDS is here to help you achieve your goals.";
+import  { useState, useEffect } from 'react';
+import { Atom, Shield, Cloud, Bot} from 'lucide-react';
+import Typewriter from './type-writer';
+import ParticleBackground from './particle-background';
 
-  const container = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.02,
-        delayChildren: 0.3,
-      },
-    },
-  };
 
-  const child = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-  };
+export default function BusinessProcess(){
+  const [scrollY, setScrollY] = useState(0);
+
+ 
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  
+  const phrases = [
+    'Secure. Unique. Durable.',
+    'Engineering Excellence.',
+    'Future-Ready Solutions.',
+    'Innovation-Driven Growth.',
+  ];
 
   return (
-    <div className="relative w-full min-h-screen bg-linear-to-b from-gray-800 to-gray-950 px-4 md:px-16 lg:px-20 py-10">
-      {/* Header */}
-      <div className="flex justify-between items-center">
-        <motion.h1
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: false, amount: 0.5 }}
-          className="text-white tracking-wider text-sm md:text-base font-medium"
-        >
-          ABOUT OUR COMPANY
-        </motion.h1>
-      </div>
+    <div className="relative w-full min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black overflow-hidden">
 
-      {/* Main Content */}
-      <div className="mt-8 md:mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className="flex flex-col justify-center">
-          <div className="flex justify-between items-center">
-            <motion.p
-              variants={container}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 1.0 }}
-              className="text-white font-medium text-sm sm:text-3xl"
-            >
-              {text.split("").map((char, i) => (
-                <motion.span key={i} variants={child}>
-                  {char}
-                </motion.span>
-              ))}
-            </motion.p>
+      <div
+        className="absolute inset-0 opacity-10"
+        style={{
+          backgroundImage: `url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1920&q=80')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          transform: `translateY(${scrollY * 0.5}px)`,
+        }}
+      />
+
+    
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.05)_1px,transparent_1px)] bg-[size:50px_50px]" />
+
+      
+      <ParticleBackground />
+
+      
+      <div className="absolute top-20 right-20 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-20 left-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+
+    
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        {/* Header Badge */}
+        <div className="flex justify-center mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full backdrop-blur-sm">
+            <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
+            <span className="text-emerald-400 text-sm font-medium tracking-wider">
+              ABOUT OUR COMPANY
+            </span>
           </div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: text.length * 0.02 + 0.5, duration: 0.5 }}
-            viewport={{ once: true }}
-            className="mt-12 shadow-2xl border-l border-r shadow-emerald-700 border-white bg-linear-to-r from-gray-700 to-gray-900 bg-clip-padding w-32 h-16 p-3 flex text-center justify-center rounded-2xl"
-          >
-            <button>
-              <p className="text-white text-xl">Lets' Talk</p>
-            </button>
-          </motion.div>
         </div>
 
-        {/* Image Section */}
-        <HeroImage />
+        {/* Main Hero Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          
+          <div className="space-y-8">
+            
+            <div>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                <span className="bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">
+                  SUDS
+                </span>
+                <br />
+                <span className="text-gray-300">Technologies</span>
+              </h1>
+              
+              <div className="text-2xl md:text-3xl font-semibold text-emerald-400 h-20">
+                <Typewriter phrases={phrases} />
+              </div>
+            </div>
+
+            {/* Description */}
+            <p className="text-gray-300 text-lg leading-relaxed max-w-xl">
+              Premier software innovation lab engineering high-performance digital ecosystems. 
+              We transform ambitious ideas into resilient, enterprise-grade technologies.
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap gap-4">
+              <button className="group relative px-8 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/50 hover:scale-105">
+                <span className="relative z-10">Let's Talk</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-emerald-700 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+              </button>
+              
+            </div>
+          </div>
+
+          
+          <div className="relative">
+           
+            <div className="relative group">
+              
+              <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-2xl blur-lg opacity-75 group-hover:opacity-100 transition duration-300" />
+              
+              
+              <div className="relative bg-gray-900 rounded-2xl overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
+                  alt="Advanced Technology Dashboard"
+                  className="w-full h-[500px] object-cover transform group-hover:scale-105 transition-transform duration-500"
+                />
+                
+                
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60" />
+                
+                {/* Floating Tech Icons */}
+                <div className="absolute top-6 right-6 flex gap-3">
+                   {[
+                    { Icon: Atom, color: 'text-blue-400' },
+                    { Icon: Shield, color: 'text-emerald-400' },
+                    { Icon: Cloud, color: 'text-cyan-400' },
+                    { Icon: Bot, color: 'text-purple-400' }
+                  ].map(({ Icon, color }, i) => (
+                    <div
+                      key={i}
+                      className="w-12 h-12 bg-gray-900/80 backdrop-blur-sm border border-emerald-500/30 rounded-lg flex items-center justify-center hover:scale-110 hover:border-emerald-500/60 transition-all duration-300 cursor-pointer group"
+                      style={{ animationDelay: `${i * 0.1}s` }}
+                    >
+                      <Icon className={`w-5 h-5 ${color} group-hover:scale-110 transition-transform duration-300`} />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Floating Code Snippet Card */}
+            <div className="absolute -bottom-6 -left-6 bg-gray-900/90 backdrop-blur-md border border-emerald-500/30 rounded-xl p-4 shadow-2xl hover:shadow-emerald-500/20 transition-all duration-300">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="flex gap-1">
+                  <div className="w-3 h-3 bg-red-500 rounded-full" />
+                  <div className="w-3 h-3 bg-yellow-500 rounded-full" />
+                  <div className="w-3 h-3 bg-green-500 rounded-full" />
+                </div>
+                <span className="text-gray-400 text-xs">secure-systems.ts</span>
+              </div>
+              <div className="font-mono text-xs text-emerald-400 space-y-1">
+                <div>const <span className="text-blue-400">innovation</span> = <span className="text-yellow-300">"limitless"</span>;</div>
+                <div>const <span className="text-blue-400">security</span> = <span className="text-yellow-300">"paramount"</span>;</div>
+                <div className="text-gray-500">// Building the future...</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
+      {/* Custom CSS for animations */}
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0) translateX(0);
+            opacity: 0;
+          }
+          50% {
+            opacity: 0.5;
+          }
+          100% {
+            transform: translateY(-100vh) translateX(50px);
+            opacity: 0;
+          }
+        }
+        
+        .animate-float {
+          animation: float linear infinite;
+        }
+      `}</style>
     </div>
   );
-}
+};
+
