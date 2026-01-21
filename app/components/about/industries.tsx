@@ -4,7 +4,7 @@ export default function Option() {
   return (
     <div className="w-full bg-gray-950 py-16 px-10">
       <div className="flex justify-center items-center pb-5">
-        <h1 className="text-sm sm:text-2xl text-white font-bold">
+        <h1 className="text-sm sm:text-2xl text-white font-bold border-b border-amber-50">
           Industries We Serve
         </h1>
       </div>
