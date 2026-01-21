@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 import image from "./images/world.jpg";
+import { motion } from "motion/react";
 export default function Overview() {
   return (
     <div className="relative w-full bg-linear-to-b from-gray-800 to-gray-950 px-4 md:px-16 lg:px-20 py-7">
@@ -12,7 +14,13 @@ export default function Overview() {
 
       {/* Main Content */}
       <div className="mt-8 md:mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className="flex flex-col justify-center">
+        <motion.div
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex flex-col justify-center"
+        >
           <div className="flex justify-between items-center">
             <p className="text-white font-medium text-sm sm:text-2xl">
               As we look toward the future, SUDS Technologies Ltd is committed
@@ -23,18 +31,24 @@ export default function Overview() {
               build the foundations of tomorrow
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Image Section */}
-        <div className="relative ">
+        <motion.div
+          initial={{ x: 100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="relative "
+        >
           <Image
             src={image}
             alt="Team collaborating on a project"
             width={600}
             height={400}
-            className="rounded-3xl object-cover h-100"
+            className="rounded-full object-cover h-100"
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   );
