@@ -3,14 +3,14 @@ import React from "react";
 import image from "./images/girl.jpg";
 function Header() {
   return (
-    <div className="bg-linear-to-r from-gray-700 to-gray-900">
+    <div className="bg-linear-to-r from-gray-800 to-gray-950">
       <div className="flex flex-col sm:flex-row justify-center items-center gap-6 py-4">
         <div className="w-96">
-          <p className="text-white">
+          <p className="text-white font-medium">
             At SUDS Technologies Ltd, we believe that software should be more
-            than just functional—it should be a resilient asset. Our name
+            than just functional.it should be a resilient asset. Our name
             reflects our foundational engineering philosophy:{" "}
-            <span className="text-3xl text-green-300">
+            <span className="text-xl text-green-300">
               Secure, Unique, Durable Systems
             </span>
             . As an innovation-driven lab, we go beyond traditional outsourcing.
@@ -26,7 +26,7 @@ function Header() {
             alt="girl smiling"
             width={500}
             height={400}
-            className="rounded-3xl "
+            className="rounded-3xl p-2"
           />
         </div>
       </div>
