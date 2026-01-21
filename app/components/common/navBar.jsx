@@ -27,12 +27,12 @@ export default function NavBar() {
           <Link href="/about" className="hover:text-teal-200 transition-colors">
             About
           </Link>
-          <Link
+          {/* <Link
             href="/services"
             className="hover:text-teal-200 transition-colors"
           >
             Services
-          </Link>
+          </Link> */}
           <Link
             href="/contact"
             className="hover:text-teal-200 transition-colors"
@@ -72,13 +72,13 @@ export default function NavBar() {
           >
             About
           </Link>
-          <Link
+          {/* <Link
             href="/services"
             onClick={toggleMenu}
             className="hover:text-teal-200 transition-colors"
           >
             Services
-          </Link>
+          </Link> */}
           <Link
             href="/contact"
             onClick={toggleMenu}
