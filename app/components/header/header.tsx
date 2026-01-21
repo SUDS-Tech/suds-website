@@ -108,27 +108,8 @@ export default function BusinessProcess(){
                   alt="Advanced Technology Dashboard"
                   className="w-full h-[500px] object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
+                             
                 
-                
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60" />
-                
-                {/* Floating Tech Icons */}
-                <div className="absolute top-6 right-6 flex gap-3">
-                   {[
-                    { Icon: Atom, color: 'text-blue-400' },
-                    { Icon: Shield, color: 'text-emerald-400' },
-                    { Icon: Cloud, color: 'text-cyan-400' },
-                    { Icon: Bot, color: 'text-purple-400' }
-                  ].map(({ Icon, color }, i) => (
-                    <div
-                      key={i}
-                      className="w-12 h-12 bg-gray-900/80 backdrop-blur-sm border border-emerald-500/30 rounded-lg flex items-center justify-center hover:scale-110 hover:border-emerald-500/60 transition-all duration-300 cursor-pointer group"
-                      style={{ animationDelay: `${i * 0.1}s` }}
-                    >
-                      <Icon className={`w-5 h-5 ${color} group-hover:scale-110 transition-transform duration-300`} />
-                    </div>
-                  ))}
-                </div>
               </div>
             </div>
 
