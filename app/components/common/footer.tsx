@@ -83,7 +83,7 @@ export default function Footer() {
               <ul className="space-y-3">
                 <li>
                   <Link
-                    href="#"
+                    href="/about"
                     className="flex items-center text-white hover:text-[#4eca78]"
                   >
                     <ChevronRight className="text-[#4eca78] mr-2" size={18} />
@@ -101,14 +101,14 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    href="/contact"
                     className="flex items-center text-white hover:text-[#4eca78]"
                   >
                     <ChevronRight className="text-[#4eca78] mr-2" size={18} />
                     Contact Us
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link
                     href="#"
                     className="flex items-center text-white hover:text-[#4eca78]"
@@ -116,10 +116,10 @@ export default function Footer() {
                     <ChevronRight className="text-[#4eca78] mr-2" size={18} />
                     Our Location
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <Link
-                    href="#"
+                    href="/"
                     className="flex items-center text-white hover:text-[#4eca78]"
                   >
                     <ChevronRight className="text-[#4eca78] mr-2" size={18} />
