@@ -1,55 +1,92 @@
 import {
-  ChevronsLeftRightEllipsis,
   Smartphone,
-  Cable,
-  Handshake,
-  Network,
-  UserRoundPlus,
+  Code2,
+  Settings,
+  Cloud,
+  Palette,
+  Shield,
 } from "lucide-react";
 
-const services = [
-  {
-    icon: ChevronsLeftRightEllipsis,
-    title: "Web Application Development",
-    description:
-      "High-performance, responsive web platforms built with modern frameworks and optimized for user experience.",
-    iconColor: "text-teal-500",
-  },
-  {
-    icon: Smartphone,
-    title: "Mobile Application Development",
-    description:
-      "Native and cross-platform mobile solutions that deliver seamless performance on iOS and Android.",
-    iconColor: "text-teal-500",
-  },
-  {
-    icon: Cable,
-    title: "Custom Software Solutions",
-    description:
-      "Tailored software engineered to automate workflows and solve specific enterprise challenges.",
-    iconColor: "text-green-500",
-  },
-  {
-    icon: Handshake,
-    title: "IT Consultancy",
-    description:
-      "Strategic advisory services on digital transformation, technology stacks, and infrastructure optimization.",
-    iconColor: "text-blue-500",
-  },
-  {
-    icon: Network,
-    title: "DevOps & Cloud Engineering",
-    description:
-      "Streamlined CI/CD pipelines and secure cloud migrations to ensure maximum uptime and deployment efficiency.",
-    iconColor: "text-blue-500",
-  },
-  {
-    icon: UserRoundPlus,
-    title: "Software Innovation Lab",
-    description:
-      "A dedicated R&D environment for prototyping, MVP development, and proof-of-concept testing for emerging technologies.",
-    iconColor: "text-blue-500",
-  },
-];
+
+
+export interface Service {
+  icon: any;
+  iconColor: string;
+  title: string;
+  description: string;
+  features: string[];
+}
+
+
+  const services: Service[] = [
+    {
+      icon: Code2,
+      iconColor: "text-blue-400",
+      title: "Web Application Development",
+      description: "High-performance, responsive web platforms built with modern frameworks and optimized for exceptional user experience.",
+      features: [
+        "React, Next.js, Vue.js expertise",
+        "Progressive Web Apps (PWA)",
+        "Responsive & accessible design",
+      ],
+    },
+    {
+      icon: Smartphone,
+      iconColor: "text-purple-400",
+      title: "Mobile Application Development",
+      description: "Native and cross-platform mobile solutions that deliver seamless performance on iOS and Android devices.",
+      features: [
+        "iOS & Android native apps",
+        "React Native & Flutter",
+        "App Store optimization",
+      ],
+    },
+    {
+      icon: Settings,
+      iconColor: "text-emerald-400",
+      title: "Custom Software Solutions",
+      description: "Tailored software engineered to automate workflows and solve specific enterprise challenges with precision.",
+      features: [
+        "Business process automation",
+        "Legacy system modernization",
+        "API development & integration",
+      ],
+    },
+    {
+      icon: Cloud,
+      iconColor: "text-cyan-400",
+      title: "DevOps & Cloud Engineering",
+      description: "Streamlined CI/CD pipelines and secure cloud migrations to ensure maximum uptime and deployment efficiency.",
+      features: [
+        "AWS, Azure, GCP expertise",
+        "Container orchestration",
+        "Infrastructure as Code (IaC)",
+      ],
+    },
+    {
+      icon: Palette,
+      iconColor: "text-pink-400",
+      title: "IT Consultancy",
+      description: "Strategic advisory services on digital transformation, technology stacks, and infrastructure optimization.",
+      features: [
+        "Technology roadmap planning",
+        "Architecture design reviews",
+        "Performance optimization",
+      ],
+    },
+    {
+      icon: Shield,
+      iconColor: "text-red-400",
+      title: "Software Innovation Lab",
+      description: "A dedicated R&D environment for prototyping, MVP development, and proof-of-concept testing for emerging technologies.",
+      features: [
+        "AI/ML experimentation",
+        "Blockchain & Web3 solutions",
+        "IoT & edge computing",
+      ],
+    },
+  ];
+
+
 
 export default services;
