@@ -77,7 +77,7 @@ export default function ContactForm() {
     }
   };
   return (
-    <div className="min-h-screen bg-linear-to-b from-gray-800 to-gray-950 relative overflow-hidden">
+    <div className="min-h-screen bg-linear-to-b from-gray-800 to-gray-950 relative overflow-hidden pt-14">
       <div className="mx-auto px-4 py-12">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left side - Contact Information */}
