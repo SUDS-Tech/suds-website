@@ -8,9 +8,9 @@
  * of this file is strictly prohibited.
  */
 
-import BusinessProcess from "./components/header/header";
-import ServiceCards from "./components/main/main";
-import Option from "./components/main/option";
+import BusinessProcess from "./components/Homepage/header";
+import ServiceCards from "./components/Homepage/main/main";
+import Option from "./components/Homepage/main/option";
 
 export default function Home() {
   return (
