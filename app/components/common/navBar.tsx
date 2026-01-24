@@ -20,6 +20,11 @@ export function NavLinkItem({
   onClick,
   isMobile = false,
 }: NavLinkItemProps) {
+  const [servicelinks, setservicelinks] = useState<boolean>(false);
+
+  const handleServiceLinks = () => {
+    setservicelinks(!servicelinks);
+  };
   return (
     <a
       href={link.href}
@@ -31,8 +36,14 @@ export function NavLinkItem({
       `}
     >
       <span className="relative z-10 flex items-center gap-1">
-        <p className="text-white">{link.label}</p>
-        {link.hasDropdown && <ChevronDown className="w-4 h-4" />}
+        <p
+          className={`${link.label === "Services" ? "text-green-400" : "text-white"}`}
+        >
+          {link.label}
+        </p>
+        <p></p>
+
+        {link.hasDropdown && <ChevronDown className="w-4 h-4 text-white" />}
       </span>
 
       <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-emerald-400 to-blue-500 group-hover:w-full transition-all duration-300" />
@@ -43,6 +54,7 @@ export function NavLinkItem({
 export function NavBar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
+  const [services, setServices] = useState<boolean>(false);
 
   const navLinks: NavLink[] = [
     { label: "Home", href: "/" },
@@ -67,7 +79,10 @@ export function NavBar() {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
+  //service display function
+  const handleServices = () => {
+    setServices(!services);
+  };
   return (
     <header
       className={`
@@ -103,6 +118,24 @@ export function NavBar() {
             {navLinks.map((link) => (
               <NavLinkItem key={link.label} link={link} />
             ))}
+
+            {/****service dropdown */}
+            {navLinks.map((navlink, index) => {
+              return (
+                <div key={index}>
+                  {navlink.label === "services" && (
+                    <div className="bg-green-400 h-64 w-64">
+                      <p className="text-white">Web Application Development</p>
+                      <p>Mobile Application Development</p>
+                      <p>Custom Software Solutions</p>
+                      <p>IT Consultancy & Digital Strategy</p>
+                      <p>DevOps & Cloud Engineering</p>
+                      <p>Software Innovation Lab</p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
 
           <div className="hidden lg:block">
@@ -140,7 +173,7 @@ export function NavBar() {
           }
         `}
       >
-        <div className="container mx-auto px-4 py-8">
+        <div className="mx-auto px-4 py-8 bg-[rgba(0,0,0,0.8)]">
           <div className="flex flex-col gap-2 mb-8">
             {navLinks.map((link, index) => (
               <div
