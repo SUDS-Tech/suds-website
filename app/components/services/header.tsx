@@ -34,16 +34,22 @@ interface FloatingIconProps {
   Icon: any;
   delay: number;
   position: any;
+  duration: number; //
 }
 
-const FloatingIcon = ({ Icon, delay, position }: FloatingIconProps) => {
+const FloatingIcon = ({
+  Icon,
+  delay,
+  position,
+  duration,
+}: FloatingIconProps) => {
   return (
     <div
       className="absolute opacity-10 animate-float"
       style={{
         ...position,
         animationDelay: `${delay}s`,
-        animationDuration: `${6 + Math.random() * 4}s`,
+        animationDuration: `${duration}s`, //  Use prop, not Math.random()
       }}
     >
       <Icon className="w-16 h-16 text-emerald-400" strokeWidth={1} />
@@ -53,20 +59,22 @@ const FloatingIcon = ({ Icon, delay, position }: FloatingIconProps) => {
 
 export default function ServicesHeader() {
   const [scrollY, setScrollY] = useState(0);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const text =
-    "At SUDS Technologies Ltd, we deliver secure, scalable and durable digital solutions engineered to solve real-world business challenges. Our services span the full software lifecycle from strategy and design to deployment and long-term optimization.";
+    "At SUDS Technologies Ltd, we deliver secure, scalable, and durable digital solutions engineered to solve real-world business challenges. Our services span the full software lifecycle from strategy and design to deployment and long-term optimization.";
 
   const words = text.split(" ");
 
   return (
-    <div className="relative w-full bg-gradient-to-br from-gray-900 via-gray-800 to-black overflow-hidden">
+    <div className="relative w-full bg-linear-to-br from-gray-900 via-gray-800 to-black overflow-hidden">
       {/* Animated background pattern */}
       <div
         className="absolute inset-0 opacity-20"
@@ -74,7 +82,9 @@ export default function ServicesHeader() {
           backgroundImage: `url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          transform: `translateY(${scrollY * 0.3}px)`,
+          transform: mounted
+            ? `translateY(${scrollY * 0.3}px)`
+            : "translateY(0px)", //  Only animate after mount
         }}
       />
 
@@ -86,21 +96,24 @@ export default function ServicesHeader() {
         style={{ animationDelay: "1s" }}
       />
 
-      {/* Floating background icons */}
+      {/* Floating background icons - fixed durations */}
       <FloatingIcon
         Icon={Code2}
         delay={0}
         position={{ top: "10%", left: "5%" }}
+        duration={7} //  Fixed value
       />
       <FloatingIcon
         Icon={Zap}
         delay={1}
         position={{ top: "60%", right: "8%" }}
+        duration={8.5} //  Fixed value
       />
       <FloatingIcon
         Icon={Code2}
         delay={2}
         position={{ bottom: "15%", left: "10%" }}
+        duration={9} //  Fixed value
       />
 
       {/* Content */}
@@ -126,7 +139,7 @@ export default function ServicesHeader() {
               style={{ animation: "fadeInUp 0.6s ease-out 0.1s both" }}
             >
               <span className="text-white">Our </span>
-              <span className="bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">
                 Services
               </span>
             </h1>
@@ -136,34 +149,17 @@ export default function ServicesHeader() {
               className="flex items-center justify-center gap-2 mb-8"
               style={{ animation: "fadeInUp 0.6s ease-out 0.2s both" }}
             >
-              <div className="w-12 h-1 bg-gradient-to-r from-transparent to-emerald-500 rounded-full" />
-              <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full" />
-              <div className="w-12 h-1 bg-gradient-to-r from-blue-500 to-transparent rounded-full" />
+              <div className="w-12 h-1 bg-linear-to-r from-transparent to-emerald-500 rounded-full" />
+              <div className="w-24 h-1 bg-linear-to-r from-emerald-500 to-blue-500 rounded-full" />
+              <div className="w-12 h-1 bg-linear-to-r from-blue-500 to-transparent rounded-full" />
             </div>
 
             {/* Subtitle with animated word reveal */}
             <div className="max-w-4xl mx-auto">
               <p className="text-gray-300 text-lg sm:text-xl md:text-2xl leading-relaxed">
-                {words.map((word, index) => {
-                  // Highlight specific words
-                  //if (word === "secure," || word === "scalable," || word === "durable") {
-                  // return (
-                  //   <AnimatedWord key={index} word={word} delay={index * 50}>
-                  //     <span className="text-white font-bold">{word}</span>
-                  //   </AnimatedWord>
-                  //  );
-                  //  }
-                  //  if (word === "strategy" || word === "design" || word === "deployment" || word === "optimization.") {
-                  //   return (
-                  //     <AnimatedWord key={index} word={word} delay={index * 50}>
-                  //      <span className="text-emerald-400 font-semibold">{word}</span>
-                  //    </AnimatedWord>
-                  //   );
-                  //  }
-                  return (
-                    <AnimatedWord key={index} word={word} delay={index * 50} />
-                  );
-                })}
+                {words.map((word, index) => (
+                  <AnimatedWord key={index} word={word} delay={index * 50} />
+                ))}
               </p>
             </div>
           </div>
@@ -175,7 +171,7 @@ export default function ServicesHeader() {
           >
             <a
               href="#services"
-              className="group px-8 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-emerald-500/50 transition-all duration-300 flex items-center justify-center gap-2"
+              className="group px-8 py-4 bg-linear-to-r from-emerald-500 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-emerald-500/50 transition-all duration-300 flex items-center justify-center gap-2"
             >
               Explore Services
               <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform duration-300" />
