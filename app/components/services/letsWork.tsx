@@ -148,7 +148,7 @@ export default function LetsWork() {
           </p>
         </div>
 
-        {/* Three Column Layout */}
+        
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
           {/* Engineering Standards */}
           <div className="relative">
@@ -269,33 +269,6 @@ export default function LetsWork() {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Bottom Stats/Trust Section */}
-        <div
-          className="grid grid-cols-2 md:grid-cols-4 gap-6"
-          style={{ animation: 'fadeInUp 0.6s ease-out 0.6s both' }}
-        >
-          {[
-            { icon: CheckCircle, value: "50+", label: "Projects Delivered" },
-            { icon: Shield, value: "100%", label: "Secure Systems" },
-            { icon: Rocket, value: "99%", label: "Client Satisfaction" },
-            { icon: HeadphonesIcon, value: "24/7", label: "Support Available" },
-          ].map((stat, idx) => {
-            const Icon = stat.icon;
-            return (
-              <div
-                key={idx}
-                className="group text-center p-6 bg-gray-800/30 rounded-xl border border-gray-700/30 hover:border-emerald-500/30 hover:bg-gray-800/50 transition-all duration-300"
-              >
-                <Icon className="w-8 h-8 text-emerald-400 mx-auto mb-3 group-hover:scale-110 transition-transform duration-300" />
-                <div className="text-3xl font-bold bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent mb-1">
-                  {stat.value}
-                </div>
-                <div className="text-gray-400 text-sm">{stat.label}</div>
-              </div>
-            );
-          })}
         </div>
       </div>
 
