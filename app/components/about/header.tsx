@@ -5,7 +5,7 @@ import image from "./images/girl.jpg";
 import { motion } from "motion/react";
 function Header() {
   return (
-    <div className="bg-linear-to-r from-gray-800 to-gray-950">
+    <div className="bg-linear-to-r from-gray-800 to-gray-950 pt-14">
       <div className="flex flex-col sm:flex-row justify-center items-center gap-6 py-4">
         <motion.div
           initial={{ x: -100, opacity: 0 }}
@@ -29,8 +29,6 @@ function Header() {
         </motion.div>
         <motion.div
           initial={{ x: 100, opacity: 0 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
