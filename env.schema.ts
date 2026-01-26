@@ -39,7 +39,7 @@ export const schema = defineSchema({
   },
   SMTP:{
     type: 'object',
-    envPrefix: 'SMTP',
+    envPrefix: 'SMTP_',
     properties:{
       HOST:{
         type: 'string',
@@ -61,6 +61,10 @@ export const schema = defineSchema({
       PASS:{
         type: 'string',
         required: true
+      },
+      FROM:{
+        type: 'string',
+        default:'noreply@suds-tech.com'
       }
     }
   },
@@ -73,6 +77,15 @@ export const schema = defineSchema({
     type: 'string',
     required: true,
     sensitive: true
+  },
+  INTERNAL_EMAIL:{
+    type: 'string',
+    required: true,
+    default: 'info@suds-tech.com'
+  },
+  ALLOWED_ORIGIN:{
+    type: 'string',
+    default: '*'
   }
 });
 
