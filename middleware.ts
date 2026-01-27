@@ -2,7 +2,7 @@
 
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { env } from "./env.schema";
+import { env } from "./src/config/env";
 
 export function middleware(request: NextRequest){
     //security headers

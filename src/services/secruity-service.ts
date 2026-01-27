@@ -11,7 +11,7 @@
 import crypto from 'crypto';
 import validator from 'validator';
 import sanitizeHtml from 'sanitize-html';
-import { env } from '@/env.schema';
+import { env } from "../config/env";
 import { CreateContactDto } from '../dto/create-contact.dto';
 import { isDisposableEmail } from '../utils/disposable-emails';
 

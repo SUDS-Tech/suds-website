@@ -11,7 +11,7 @@
 
 import nodemailer from 'nodemailer';
 import { Contact, ContactType } from '../entities/Contact.entity';
-import {env} from '../../env.schema'
+import { env } from "../config/env";
 
 export class NotificationService{
     private transporter: nodemailer.Transporter;

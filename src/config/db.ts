@@ -8,7 +8,7 @@
  * of this file is strictly prohibited.
  */
 import {DataSource} from 'typeorm'
-import { env } from '@/env.schema';
+import { env } from "./env";
 
 export const AppDataSource = new DataSource({
     type: 'postgres',

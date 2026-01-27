@@ -1,6 +1,6 @@
-import { defineSchema, loadEnv } from 'dotenv-gad';
+import { defineSchema } from 'dotenv-gad';
 
-export const schema = defineSchema({
+export default defineSchema({
   // Add your environment variables here
   DB: {
     type: 'object',
@@ -90,4 +90,3 @@ export const schema = defineSchema({
 });
 
 
-export const env = loadEnv(schema)
