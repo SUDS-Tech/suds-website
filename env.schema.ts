@@ -9,30 +9,36 @@ export default defineSchema({
       HOST:{
         type: 'string',
         required: true,
-        default: 'localhost'
+        default: 'localhost',
+        docs: "database hostname or ip address"
       },
       PORT:{
         type: 'number',
         required: true,
-        default: 5432
+        default: 5432,
+        docs: "database port number"
       },
       USER:{
         type: 'string',
         required: true,
-        default: 'postgres'
+        default: 'postgres',
+        docs: "database user name"
       },
       PASS:{
         type: 'string',
         required: true,
+        docs: "database password"
       },
       SSL:{
         type: 'boolean',
         required: true,
-        default: false
+        default: false,
+        docs: "database ssl enabled or not"
       },
       NAME:{
         type: 'string',
-        required: true
+        required: true,
+        docs: "database name"
       }
     }
 
@@ -43,35 +49,42 @@ export default defineSchema({
     properties:{
       HOST:{
         type: 'string',
-        required: true
+        required: true,
+        docs: "smtp hostname or ip address"
       },
       PORT:{
         type: 'number',
         required: true,
-        default: 587
+        default: 587,
+        docs: "smtp port number"
       },
       SECURE:{
         type: 'boolean',
-        required: true
+        required: true,
+        docs: "smtp secure or not"
       },
       USER:{
         type: 'string',
-        required: true
+        required: true,
+        docs: "smtp user name"
       },
       PASS:{
         type: 'string',
-        required: true
+        required: true,
+        docs: "smtp password"
       },
       FROM:{
         type: 'string',
-        default:'noreply@suds-tech.com'
+        default:'noreply@suds-tech.com',
+        docs: "smtp from address"
       }
     }
   },
   NODE_ENV: {
     type: 'string',
     enum: ['development', 'production', 'test'],
-    default: 'development'
+    default: 'development',
+    docs: 'application environment'
   },
   ENCRYPTION_KEY:{
     type: 'string',
@@ -81,11 +94,13 @@ export default defineSchema({
   INTERNAL_EMAIL:{
     type: 'string',
     required: true,
-    default: 'info@suds-tech.com'
+    default: 'info@suds-tech.com',
+    docs: "internal email address"
   },
   ALLOWED_ORIGIN:{
     type: 'string',
-    default: '*'
+    default: '*',
+    docs: "allowed origin"
   }
 });
 
