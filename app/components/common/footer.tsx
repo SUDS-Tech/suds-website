@@ -26,7 +26,7 @@ interface SocialLink {
 
 interface FooterLink {
   label: string;
-  href: string;
+  href?: string;
 }
 
 interface FooterSection {
@@ -72,7 +72,7 @@ const FooterLinkItem = ({ link }: FooterLinkItemProps) => {
           className="text-emerald-500 mr-2 opacity-0 group-hover:opacity-100 -ml-4 group-hover:ml-0 transition-all duration-300"
           size={14}
         />
-        {link.label}
+        <p>{link.label}</p>
       </a>
     </li>
   );
@@ -192,27 +192,27 @@ export function Footer() {
       links: [
         { label: "About Us", href: "/about" },
         { label: "Our Team", href: "/team" },
-        { label: "Careers we are soon hiring", href: "/careers" },
+        { label: "Careers we are soon hiring" },
         { label: "Contact Us", href: "/contact" },
       ],
     },
     {
       title: "Services",
       links: [
-        { label: "Web Development", href: "/services/web" },
-        { label: "Mobile Apps", href: "/services/mobile" },
-        { label: "Cloud Solutions", href: "/services/cloud" },
-        { label: "Custom Software", href: "/services/custom-software" },
-        { label: "Consultancy", href: "/services/consulting" },
+        { label: "Web Development" },
+        { label: "Mobile Apps" },
+        { label: "Cloud Solutions" },
+        { label: "Custom Software" },
+        { label: "Consultancy" },
       ],
     },
     {
       title: "Resources",
       links: [
-        { label: "Projects", href: "/projects" },
-        { label: "Case Studies", href: "/case-studies" },
-        { label: "Blog", href: "/blog" },
-        { label: "Docs", href: "/docs" },
+        { label: "Projects" },
+        { label: "Case Studies" },
+        { label: "Blog" },
+        { label: "Docs" },
       ],
     },
   ];
