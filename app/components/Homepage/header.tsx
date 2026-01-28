@@ -23,7 +23,7 @@ export default function BusinessProcess() {
   ];
 
   return (
-    <div className="relative w-full min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black overflow-hidden">
+    <div className="relative w-full min-h-screen bg-linear-to-br from-gray-900 via-gray-800 to-black overflow-hidden">
       <div
         className="absolute inset-0 opacity-10"
         style={{
@@ -60,7 +60,7 @@ export default function BusinessProcess() {
           <div className="space-y-8">
             <div>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                <span className="bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">
+                <span className="bg-linear-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">
                   SUDS
                 </span>
                 <br />
@@ -82,9 +82,9 @@ export default function BusinessProcess() {
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
               <Link href="/contact">
-                <button className="group relative px-8 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/50 hover:scale-105">
-                  <span className="relative z-10">Let's Talk</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-emerald-700 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                <button className="group relative px-8 py-4 bg-linear-to-r from-emerald-500 to-emerald-600 text-white font-semibold rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/50 hover:scale-105">
+                  <p className="relative z-10">Let's Talk</p>
+                  <div className="absolute inset-0 bg-linear-to-r from-emerald-600 to-emerald-700 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                 </button>
               </Link>
             </div>
@@ -92,13 +92,13 @@ export default function BusinessProcess() {
 
           <div className="relative">
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-2xl blur-lg opacity-75 group-hover:opacity-100 transition duration-300" />
+              <div className="absolute -inset-1 bg-linear-to-r from-emerald-500 to-blue-500 rounded-2xl blur-lg opacity-75 group-hover:opacity-100 transition duration-300" />
 
               <div className="relative bg-gray-900 rounded-2xl overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
                   alt="Advanced Technology Dashboard"
-                  className="w-full h-[500px] object-cover transform group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-125 object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
             </div>
@@ -111,7 +111,7 @@ export default function BusinessProcess() {
                   <div className="w-3 h-3 bg-yellow-500 rounded-full" />
                   <div className="w-3 h-3 bg-green-500 rounded-full" />
                 </div>
-                <span className="text-gray-400 text-xs">secure-systems.ts</span>
+                <p className="text-gray-400 text-xs">secure-systems.ts</p>
               </div>
               <div className="font-mono text-xs text-emerald-400 space-y-1">
                 <div>

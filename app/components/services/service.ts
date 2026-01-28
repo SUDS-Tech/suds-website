@@ -2,7 +2,7 @@ import {
   Smartphone,
   Settings,
   Cloud,
-   Sparkles,
+  Sparkles,
   Layers,
   Search,
   PenTool,
@@ -11,7 +11,7 @@ import {
   HandHelping,
   Code,
   Rocket,
-  HeadphonesIcon
+  HeadphonesIcon,
 } from "lucide-react";
 
 export interface Service {
@@ -127,50 +127,51 @@ const services: Service[] = [
 ];
 
 export const philosophy = [
-    {
-      icon: Shield,
-      title: "Secure",
-      description: "Security embedded at every layer of development",
-    },
-    {
-      icon: Sparkles,
-      title: "Unique",
-      description: "Solutions designed for your specific challenges",
-    },
-    {
-      icon: Layers,
-      title: "Durable",
-      description: "Architectures built to scale and last",
-    },
-  ];
+  {
+    icon: Shield,
+    title: "Secure",
+    description: "Security embedded at every layer of development",
+  },
+  {
+    icon: Sparkles,
+    title: "Unique",
+    description: "Solutions designed for your specific challenges",
+  },
+  {
+    icon: Layers,
+    title: "Durable",
+    description: "Architectures built to scale and last",
+  },
+];
 
-  
-  export const processSteps = [
-    {
-      icon: Search,
-      title: "Discovery & Requirements Analysis",
-      description: "Deep dive into your business needs and technical requirements",
-    },
-    {
-      icon: PenTool,
-      title: "Secure Architecture Design",
-      description: "Creating robust blueprints with security as the foundation",
-    },
-    {
-      icon: Code,
-      title: "Agile Development & Testing",
-      description: "Iterative sprints with continuous integration and quality assurance",
-    },
-    {
-      icon: Rocket,
-      title: "Deployment & Optimization",
-      description: "Seamless launch with performance tuning and monitoring",
-    },
-    {
-      icon: HeadphonesIcon,
-      title: "Continuous Support & Improvement",
-      description: "Ongoing maintenance and feature enhancements",
-    },
-  ];
+export const processSteps = [
+  {
+    icon: Search,
+    title: "Discovery & Requirements Analysis",
+    description:
+      "Deep dive into your business needs and technical requirements",
+  },
+  {
+    icon: PenTool,
+    title: "Secure Architecture Design",
+    description: "Creating robust blueprints with security as the foundation",
+  },
+  {
+    icon: Code,
+    title: "Agile Development & Testing",
+    description:
+      "Iterative sprints with continuous integration and quality assurance",
+  },
+  {
+    icon: Rocket,
+    title: "Deployment & Optimization",
+    description: "Seamless launch with performance tuning and monitoring",
+  },
+  {
+    icon: HeadphonesIcon,
+    title: "Continuous Support & Improvement",
+    description: "Ongoing maintenance and feature enhancements",
+  },
+];
 
 export default services;
