@@ -36,14 +36,10 @@ export function NavLinkItem({
       `}
     >
       <span className="relative z-10 flex items-center gap-1">
-        <p
-          className={`${link.label === "Services" ? "text-green-400" : "text-white"}`}
-        >
-          {link.label}
-        </p>
-        <p></p>
+        <p className="text-white">{link.label}</p>
+        {/* <p></p>
 
-        {link.hasDropdown && <ChevronDown className="w-4 h-4 text-white" />}
+        {link.hasDropdown && <ChevronDown className="w-4 h-4 text-white" />} */}
       </span>
 
       <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-emerald-400 to-blue-500 group-hover:w-full transition-all duration-300" />
