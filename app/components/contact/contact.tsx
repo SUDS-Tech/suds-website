@@ -100,7 +100,7 @@ export default function ContactForm() {
                 <div>
                   <p className="text-green-500 font-medium mb-1">Call us now</p>
                   <p className="text-xl font-semibold text-white">
-                    +1 (818) 765 432 10
+                    +256 757 212 246 / +256 701 521 269
                   </p>
                 </div>
               </div>
