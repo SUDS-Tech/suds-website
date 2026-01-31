@@ -13,7 +13,7 @@ function JoinUs() {
             real-world problems, Suds Technologies Ltd is building something
             you'll want to be part of.
           </p>
-          <div className="flex">
+          <div className="flex flex-col sm:flex-row">
             <p className="text-white">
               Interested in working with us or joining the team?.
             </p>
