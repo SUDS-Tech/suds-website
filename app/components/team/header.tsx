@@ -4,7 +4,7 @@ import image from "@/app/components/team/images/team.jpg";
 
 function Header() {
   return (
-    <div className="bg-linear-to-b from-gray-800 to-gray-950 pt-20">
+    <div className="bg-linear-to-b from-gray-800 to-gray-950 pt-20 pb-4">
       <div className="flex flex-col justify-center items-center sm:flex-row">
         <div className="w-full px-2">
           <p className="text-sm sm:text-xl text-white ">

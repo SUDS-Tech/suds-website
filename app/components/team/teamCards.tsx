@@ -4,9 +4,10 @@ import Image from "next/image";
 function TeamSection() {
   return (
     <div className="bg-linear-to-b from-gray-800 to-gray-950 py-4">
-      <h1 className="text-white text-2xl flex justify-self-center items-center">
-        Our team
-      </h1>
+      <div className="flex justify-center items-center">
+        <h1 className="text-white text-2xl ">Our team</h1>
+      </div>
+
       <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
         {team.map((item, id) => {
           return (
