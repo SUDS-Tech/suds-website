@@ -9,19 +9,19 @@ function TeamCircle() {
         <div className="relative border-2 border-black w-60 h-60 ">
           <div className="absolute -right-17.5 top-16 bg-white py-2">
             <div className="flex flex-col justify-center items-center">
-              <p>Collaboration first</p>
+              <p className="text-black">Collaboration first</p>
               <UsersRound className="text-green-600 w-8 h-8" />
             </div>
           </div>
           <div className="absolute -left-12 top-16">
             <div className="flex flex-col justify-center items-center bg-white py-2">
-              <p>Quality work</p>
+              <p className="text-black">Quality work</p>
               <ThumbsUp className="text-green-600 w-8 h-8" />
             </div>
           </div>
           <div className="absolute -bottom-3 left-5 bg-white px-1">
             <div className="flex flex-col justify-center items-center">
-              <p>Continuous improvement</p>
+              <p className="text-black">Continuous improvement</p>
               <Recycle className="text-green-600 w-8 h-8" />
             </div>
           </div>
