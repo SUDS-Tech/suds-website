@@ -194,6 +194,7 @@ export function Footer() {
         { label: "Our Team", href: "/team" },
         { label: "Careers we are soon hiring" },
         { label: "Contact Us", href: "/contact" },
+        { label: "Team", href: "/team" },
       ],
     },
     {
