@@ -57,7 +57,7 @@ export function NavBar() {
     { label: "About", href: "/about" },
     { label: "Services", href: "/services", hasDropdown: true },
     { label: "Contact", href: "/contact" },
-    { label: "Team", href: "/team" },
+    // { label: "Team", href: "/team" },
   ];
 
   useEffect(() => {
