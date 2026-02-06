@@ -1,229 +1,98 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Code2, Zap, ArrowDown } from "lucide-react";
-
-interface Animated {
-  word: string;
-  delay: number;
-}
-
-const AnimatedWord = ({ word, delay }: Animated) => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), delay);
-    return () => clearTimeout(timer);
-  }, [delay]);
-
-  return (
-    <span
-      className="inline-block mr-1"
-      style={{
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? "translateY(0)" : "translateY(10px)",
-        transition: "all 0.4s ease-out",
-      }}
-    >
-      {word}
-    </span>
-  );
-};
-
-interface FloatingIconProps {
-  Icon: any;
-  delay: number;
-  position: any;
-  duration: number; //
-}
-
-const FloatingIcon = ({
-  Icon,
-  delay,
-  position,
-  duration,
-}: FloatingIconProps) => {
-  return (
-    <div
-      className="absolute opacity-10 animate-float"
-      style={{
-        ...position,
-        animationDelay: `${delay}s`,
-        animationDuration: `${duration}s`, //  Use prop, not Math.random()
-      }}
-    >
-      <Icon className="w-16 h-16 text-emerald-400" strokeWidth={1} />
-    </div>
-  );
-};
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import ParticleBackground from "../Homepage/particle-background";
 
 export default function ServicesHeader() {
-  const [scrollY, setScrollY] = useState(0);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const text =
-    "At SUDS Technologies Ltd, we deliver secure, scalable, and durable digital solutions engineered to solve real-world business challenges. Our services span the full software lifecycle from strategy and design to deployment and long-term optimization.";
-
-  const words = text.split(" ");
-
   return (
-    <div className="relative w-full bg-linear-to-br from-gray-900 via-gray-800 to-black overflow-hidden">
-      {/* Animated background pattern */}
-      <div
-        className="absolute inset-0 opacity-20"
-        style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          transform: mounted
-            ? `translateY(${scrollY * 0.3}px)`
-            : "translateY(0px)", //  Only animate after mount
-        }}
-      />
+    <div className="relative w-full min-h-screen bg-[#0d1117] overflow-hidden pt-20">
+      {/* Subtle Grid Pattern */}
+      <div className="absolute inset-0 grid-pattern opacity-30" />
 
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.03)_1px,transparent_1px)] bg-[size:50px_50px]" />
+      {/* Particle Background */}
+      <ParticleBackground />
 
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl animate-pulse" />
-      <div
-        className="absolute bottom-0 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse"
-        style={{ animationDelay: "1s" }}
-      />
-
-      {/* Floating background icons - fixed durations */}
-      <FloatingIcon
-        Icon={Code2}
-        delay={0}
-        position={{ top: "10%", left: "5%" }}
-        duration={7} //  Fixed value
-      />
-      <FloatingIcon
-        Icon={Zap}
-        delay={1}
-        position={{ top: "60%", right: "8%" }}
-        duration={8.5} //  Fixed value
-      />
-      <FloatingIcon
-        Icon={Code2}
-        delay={2}
-        position={{ bottom: "15%", left: "10%" }}
-        duration={9} //  Fixed value
-      />
-
-      {/* Content */}
-      <div className="relative z-10 pt-32 pb-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          {/* Badge */}
-          <div
-            className="flex justify-center mb-8"
-            style={{ animation: "fadeInUp 0.6s ease-out" }}
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full backdrop-blur-sm">
-              <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-              <span className="text-emerald-400 text-sm font-medium tracking-wider">
-                COMPREHENSIVE SOLUTIONS
-              </span>
-            </div>
-          </div>
-
-          {/* Main title */}
-          <div className="text-center mb-12">
-            <h1
-              className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6"
-              style={{ animation: "fadeInUp 0.6s ease-out 0.1s both" }}
-            >
-              <span className="text-white">Our </span>
-              <span className="bg-linear-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">
-                Services
-              </span>
-            </h1>
-
-            {/* Decorative line */}
-            <div
-              className="flex items-center justify-center gap-2 mb-8"
-              style={{ animation: "fadeInUp 0.6s ease-out 0.2s both" }}
-            >
-              <div className="w-12 h-1 bg-linear-to-r from-transparent to-emerald-500 rounded-full" />
-              <div className="w-24 h-1 bg-linear-to-r from-emerald-500 to-blue-500 rounded-full" />
-              <div className="w-12 h-1 bg-linear-to-r from-blue-500 to-transparent rounded-full" />
-            </div>
-
-            {/* Subtitle with animated word reveal */}
-            <div className="max-w-4xl mx-auto">
-              <p className="text-gray-300 text-lg sm:text-xl md:text-2xl leading-relaxed">
-                {words.map((word, index) => (
-                  <AnimatedWord key={index} word={word} delay={index * 50} />
-                ))}
-              </p>
-            </div>
-          </div>
-
-          {/* CTA Buttons */}
-          <div
-            className="flex flex-col sm:flex-row justify-center gap-4"
-            style={{ animation: "fadeInUp 0.6s ease-out 0.5s both" }}
-          >
-            <a
-              href="#services"
-              className="group px-8 py-4 bg-linear-to-r from-emerald-500 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-emerald-500/50 transition-all duration-300 flex items-center justify-center gap-2"
-            >
-              Explore Services
-              <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform duration-300" />
-            </a>
-            <a
-              href="/contact"
-              className="px-8 py-4 border-2 border-emerald-500/50 text-emerald-400 font-semibold rounded-xl hover:bg-emerald-500/10 transition-all duration-300 flex items-center justify-center"
-            >
-              Get Started
-            </a>
-          </div>
-
-          {/* Scroll indicator */}
-          <div
-            className="flex justify-center mt-16"
-            style={{ animation: "fadeInUp 0.6s ease-out 0.6s both" }}
-          >
-            <div className="flex flex-col items-center gap-2 text-gray-500 animate-bounce">
-              <span className="text-sm">Scroll to explore</span>
-              <ArrowDown className="w-5 h-5" />
-            </div>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        {/* Header Badge */}
+        <div className="flex justify-center mb-8 animate-fade-in-up">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full">
+            <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+            <span className="text-emerald-500 text-sm font-medium tracking-wider">
+              OUR SERVICES
+            </span>
           </div>
         </div>
+
+        {/* Main Content */}
+        <div className="text-center max-w-4xl mx-auto space-y-8">
+          <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
+            Enterprise-Grade{" "}
+            <span className="bg-gradient-to-r from-emerald-500 to-emerald-600 bg-clip-text text-transparent">
+              Technology Solutions
+            </span>
+          </h1>
+
+          <p className="text-gray-400 text-lg leading-relaxed max-w-3xl mx-auto">
+            From web and mobile applications to cloud infrastructure and AI-driven innovations,
+            we deliver comprehensive technology solutions that transform businesses and drive growth.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap gap-4 justify-center pt-4">
+            <Link href="/contact">
+              <button className="btn-primary">
+                Start Your Project
+                <ArrowRight className="w-5 h-5" />
+              </button>
+            </Link>
+            <Link href="/about">
+              <button className="btn-secondary">
+                Learn More
+              </button>
+            </Link>
+          </div>
+
+          {/* Feature Tags */}
+          <div className="flex flex-wrap gap-3 justify-center pt-8">
+            {[
+              "Web Development",
+              "Mobile Apps",
+              "Cloud Solutions",
+              "DevOps",
+              "AI/ML",
+              "Consultancy",
+            ].map((tag, index) => (
+              <span
+                key={index}
+                className="px-4 py-2 bg-[#161b22] border border-gray-800 text-gray-300 text-sm rounded-lg hover:border-emerald-500/50 transition-colors duration-200"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Stats Section */}
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          {[
+            { value: "50+", label: "Projects Delivered" },
+            { value: "98%", label: "Client Satisfaction" },
+            { value: "24/7", label: "Support Available" },
+            { value: "10+", label: "Years Experience" },
+          ].map((stat, index) => (
+            <div
+              key={index}
+              className="text-center p-6 bg-[#161b22] border border-gray-800 rounded-lg hover:border-emerald-500/50 transition-colors duration-200"
+            >
+              <div className="text-3xl font-bold text-emerald-500 mb-1">
+                {stat.value}
+              </div>
+              <div className="text-sm text-gray-400">{stat.label}</div>
+            </div>
+          ))}
+        </div>
       </div>
-
-      {/* CSS Animations */}
-      <style jsx>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes float {
-          0%,
-          100% {
-            transform: translateY(0) rotate(0deg);
-          }
-          50% {
-            transform: translateY(-20px) rotate(5deg);
-          }
-        }
-
-        .animate-float {
-          animation: float linear infinite;
-        }
-      `}</style>
     </div>
   );
 }

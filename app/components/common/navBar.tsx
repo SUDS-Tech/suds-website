@@ -71,7 +71,7 @@ export function NavBar() {
         fixed top-0 left-0 right-0 z-50 transition-all duration-200
         ${
           scrolled
-            ? "bg-[#0a0a0a]/95 backdrop-blur-sm border-b border-gray-800/50"
+            ? "bg-[#0d1117]/95 backdrop-blur-sm border-b border-gray-800/50"
             : "bg-transparent"
         }
       `}
@@ -80,7 +80,7 @@ export function NavBar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="/" className="flex items-center gap-3 group">
-            <div className="relative bg-[#111111] p-2 rounded-lg border border-gray-800 group-hover:border-emerald-500/50 transition-colors duration-200">
+            <div className="relative bg-[#161b22] p-2 rounded-lg border border-gray-800 group-hover:border-emerald-500/50 transition-colors duration-200">
               <Zap className="w-5 h-5 text-emerald-500" />
             </div>
 
@@ -114,7 +114,7 @@ export function NavBar() {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            className="lg:hidden p-2 rounded-lg bg-[#111111] border border-gray-800 hover:border-emerald-500/50 transition-colors duration-200"
+            className="lg:hidden p-2 rounded-lg bg-[#161b22] border border-gray-800 hover:border-emerald-500/50 transition-colors duration-200"
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
           >
@@ -130,7 +130,7 @@ export function NavBar() {
       {/* Mobile Menu */}
       <div
         className={`
-          lg:hidden fixed inset-0 top-16 bg-[#0a0a0a]/98 backdrop-blur-sm
+          lg:hidden fixed inset-0 top-16 bg-[#0d1117]/98 backdrop-blur-sm
           transition-all duration-200 ease-in-out
           ${
             isOpen

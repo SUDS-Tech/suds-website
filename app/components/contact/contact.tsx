@@ -2,6 +2,7 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 import { ChangeEvent, useState } from "react";
 import { Form, FormErrors } from "./types";
+import ParticleBackground from "../Homepage/particle-background";
 
 export default function ContactForm() {
   const [form, setForm] = useState<Form>({
@@ -79,7 +80,10 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] relative overflow-hidden pt-14">
+    <div className="min-h-screen bg-[#0d1117] relative overflow-hidden pt-14">
+      {/* Particle Background */}
+      <ParticleBackground />
+
       {/* Subtle Grid Pattern */}
       <div className="absolute inset-0 grid-pattern opacity-30" />
 
@@ -161,7 +165,7 @@ export default function ContactForm() {
                     onChange={handleChange}
                     placeholder="Enter your name"
                     type="text"
-                    className={`placeholder:text-gray-500 w-full h-12 px-4 py-2 bg-[#0a0a0a] border ${errors.name ? "border-red-500" : "border-gray-700"} rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 text-white transition-all duration-200`}
+                    className={`placeholder:text-gray-500 w-full h-12 px-4 py-2 bg-[#0d1117] border ${errors.name ? "border-red-500" : "border-gray-700"} rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 text-white transition-all duration-200`}
                   />
                   {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
                 </div>
@@ -180,7 +184,7 @@ export default function ContactForm() {
                     onChange={handleChange}
                     name="email"
                     placeholder="Enter your email"
-                    className={`placeholder:text-gray-500 w-full h-12 px-4 py-2 bg-[#0a0a0a] border ${errors.email ? "border-red-500" : "border-gray-700"} rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 text-white transition-all duration-200`}
+                    className={`placeholder:text-gray-500 w-full h-12 px-4 py-2 bg-[#0d1117] border ${errors.email ? "border-red-500" : "border-gray-700"} rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 text-white transition-all duration-200`}
                   />
                   {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
                 </div>
@@ -198,7 +202,7 @@ export default function ContactForm() {
                     onChange={handleChange}
                     name="message"
                     rows={5}
-                    className={`placeholder:text-gray-500 w-full px-4 py-2 bg-[#0a0a0a] border ${errors.message ? "border-red-500" : "border-gray-700"} rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 text-white transition-all duration-200`}
+                    className={`placeholder:text-gray-500 w-full px-4 py-2 bg-[#0d1117] border ${errors.message ? "border-red-500" : "border-gray-700"} rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 text-white transition-all duration-200`}
                     placeholder="Enter your message here..."
                   />
                   {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}

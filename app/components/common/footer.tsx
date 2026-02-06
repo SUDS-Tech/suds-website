@@ -45,7 +45,7 @@ const SocialIcon = ({ social }: SocialIconProps) => {
       href={social.href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative p-2.5 bg-[#111111] border border-gray-800 rounded-lg hover:border-emerald-500/50 transition-all duration-200"
+      className="group relative p-2.5 bg-[#161b22] border border-gray-800 rounded-lg hover:border-emerald-500/50 transition-all duration-200"
       aria-label={social.name}
     >
       {social.icon}
@@ -83,7 +83,7 @@ const NewsletterSection = () => {
   };
 
   return (
-    <div className="bg-[#111111] p-6 rounded-xl border border-gray-800">
+    <div className="bg-[#161b22] p-6 rounded-xl border border-gray-800">
       <h3 className="text-white font-semibold text-lg mb-2 flex items-center gap-2">
         <Mail className="w-5 h-5 text-emerald-500" />
         Stay Updated
@@ -98,7 +98,7 @@ const NewsletterSection = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="email@example.com"
-            className="w-full px-4 py-3 bg-[#0a0a0a] border border-gray-700 rounded-lg text-white placeholder-gray-500 text-sm focus:outline-none focus:border-emerald-500/50 transition-all duration-200"
+            className="w-full px-4 py-3 bg-[#0d1117] border border-gray-700 rounded-lg text-white placeholder-gray-500 text-sm focus:outline-none focus:border-emerald-500/50 transition-all duration-200"
           />
         </div>
         <button
@@ -202,7 +202,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="relative w-full bg-[#0a0a0a] overflow-hidden border-t border-gray-800">
+    <footer className="relative w-full bg-[#0d1117] overflow-hidden border-t border-gray-800">
       {/* Subtle Grid Pattern */}
       <div className="absolute inset-0 grid-pattern opacity-50" />
 
@@ -211,7 +211,7 @@ export function Footer() {
           {/* Brand Section */}
           <div className="lg:col-span-3 space-y-6">
             <a href="/" className="flex items-center gap-3 group w-fit">
-              <div className="relative bg-[#111111] p-2 rounded-lg border border-gray-800 group-hover:border-emerald-500/50 transition-colors duration-200">
+              <div className="relative bg-[#161b22] p-2 rounded-lg border border-gray-800 group-hover:border-emerald-500/50 transition-colors duration-200">
                 <Zap className="w-5 h-5 text-emerald-500" />
               </div>
               <div>
@@ -306,7 +306,7 @@ export function Footer() {
 
         {/* Status Indicator */}
         <div className="mt-8 flex justify-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#111111] border border-gray-800 rounded-full">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#161b22] border border-gray-800 rounded-full">
             <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
             <span className="text-gray-600 text-[10px] font-medium uppercase tracking-wider">
               Systems Operational

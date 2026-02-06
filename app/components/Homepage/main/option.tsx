@@ -25,7 +25,7 @@ const FeatureCard = ({ feature, index }: FeatureCardProps) => {
       <div className="flex flex-col items-center text-center h-full">
         {/* Icon */}
         <div className="mb-6 relative">
-          <div className="p-5 rounded-xl bg-[#0a0a0a] border border-gray-800 transition-all duration-200">
+          <div className="p-5 rounded-xl bg-[#0d1117] border border-gray-800 transition-all duration-200">
             <IconComponent
               className={`w-12 h-12 ${feature.iconColor} transition-all duration-200`}
               strokeWidth={1.5}
@@ -66,7 +66,7 @@ const FeatureCard = ({ feature, index }: FeatureCardProps) => {
 
 export default function SUDSWhyChoose() {
   return (
-    <div className="relative w-full bg-[#111111] py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <div className="relative w-full bg-[#161b22] py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Subtle Grid Pattern */}
       <div className="absolute inset-0 grid-pattern opacity-30" />
 
@@ -128,7 +128,7 @@ export default function SUDSWhyChoose() {
           ].map((stat, index) => (
             <div
               key={index}
-              className="text-center p-6 bg-[#0a0a0a] border border-gray-800 rounded-lg"
+              className="text-center p-6 bg-[#0d1117] border border-gray-800 rounded-lg"
             >
               <div className="text-3xl md:text-4xl font-bold text-emerald-500 mb-2">
                 {stat.value}

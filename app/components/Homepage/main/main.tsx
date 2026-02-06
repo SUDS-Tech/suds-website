@@ -24,7 +24,7 @@ const ServiceCard = ({ service, index }: ServiceCardProps) => {
     >
       <div className="flex flex-col h-full">
         <div className="mb-6">
-          <div className="inline-flex p-4 rounded-xl bg-[#0a0a0a] border border-gray-800 transition-all duration-200">
+          <div className="inline-flex p-4 rounded-xl bg-[#0d1117] border border-gray-800 transition-all duration-200">
             <IconComponent
               className={`w-10 h-10 ${service.iconColor} transition-all duration-200`}
               strokeWidth={1.5}
@@ -70,7 +70,7 @@ const ServiceCard = ({ service, index }: ServiceCardProps) => {
 
 export default function Services() {
   return (
-    <div className="relative w-full bg-[#111111] py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <div className="relative w-full bg-[#161b22] py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Subtle Grid Pattern */}
       <div className="absolute inset-0 grid-pattern opacity-30" />
 

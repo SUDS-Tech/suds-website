@@ -1,26 +1,27 @@
 import Link from "next/link";
-import React from "react";
 
 function JoinUs() {
   return (
-    <div>
-      <div className="bg-linear-to-b from-gray-800 to-gray-950 py-3 w-full flex justify-center items-center px-4">
-        <div className="max-w-2xl flex flex-col justify-center items-center ">
-          <h1 className="text-white">Join Us</h1>
-          <p className="text-white">We're just getting started.</p>
-          <p className="text-white">
-            If you're passionate about technology, innovation, and solving
-            real-world problems, Suds Technologies Ltd is building something
-            you'll want to be part of.
+    <div className="bg-[#161b22] py-16 w-full flex justify-center items-center px-4">
+      <div className="max-w-3xl text-center space-y-6">
+        <h2 className="text-3xl font-bold text-white">Join Us</h2>
+        <p className="text-xl text-gray-300 font-semibold">
+          We're just getting started.
+        </p>
+        <p className="text-gray-400 text-base leading-relaxed">
+          If you're passionate about technology, innovation, and solving
+          real-world problems, SUDS Technologies Ltd is building something
+          you'll want to be part of.
+        </p>
+        <div className="pt-4">
+          <p className="text-white mb-4">
+            Interested in working with us or joining the team?
           </p>
-          <div className="flex flex-col sm:flex-row">
-            <p className="text-white">
-              Interested in working with us or joining the team?.
-            </p>
-            <Link href="/contact">
-              <p className="text-green-500">Get in touch</p>
-            </Link>
-          </div>
+          <Link href="/contact">
+            <button className="btn-primary">
+              Get in Touch
+            </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -13,7 +13,7 @@ export default function BusinessProcess() {
   ];
 
   return (
-    <div className="relative w-full min-h-screen bg-[#0a0a0a] overflow-hidden">
+    <div className="relative w-full min-h-screen bg-[#0d1117] overflow-hidden">
       {/* Subtle Grid Pattern */}
       <div className="absolute inset-0 grid-pattern opacity-30" />
 
@@ -74,7 +74,7 @@ export default function BusinessProcess() {
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500/20 to-emerald-600/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition duration-300" />
 
-              <div className="relative bg-[#111111] rounded-2xl overflow-hidden border border-gray-800 group-hover:border-emerald-500/50 transition-colors duration-300">
+              <div className="relative bg-[#161b22] rounded-2xl overflow-hidden border border-gray-800 group-hover:border-emerald-500/50 transition-colors duration-300">
                 <img
                   src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
                   alt="Advanced Technology Dashboard"
@@ -84,7 +84,7 @@ export default function BusinessProcess() {
             </div>
 
             {/* Floating Code Snippet Card */}
-            <div className="absolute -bottom-6 -left-6 bg-[#111111] border border-gray-800 rounded-xl p-4 hover:border-emerald-500/50 transition-all duration-300">
+            <div className="absolute -bottom-6 -left-6 bg-[#161b22] border border-gray-800 rounded-xl p-4 hover:border-emerald-500/50 transition-all duration-300">
               <div className="flex items-center gap-2 mb-2">
                 <div className="flex gap-1">
                   <div className="w-3 h-3 bg-red-500 rounded-full" />
