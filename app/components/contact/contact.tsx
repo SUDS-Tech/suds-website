@@ -33,8 +33,8 @@ export default function ContactForm() {
     // Name validation
     if (!form.name.trim()) {
       newErrors.name = "Name is required";
-    } else if (form.name.length < 2) {
-      newErrors.name = "Name must be more than 2 characters";
+    } else if (form.name.length < 5) {
+      newErrors.name = "Name must be more than 5 characters";
     }
 
     // Email validation
@@ -58,6 +58,7 @@ export default function ContactForm() {
     return !newErrors.name && !newErrors.email && !newErrors.message;
   };
 
+  //handle submit  function
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const isValid = handleValidate();
