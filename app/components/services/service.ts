@@ -28,7 +28,7 @@ export interface Service {
 const services: Service[] = [
   {
     icon: Globe,
-    iconColor: "text-blue-400",
+    iconColor: "text-emerald-500",
     title: "Web Application Development",
     description:
       "We design and build high-performance web applications that are fast, secure, and scalable.",
@@ -45,7 +45,7 @@ const services: Service[] = [
   },
   {
     icon: Smartphone,
-    iconColor: "text-purple-400",
+    iconColor: "text-emerald-500",
     title: "Mobile Application Development",
     description:
       "We create reliable mobile applications that deliver seamless performance across devices.",
@@ -62,7 +62,7 @@ const services: Service[] = [
   },
   {
     icon: Settings,
-    iconColor: "text-emerald-400",
+    iconColor: "text-emerald-500",
     title: "Custom Software Solutions",
     description:
       "Every business is unique — we engineer tailor-made software designed specifically for your workflows, scale, and long-term goals.",
@@ -78,7 +78,7 @@ const services: Service[] = [
   },
   {
     icon: HandHelping,
-    iconColor: "text-cyan-400",
+    iconColor: "text-emerald-500",
     title: "IT Consultancy & Digital Strategy",
     description:
       "We act as a strategic technology partner, helping organizations make confident, future-proof decisions.",
@@ -94,7 +94,7 @@ const services: Service[] = [
   },
   {
     icon: Cloud,
-    iconColor: "text-pink-400",
+    iconColor: "text-emerald-500",
     title: "DevOps & Cloud Engineering",
     description:
       "We streamline software delivery and infrastructure through modern DevOps practices.",
@@ -110,7 +110,7 @@ const services: Service[] = [
   },
   {
     icon: Shield,
-    iconColor: "text-red-400",
+    iconColor: "text-emerald-500",
     title: "Software Innovation Lab",
     description:
       "Our Innovation Lab is where ideas evolve into production-ready solutions.",

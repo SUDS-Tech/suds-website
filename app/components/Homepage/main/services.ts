@@ -43,7 +43,7 @@ export interface Service {
     },
     {
       icon: Settings,
-      iconColor: "text-emerald-400",
+      iconColor: "text-emerald-500",
       title: "Custom Software Solutions",
       description: "Tailored software engineered to automate workflows and solve specific enterprise challenges with precision.",
       features: [
