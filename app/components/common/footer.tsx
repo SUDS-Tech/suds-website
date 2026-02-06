@@ -15,8 +15,6 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 
-import Image from "next/image";
-
 interface SocialLink {
   name: string;
   href: string;
@@ -309,22 +307,13 @@ export function Footer() {
           <p>© {new Date().getFullYear()} SUDS Technologies Ltd.</p>
 
           <div className="flex gap-6">
-            <a
-              href="/privacy"
-              className="hover:text-emerald-400 transition-colors"
-            >
+            <a href="/" className="hover:text-emerald-400 transition-colors">
               Privacy
             </a>
-            <a
-              href="/terms"
-              className="hover:text-emerald-400 transition-colors"
-            >
+            <a href="/" className="hover:text-emerald-400 transition-colors">
               Terms
             </a>
-            <a
-              href="/cookies"
-              className="hover:text-emerald-400 transition-colors"
-            >
+            <a href="/" className="hover:text-emerald-400 transition-colors">
               Cookies
             </a>
           </div>
