@@ -15,36 +15,24 @@ const ServiceCard = ({ service, index }: ServiceCardProps) => {
 
   return (
     <div
-      className="group relative h-full"
+      className="card h-full"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{
-        animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`,
+        animationDelay: `${index * 0.1}s`,
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-blue-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl border border-gray-700/50 group-hover:border-emerald-500/50 transition-all duration-300" />
-
-      <div className="relative p-8 h-full flex flex-col z-10">
+      <div className="flex flex-col h-full">
         <div className="mb-6">
-          <div
-            className="inline-flex p-4 rounded-xl bg-gray-900/50 border border-gray-700/50 group-hover:bg-gray-800/50 group-hover:border-emerald-500/30 transition-all duration-300"
-            style={{
-              transform: isHovered
-                ? "scale(1.1) rotate(5deg)"
-                : "scale(1) rotate(0deg)",
-              transition: "transform 0.3s ease-out",
-            }}
-          >
+          <div className="inline-flex p-4 rounded-xl bg-[#0a0a0a] border border-gray-800 transition-all duration-200">
             <IconComponent
-              className={`w-10 h-10 ${service.iconColor} group-hover:drop-shadow-[0_0_10px_rgba(16,185,129,0.5)] transition-all duration-300`}
+              className={`w-10 h-10 ${service.iconColor} transition-all duration-200`}
               strokeWidth={1.5}
             />
           </div>
         </div>
 
-        <h3 className="text-xl font-bold text-white mb-4 group-hover:text-emerald-400 transition-colors duration-300">
+        <h3 className="text-xl font-bold text-white mb-4 group-hover:text-emerald-500 transition-colors duration-200">
           {service.title}
         </h3>
 
@@ -56,7 +44,7 @@ const ServiceCard = ({ service, index }: ServiceCardProps) => {
           {service.features.map((feature, idx) => (
             <div
               key={idx}
-              className="flex items-start gap-2 text-gray-500 text-xs group-hover:text-gray-400 transition-colors duration-300"
+              className="flex items-start gap-2 text-gray-500 text-xs"
             >
               <Sparkles className="w-3 h-3 text-emerald-500 mt-0.5 flex-shrink-0" />
               <span>{feature}</span>
@@ -66,7 +54,7 @@ const ServiceCard = ({ service, index }: ServiceCardProps) => {
 
         {/* CTA */}
         <div
-          className="flex items-center gap-2 text-emerald-500 text-sm font-medium transition-all duration-300"
+          className="flex items-center gap-2 text-emerald-500 text-sm font-medium transition-all duration-200"
           style={{
             opacity: isHovered ? 1 : 0,
             transform: isHovered ? "translateY(0)" : "translateY(-8px)",
@@ -82,26 +70,22 @@ const ServiceCard = ({ service, index }: ServiceCardProps) => {
 
 export default function Services() {
   return (
-    <div className="relative w-full bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
-      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-96 h-96 bg-emerald-500/10 rounded-full blur-[120px] animate-pulse" />
-      <div
-        className="absolute bottom-20 right-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-[100px] animate-pulse"
-        style={{ animationDelay: "1s" }}
-      />
+    <div className="relative w-full bg-[#111111] py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      {/* Subtle Grid Pattern */}
+      <div className="absolute inset-0 grid-pattern opacity-30" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full backdrop-blur-sm mb-4">
-            <Zap className="w-4 h-4 text-emerald-400" />
-            <span className="text-emerald-400 text-sm font-medium tracking-wider">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full mb-4">
+            <Zap className="w-4 h-4 text-emerald-500" />
+            <span className="text-emerald-500 text-sm font-medium tracking-wider">
               WHAT WE DO
             </span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
             Services We{" "}
-            <span className="bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-emerald-500 to-emerald-600 bg-clip-text text-transparent">
               Offer
             </span>
           </h1>
@@ -113,12 +97,12 @@ export default function Services() {
 
           <div className="flex items-center justify-center gap-2">
             <div className="w-12 h-1 bg-gradient-to-r from-transparent to-emerald-500 rounded-full" />
-            <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full" />
-            <div className="w-12 h-1 bg-gradient-to-r from-blue-500 to-transparent rounded-full" />
+            <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full" />
+            <div className="w-12 h-1 bg-gradient-to-r from-emerald-600 to-transparent rounded-full" />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in-up">
           {services.map((service, index) => (
             <ServiceCard key={index} service={service} index={index} />
           ))}
@@ -129,34 +113,20 @@ export default function Services() {
           <div className="inline-flex flex-col sm:flex-row gap-4">
             <a
               href="/services"
-              className="group px-8 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-emerald-500/50 transition-all duration-300 flex items-center justify-center gap-2"
+              className="btn-primary"
             >
               View All Services
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              <ArrowRight className="w-5 h-5" />
             </a>
             <a
               href="/contact"
-              className="px-8 py-4 border-2 border-emerald-500/50 text-emerald-400 font-semibold rounded-xl hover:bg-emerald-500/10 transition-all duration-300"
+              className="btn-secondary"
             >
               Request a Quote
             </a>
           </div>
         </div>
       </div>
-
-      {/* CSS Animations */}
-      <style jsx>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </div>
   );
 }

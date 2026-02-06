@@ -9,7 +9,7 @@
  */
 
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { NavBar } from "@/app/components/common/navBar";
 import Footer from "./components/common/footer";
@@ -17,6 +17,7 @@ import Footer from "./components/common/footer";
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {

@@ -1,28 +1,32 @@
 import { Recycle, ThumbsUp, UsersRound } from "lucide-react";
-import React from "react";
 
 function TeamCircle() {
   return (
-    <div className="flex flex-col justify-center items-center py-6 bg-linear-to-b from-gray-800 to-gray-950 ">
-      <h1 className="text-white text-2xl pb-4">How we work</h1>
-      <div className="w-100 h-100 p-3 bg-white rounded-full flex justify-center items-center">
-        <div className="relative border-2 border-black w-60 h-60 ">
-          <div className="absolute -right-17.5 top-16 bg-white py-2">
+    <div className="flex flex-col justify-center items-center py-16 bg-[#0a0a0a]">
+      <h2 className="text-white text-3xl font-bold pb-8">How we work</h2>
+      <div className="w-100 h-100 p-6 bg-[#111111] border border-gray-800 rounded-full flex justify-center items-center">
+        <div className="relative border-2 border-emerald-500/30 w-60 h-60 rounded-full">
+          {/* Collaboration first */}
+          <div className="absolute -right-20 top-16 bg-[#111111] border border-gray-800 rounded-lg py-3 px-4">
             <div className="flex flex-col justify-center items-center">
-              <p className="text-black">Collaboration first</p>
-              <UsersRound className="text-green-600 w-8 h-8" />
+              <UsersRound className="text-emerald-500 w-8 h-8 mb-2" />
+              <p className="text-white text-sm font-medium">Collaboration first</p>
             </div>
           </div>
-          <div className="absolute -left-12 top-16">
-            <div className="flex flex-col justify-center items-center bg-white py-2">
-              <p className="text-black">Quality work</p>
-              <ThumbsUp className="text-green-600 w-8 h-8" />
+
+          {/* Quality work */}
+          <div className="absolute -left-16 top-16 bg-[#111111] border border-gray-800 rounded-lg py-3 px-4">
+            <div className="flex flex-col justify-center items-center">
+              <ThumbsUp className="text-emerald-500 w-8 h-8 mb-2" />
+              <p className="text-white text-sm font-medium">Quality work</p>
             </div>
           </div>
-          <div className="absolute -bottom-3 left-5 bg-white px-1">
+
+          {/* Continuous improvement */}
+          <div className="absolute -bottom-6 left-8 bg-[#111111] border border-gray-800 rounded-lg py-3 px-4">
             <div className="flex flex-col justify-center items-center">
-              <p className="text-black">Continuous improvement</p>
-              <Recycle className="text-green-600 w-8 h-8" />
+              <Recycle className="text-emerald-500 w-8 h-8 mb-2" />
+              <p className="text-white text-sm font-medium">Continuous improvement</p>
             </div>
           </div>
         </div>

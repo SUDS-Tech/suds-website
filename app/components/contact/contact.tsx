@@ -58,7 +58,7 @@ export default function ContactForm() {
     return !newErrors.name && !newErrors.email && !newErrors.message;
   };
 
-  //handle submit  function
+  //handle submit function
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const isValid = handleValidate();
@@ -69,22 +69,26 @@ export default function ContactForm() {
       setSuccessMessage("Form submitted successfully");
       setTimeout(() => {
         setSuccessMessage("");
-      }, 800);
+      }, 3000);
     } else {
       setSuccessMessage("Failed to submit form");
       setTimeout(() => {
         setSuccessMessage("");
-      }, 800);
+      }, 3000);
     }
   };
+
   return (
-    <div className="min-h-screen bg-linear-to-b from-gray-800 to-gray-950 relative overflow-hidden pt-14">
-      <div className="mx-auto px-4 py-12">
+    <div className="min-h-screen bg-[#0a0a0a] relative overflow-hidden pt-14">
+      {/* Subtle Grid Pattern */}
+      <div className="absolute inset-0 grid-pattern opacity-30" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 py-12">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left side - Contact Information */}
-          <div className="space-y-8 flex justify-center items-center flex-col shadow-2xl shadow-cyan-800 rounded-xl py-2">
+          <div className="space-y-8 flex justify-center items-center flex-col card">
             <div className="space-y-4">
-              <p className="text-teal-500 font-medium tracking-wider uppercase text-sm">
+              <p className="text-emerald-500 font-medium tracking-wider uppercase text-sm">
                 SAY HELLO
               </p>
               <h1 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
@@ -95,11 +99,11 @@ export default function ContactForm() {
             <div className="space-y-6">
               {/* Phone */}
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center">
+                <div className="w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center">
                   <Phone className="w-8 h-8 text-white" />
                 </div>
                 <div>
-                  <p className="text-green-500 font-medium mb-1">Call us now</p>
+                  <p className="text-emerald-500 font-medium mb-1">Call us now</p>
                   <p className="text-xl font-semibold text-white">
                     +256 757 212 246 / +256 701 521 269
                   </p>
@@ -108,11 +112,11 @@ export default function ContactForm() {
 
               {/* Email */}
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center">
+                <div className="w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center">
                   <Mail className="w-8 h-8 text-white" />
                 </div>
                 <div>
-                  <p className="text-green-500 font-medium mb-1">
+                  <p className="text-emerald-500 font-medium mb-1">
                     Support email
                   </p>
                   <p className="text-xl font-semibold text-white">
@@ -123,22 +127,23 @@ export default function ContactForm() {
 
               {/* Address */}
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center relative">
+                <div className="w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center">
                   <MapPin className="w-8 h-8 text-white" />
                 </div>
                 <div>
-                  <p className="text-green-500 font-medium mb-1">Our address</p>
+                  <p className="text-emerald-500 font-medium mb-1">Our address</p>
                   <p className="text-xl font-semibold text-white">
-                    Kampala,Uganda
+                    Kampala, Uganda
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="relative rounded-2xl overflow-hidden  min-h-125 shadow-2xl shadow-cyan-800">
+          {/* Right side - Contact Form */}
+          <div className="relative rounded-2xl overflow-hidden card min-h-125">
             {/* Form content */}
-            <div className="relative z-10 bg-transparent shadow-2xl shadow-blue-400 p-8 backdrop-blur-sm">
+            <div className="relative z-10">
               <h2 className="text-3xl font-bold text-white mb-8">Contact us</h2>
 
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -156,9 +161,9 @@ export default function ContactForm() {
                     onChange={handleChange}
                     placeholder="Enter your name"
                     type="text"
-                    className={`placeholder:text-white w-full h-12 px-4 py-2 border-b ${errors.name ? "border-red-600" : "border-b-green-600"}  rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-white`}
+                    className={`placeholder:text-gray-500 w-full h-12 px-4 py-2 bg-[#0a0a0a] border ${errors.name ? "border-red-500" : "border-gray-700"} rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 text-white transition-all duration-200`}
                   />
-                  <p className="text-red-600">{errors.name}</p>
+                  {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
                 </div>
 
                 <div className="space-y-2">
@@ -175,9 +180,9 @@ export default function ContactForm() {
                     onChange={handleChange}
                     name="email"
                     placeholder="Enter your email"
-                    className={`placeholder:text-white w-full h-12 px-4 py-2 border-b ${errors.email ? "border-b-red-600" : "border-b-green-400"} rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-white`}
+                    className={`placeholder:text-gray-500 w-full h-12 px-4 py-2 bg-[#0a0a0a] border ${errors.email ? "border-red-500" : "border-gray-700"} rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 text-white transition-all duration-200`}
                   />
-                  <p className="text-red-600">{errors.email}</p>
+                  {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
                 </div>
 
                 <div className="space-y-2">
@@ -185,26 +190,31 @@ export default function ContactForm() {
                     htmlFor="message"
                     className="block text-white text-sm font-medium"
                   >
-                    Your Message(required)
+                    Your Message (required)
                   </label>
                   <textarea
                     id="message"
                     value={form.message}
                     onChange={handleChange}
                     name="message"
-                    className={`placeholder:text-white w-full min-h-30 px-4 py-2 border-b ${errors.message ? "border-b-red-600" : "border-b-green-400"}  rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-white`}
+                    rows={5}
+                    className={`placeholder:text-gray-500 w-full px-4 py-2 bg-[#0a0a0a] border ${errors.message ? "border-red-500" : "border-gray-700"} rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 text-white transition-all duration-200`}
                     placeholder="Enter your message here..."
                   />
-                  <p className="text-red-600">{errors.message}</p>
+                  {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full h-12 bg-linear-to-r from-green-600 to-green-950 hover:bg-green-600 text-white font-semibold rounded-lg transition-colors duration-200"
+                  className="btn-primary w-full"
                 >
                   Send Message
                 </button>
-                <p className="text-green-500 text-xl">{successMessage}</p>
+                {successMessage && (
+                  <p className={`text-sm font-medium ${successMessage.includes('success') ? 'text-emerald-500' : 'text-red-500'}`}>
+                    {successMessage}
+                  </p>
+                )}
               </form>
             </div>
           </div>

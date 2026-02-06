@@ -21,7 +21,7 @@ export interface Service {
   const services: Service[] = [
     {
       icon: Code2,
-      iconColor: "text-blue-400",
+      iconColor: "text-emerald-500",
       title: "Web Application Development",
       description: "High-performance, responsive web platforms built with modern frameworks and optimized for exceptional user experience.",
       features: [
@@ -32,7 +32,7 @@ export interface Service {
     },
     {
       icon: Smartphone,
-      iconColor: "text-purple-400",
+      iconColor: "text-emerald-500",
       title: "Mobile Application Development",
       description: "Native and cross-platform mobile solutions that deliver seamless performance on iOS and Android devices.",
       features: [
@@ -54,7 +54,7 @@ export interface Service {
     },
     {
       icon: Cloud,
-      iconColor: "text-cyan-400",
+      iconColor: "text-emerald-500",
       title: "DevOps & Cloud Engineering",
       description: "Streamlined CI/CD pipelines and secure cloud migrations to ensure maximum uptime and deployment efficiency.",
       features: [
@@ -65,7 +65,7 @@ export interface Service {
     },
     {
       icon: Palette,
-      iconColor: "text-pink-400",
+      iconColor: "text-emerald-500",
       title: "IT Consultancy",
       description: "Strategic advisory services on digital transformation, technology stacks, and infrastructure optimization.",
       features: [
@@ -76,7 +76,7 @@ export interface Service {
     },
     {
       icon: Shield,
-      iconColor: "text-red-400",
+      iconColor: "text-emerald-500",
       title: "Software Innovation Lab",
       description: "A dedicated R&D environment for prototyping, MVP development, and proof-of-concept testing for emerging technologies.",
       features: [
