@@ -191,10 +191,10 @@ export function Footer() {
       title: "Company",
       links: [
         { label: "About Us", href: "/about" },
-        { label: "Our Team", href: "/team" },
+        // { label: "Our Team", href: "/team" },
         { label: "Careers we are soon hiring" },
         { label: "Contact Us", href: "/contact" },
-        { label: "Team", href: "/team" },
+        // { label: "Team", href: "/team" },
       ],
     },
     {
