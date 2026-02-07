@@ -34,8 +34,9 @@ export default function ServicesHeader() {
           </h1>
 
           <p className="text-gray-400 text-lg leading-relaxed max-w-3xl mx-auto">
-            From web and mobile applications to cloud infrastructure and AI-driven innovations,
-            we deliver comprehensive technology solutions that transform businesses and drive growth.
+            From web and mobile applications to cloud infrastructure and
+            AI-driven innovations, we deliver comprehensive technology solutions
+            that transform businesses and drive growth.
           </p>
 
           {/* CTA Buttons */}
@@ -47,9 +48,7 @@ export default function ServicesHeader() {
               </button>
             </Link>
             <Link href="/about">
-              <button className="btn-secondary">
-                Learn More
-              </button>
+              <button className="btn-secondary">Learn More</button>
             </Link>
           </div>
 
