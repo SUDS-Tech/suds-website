@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Zap, CheckCircle, ArrowRight } from "lucide-react";
 import services, { Service } from "./service";
+import Link from "next/link";
 
 interface Industry {
   industry: Service;
@@ -14,7 +15,7 @@ const IndustryCard = ({ industry, index }: Industry) => {
   const IconComponent = industry.icon;
 
   return (
-    <div
+    <article
       className="card h-full"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -85,13 +86,16 @@ const IndustryCard = ({ industry, index }: Industry) => {
           <ArrowRight className="w-4 h-4" />
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 
 export default function Industries() {
   return (
-    <div className="relative w-full bg-[#0d1117] py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section
+      aria-labelledby="industries-heading"
+      className="relative w-full bg-[#0d1117] py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
+    >
       {/* Subtle Grid Pattern */}
       <div className="absolute inset-0 grid-pattern opacity-30" />
 
@@ -104,12 +108,15 @@ export default function Industries() {
             </span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
+          <h2
+            id="industries-heading"
+            className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6"
+          >
             Industries We{" "}
-            <span className="bg-gradient-to-r from-emerald-500 to-emerald-600 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-emerald-500 to-emerald-600 bg-clip-text text-transparent">
               Serve
             </span>
-          </h1>
+          </h2>
 
           <p className="text-gray-400 text-lg max-w-3xl mx-auto mb-6">
             Our versatile expertise allows us to deliver transformative impact
@@ -118,9 +125,9 @@ export default function Industries() {
           </p>
 
           <div className="flex items-center justify-center gap-2">
-            <div className="w-12 h-1 bg-gradient-to-r from-transparent to-emerald-500 rounded-full" />
-            <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full" />
-            <div className="w-12 h-1 bg-gradient-to-r from-emerald-600 to-transparent rounded-full" />
+            <div className="w-12 h-1 bg-linear-to-r from-transparent to-emerald-500 rounded-full" />
+            <div className="w-24 h-1 bg-linear-to-r from-emerald-500 to-emerald-600 rounded-full" />
+            <div className="w-12 h-1 bg-linear-to-r from-emerald-600 to-transparent rounded-full" />
           </div>
         </div>
 
@@ -130,18 +137,18 @@ export default function Industries() {
           ))}
         </div>
 
-        <div className="text-center">
+        <footer className="text-center">
           <div className="inline-flex flex-col sm:flex-row gap-4">
-            <a href="/contact" className="btn-primary">
-              Discuss Your Project
+            <Link href="/contact" className="btn-primary">
+              <p>Discuss Your Project</p>
               <ArrowRight className="w-5 h-5" />
-            </a>
-            <a href="/about" className="btn-secondary">
-              View Case Studies
-            </a>
+            </Link>
+            <Link href="/about">
+              <p className="btn-secondary">View Case Studies</p>
+            </Link>
           </div>
-        </div>
+        </footer>
       </div>
-    </div>
+    </section>
   );
 }

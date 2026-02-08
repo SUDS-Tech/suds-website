@@ -29,7 +29,7 @@ export function NavLinkItem({
         ${isMobile ? "w-full text-center" : ""}
       `}
     >
-      <span className="relative z-10 text-gray-300 group-hover:text-white transition-colors duration-200">
+      <span className="relative z-10 text-gray-300 group-hover:text-white transition-colors duration-200 py-6">
         {link.label}
       </span>
       <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-500 group-hover:w-full transition-all duration-200" />
@@ -68,7 +68,7 @@ export function NavBar() {
   return (
     <header
       className={`
-        fixed top-0 left-0 right-0 z-50 transition-all duration-200
+        fixed top-0 left-0 right-0 z-50 transition-all duration-200 p-3
         ${
           scrolled
             ? "bg-[#0d1117]/95 backdrop-blur-sm border-b border-gray-800/50"
@@ -85,9 +85,7 @@ export function NavBar() {
             </div>
 
             <div>
-              <h1 className="text-xl font-bold text-emerald-500">
-                SUDS
-              </h1>
+              <h1 className="text-xl font-bold text-emerald-500">SUDS</h1>
               <p className="text-[10px] text-gray-400 tracking-wider uppercase">
                 TECHNOLOGIES LTD
               </p>
@@ -103,10 +101,7 @@ export function NavBar() {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <a
-              href="/contact"
-              className="btn-primary"
-            >
+            <a href="/contact" className="btn-primary">
               Get Started
             </a>
           </div>
@@ -139,13 +134,13 @@ export function NavBar() {
           }
         `}
       >
-        <div className="mx-auto px-4 py-8">
-          <div className="flex flex-col gap-2 mb-8">
+        <div className="mx-auto px-4 py-8 bg-[rgba(0,0,0,0.8)]">
+          <div className="flex flex-col gap-6 mb-8">
             {navLinks.map((link, index) => (
               <div
                 key={link.label}
                 style={{
-                  transitionDelay: isOpen ? `${index * 50}ms` : '0ms',
+                  transitionDelay: isOpen ? `${index * 50}ms` : "0ms",
                 }}
                 className={`
                   transform transition-all duration-200

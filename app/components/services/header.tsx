@@ -6,7 +6,7 @@ import ParticleBackground from "../Homepage/particle-background";
 
 export default function ServicesHeader() {
   return (
-    <div className="relative w-full min-h-screen bg-[#0d1117] overflow-hidden pt-20">
+    <header className="relative w-full min-h-screen bg-[#0d1117] overflow-hidden pt-20">
       {/* Subtle Grid Pattern */}
       <div className="absolute inset-0 grid-pattern opacity-30" />
 
@@ -28,14 +28,15 @@ export default function ServicesHeader() {
         <div className="text-center max-w-4xl mx-auto space-y-8">
           <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
             Enterprise-Grade{" "}
-            <span className="bg-gradient-to-r from-emerald-500 to-emerald-600 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-emerald-500 to-emerald-600 bg-clip-text text-transparent">
               Technology Solutions
             </span>
           </h1>
 
           <p className="text-gray-400 text-lg leading-relaxed max-w-3xl mx-auto">
-            From web and mobile applications to cloud infrastructure and AI-driven innovations,
-            we deliver comprehensive technology solutions that transform businesses and drive growth.
+            From web and mobile applications to cloud infrastructure and
+            AI-driven innovations, we deliver comprehensive technology solutions
+            that transform businesses and drive growth.
           </p>
 
           {/* CTA Buttons */}
@@ -48,7 +49,7 @@ export default function ServicesHeader() {
             </Link>
             <Link href="/about">
               <button className="btn-secondary">
-                Learn More
+                Learn More about our company
               </button>
             </Link>
           </div>
@@ -74,7 +75,7 @@ export default function ServicesHeader() {
         </div>
 
         {/* Stats Section */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        <footer className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
           {[
             { value: "50+", label: "Projects Delivered" },
             { value: "98%", label: "Client Satisfaction" },
@@ -91,8 +92,8 @@ export default function ServicesHeader() {
               <div className="text-sm text-gray-400">{stat.label}</div>
             </div>
           ))}
-        </div>
+        </footer>
       </div>
-    </div>
+    </header>
   );
 }

@@ -21,8 +21,36 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "SUDS Technologies Ltd",
-  description: "Software Innovation Lab & Technology Solutions Company",
+  title: {
+    default: "SUDS Technologies Ltd | Software & IT Solutions Company",
+    template: "%s | SUDS Technologies Ltd",
+  },
+  description:
+    "SUDS Technologies Ltd is a leading software development and IT solutions company specializing in web, mobile, cloud, and digital transformation.",
+  keywords: [
+    "SUDS",
+    "SUDS Technologies",
+    "SUDS Technologies Ltd",
+    "software company",
+    "IT solutions",
+    "web development",
+    "technology company",
+  ],
+  metadataBase: new URL("https://www.suds-tech.com"),
+  openGraph: {
+    title: "SUDS Technologies Ltd",
+    description:
+      "Innovative software development & technology solutions by SUDS Technologies Ltd.",
+
+    url: "https://www.suds-tech.com",
+    siteName: "SUDS Technologies Ltd",
+    locale: "en_US",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

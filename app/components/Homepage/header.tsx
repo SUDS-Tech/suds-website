@@ -13,7 +13,7 @@ export default function BusinessProcess() {
   ];
 
   return (
-    <div className="relative w-full min-h-screen bg-[#0d1117] overflow-hidden">
+    <header className="relative w-full min-h-screen bg-[#0d1117] overflow-hidden">
       {/* Subtle Grid Pattern */}
       <div className="absolute inset-0 grid-pattern opacity-30" />
 
@@ -36,11 +36,12 @@ export default function BusinessProcess() {
           <div className="space-y-8">
             <div>
               <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-                <span className="bg-gradient-to-r from-emerald-500 to-emerald-600 bg-clip-text text-transparent">
-                  SUDS
-                </span>
-                <br />
-                <span className="text-gray-300">Technologies</span>
+                <div className="flex flex-col">
+                  <span className="bg-linear-to-r from-emerald-500 to-emerald-600 bg-clip-text text-transparent">
+                    SUDS
+                  </span>
+                  <span className="text-gray-300">Technologies</span>
+                </div>
               </h1>
 
               <div className="text-2xl md:text-3xl font-semibold text-emerald-500 h-20">
@@ -58,21 +59,17 @@ export default function BusinessProcess() {
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
               <Link href="/contact">
-                <button className="btn-primary">
-                  Let's Talk
-                </button>
+                <button className="btn-primary">Let's Talk</button>
               </Link>
               <Link href="/services">
-                <button className="btn-secondary">
-                  View Services
-                </button>
+                <button className="btn-secondary">View Services</button>
               </Link>
             </div>
           </div>
 
           <div className="relative">
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500/20 to-emerald-600/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition duration-300" />
+              <div className="absolute -inset-1 bg-linear-to-r from-emerald-500/20 to-emerald-600/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition duration-300" />
 
               <div className="relative bg-[#161b22] rounded-2xl overflow-hidden border border-gray-800 group-hover:border-emerald-500/50 transition-colors duration-300">
                 <img
@@ -102,12 +99,12 @@ export default function BusinessProcess() {
                   const <span className="text-blue-400">security</span> ={" "}
                   <span className="text-yellow-300">"paramount"</span>;
                 </div>
-                <div className="text-gray-500">// Building the future...</div>
+                <div className="text-white">// Building the future...</div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 }

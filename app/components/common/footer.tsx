@@ -18,7 +18,7 @@ import {
 interface SocialLink {
   name: string;
   href: string;
-  icon: JSX.Element;
+  icon: React.ReactNode;
 }
 
 interface FooterLink {
@@ -101,10 +101,7 @@ const NewsletterSection = () => {
             className="w-full px-4 py-3 bg-[#0d1117] border border-gray-700 rounded-lg text-white placeholder-gray-500 text-sm focus:outline-none focus:border-emerald-500/50 transition-all duration-200"
           />
         </div>
-        <button
-          onClick={handleSubscribe}
-          className="btn-primary w-full"
-        >
+        <button onClick={handleSubscribe} className="btn-primary w-full">
           Subscribe
           <ArrowUpRight className="w-4 h-4" />
         </button>
@@ -118,7 +115,12 @@ export function Footer() {
     {
       name: "Facebook",
       href: "https://facebook.com",
-      icon: <Facebook size={18} className="text-gray-400 group-hover:text-emerald-500 transition-colors duration-200" />,
+      icon: (
+        <Facebook
+          size={18}
+          className="text-gray-400 group-hover:text-emerald-500 transition-colors duration-200"
+        />
+      ),
     },
     {
       name: "X",
@@ -136,22 +138,42 @@ export function Footer() {
     {
       name: "LinkedIn",
       href: "https://linkedin.com",
-      icon: <Linkedin size={18} className="text-gray-400 group-hover:text-emerald-500 transition-colors duration-200" />,
+      icon: (
+        <Linkedin
+          size={18}
+          className="text-gray-400 group-hover:text-emerald-500 transition-colors duration-200"
+        />
+      ),
     },
     {
       name: "Instagram",
       href: "https://instagram.com",
-      icon: <Instagram size={18} className="text-gray-400 group-hover:text-emerald-500 transition-colors duration-200" />,
+      icon: (
+        <Instagram
+          size={18}
+          className="text-gray-400 group-hover:text-emerald-500 transition-colors duration-200"
+        />
+      ),
     },
     {
       name: "Github",
       href: "https://github.com",
-      icon: <Github size={18} className="text-gray-400 group-hover:text-emerald-500 transition-colors duration-200" />,
+      icon: (
+        <Github
+          size={18}
+          className="text-gray-400 group-hover:text-emerald-500 transition-colors duration-200"
+        />
+      ),
     },
     {
       name: "Youtube",
       href: "https://youtube.com",
-      icon: <Youtube size={18} className="text-gray-400 group-hover:text-emerald-500 transition-colors duration-200" />,
+      icon: (
+        <Youtube
+          size={18}
+          className="text-gray-400 group-hover:text-emerald-500 transition-colors duration-200"
+        />
+      ),
     },
     {
       name: "WhatsApp",
@@ -183,11 +205,11 @@ export function Footer() {
     {
       title: "Services",
       links: [
-        { label: "Web Development", href: "/services" },
-        { label: "Mobile Apps", href: "/services" },
-        { label: "Cloud Solutions", href: "/services" },
-        { label: "Custom Software", href: "/services" },
-        { label: "Consultancy", href: "/services" },
+        { label: "Web Development", href: "/services#web-development" },
+        { label: "Mobile Apps", href: "/services#mobile-app-development" },
+        { label: "Cloud Solutions", href: "/services#cloud-solutions" },
+        { label: "Custom Software", href: "/services#custom-software" },
+        { label: "Consultancy", href: "/services#it-consultancy" },
       ],
     },
     {
@@ -292,13 +314,22 @@ export function Footer() {
           <p>© {new Date().getFullYear()} SUDS Technologies Ltd.</p>
 
           <div className="flex gap-6">
-            <a href="/" className="hover:text-emerald-500 transition-colors duration-200">
+            <a
+              href="/"
+              className="hover:text-emerald-500 transition-colors duration-200"
+            >
               Privacy
             </a>
-            <a href="/" className="hover:text-emerald-500 transition-colors duration-200">
+            <a
+              href="/"
+              className="hover:text-emerald-500 transition-colors duration-200"
+            >
               Terms
             </a>
-            <a href="/" className="hover:text-emerald-500 transition-colors duration-200">
+            <a
+              href="/"
+              className="hover:text-emerald-500 transition-colors duration-200"
+            >
               Cookies
             </a>
           </div>
@@ -308,7 +339,7 @@ export function Footer() {
         <div className="mt-8 flex justify-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#161b22] border border-gray-800 rounded-full">
             <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
-            <span className="text-gray-600 text-[10px] font-medium uppercase tracking-wider">
+            <span className="text-[#ABABAB] text-[10px] font-medium uppercase tracking-wider">
               Systems Operational
             </span>
           </div>

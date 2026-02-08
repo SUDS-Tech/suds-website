@@ -35,16 +35,18 @@ const FeatureCard = ({ feature, index }: FeatureCardProps) => {
 
         {/* Number Badge */}
         <div className="absolute top-4 right-4 w-8 h-8 bg-emerald-500/10 rounded-full flex items-center justify-center border border-emerald-500/30">
-          <span className="text-emerald-500 text-sm font-bold">{index + 1}</span>
+          <span className="text-emerald-500 text-sm font-bold">
+            {index + 1}
+          </span>
         </div>
 
         {/* Title */}
-        <h3 className="text-xl font-bold text-white mb-4 group-hover:text-emerald-500 transition-colors duration-200">
+        <h3 className="text-xl font-bold text-[#ABABAB] mb-4 group-hover:text-emerald-500 transition-colors duration-200">
           {feature.title}
         </h3>
 
         {/* Description */}
-        <p className="text-gray-400 text-sm leading-relaxed flex-grow">
+        <p className="text-gray-400 text-sm leading-relaxed grow">
           {feature.description}
         </p>
 
@@ -82,7 +84,7 @@ export default function SUDSWhyChoose() {
 
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
             The SUDS{" "}
-            <span className="bg-gradient-to-r from-emerald-500 to-emerald-600 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-emerald-500 to-emerald-600 bg-clip-text text-transparent">
               Advantage
             </span>
           </h2>
@@ -93,9 +95,9 @@ export default function SUDSWhyChoose() {
           </p>
 
           <div className="flex items-center justify-center gap-2">
-            <div className="w-12 h-1 bg-gradient-to-r from-transparent to-emerald-500 rounded-full" />
-            <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full" />
-            <div className="w-12 h-1 bg-gradient-to-r from-emerald-600 to-transparent rounded-full" />
+            <div className="w-12 h-1 bg-linear-to-r from-transparent to-emerald-500 rounded-full" />
+            <div className="w-24 h-1 bg-linear-to-r from-emerald-500 to-emerald-600 rounded-full" />
+            <div className="w-12 h-1 bg-linear-to-r from-emerald-600 to-transparent rounded-full" />
           </div>
         </div>
 
@@ -107,7 +109,7 @@ export default function SUDSWhyChoose() {
         </div>
 
         {/* CTA Section */}
-        <div className="mt-20 text-center">
+        <footer className="mt-20 text-center">
           <div className="inline-flex flex-col sm:flex-row gap-4">
             <a href="/about" className="btn-primary">
               Learn More About Us
@@ -116,7 +118,7 @@ export default function SUDSWhyChoose() {
               Start Your Project
             </a>
           </div>
-        </div>
+        </footer>
 
         {/* Stats Section */}
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">

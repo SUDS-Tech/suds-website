@@ -11,6 +11,7 @@ import {
   Phone,
 } from "lucide-react";
 import { philosophy, processSteps } from "./service";
+import Link from "next/link";
 
 interface ProcessStepProps {
   step: {
@@ -124,9 +125,7 @@ export default function LetsWork() {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Left Column - Process Steps */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-white mb-8">
-              Our Process
-            </h2>
+            <h2 className="text-2xl font-bold text-white mb-8">Our Process</h2>
             {processSteps.map((step, index) => (
               <ProcessStep key={index} step={step} index={index} />
             ))}
@@ -135,9 +134,9 @@ export default function LetsWork() {
           {/* Right Column - Philosophy & Contact */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-2xl font-bold text-white mb-8">
+              <p className="text-2xl font-bold text-white mb-8">
                 Our Philosophy
-              </h2>
+              </p>
               <div className="space-y-4">
                 {philosophy.map((item, index) => (
                   <PhilosophyCard key={index} item={item} index={index} />
@@ -147,36 +146,34 @@ export default function LetsWork() {
 
             {/* Contact Cards */}
             <div className="space-y-4 pt-8">
-              <h2 className="text-2xl font-bold text-white mb-6">
-                Get In Touch
-              </h2>
+              <p className="text-2xl font-bold text-white mb-6">Get In Touch</p>
 
-              <a
-                href="mailto:info@suds-tech.com"
-                className="card block group"
-              >
+              <a href="mailto:info@suds-tech.com" className="card block group">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center flex-shrink-0">
                     <Mail className="w-6 h-6 text-white" />
                   </div>
                   <div className="flex-1">
-                    <p className="text-emerald-500 font-medium text-sm mb-1">Email Us</p>
-                    <p className="text-white font-semibold">info@suds-tech.com</p>
+                    <p className="text-emerald-500 font-medium text-sm mb-1">
+                      Email Us
+                    </p>
+                    <p className="text-white font-semibold">
+                      info@suds-tech.com
+                    </p>
                   </div>
                   <ArrowRight className="w-5 h-5 text-emerald-500 group-hover:translate-x-1 transition-transform duration-200" />
                 </div>
               </a>
 
-              <a
-                href="tel:+256757212246"
-                className="card block group"
-              >
+              <a href="tel:+256757212246" className="card block group">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center flex-shrink-0">
                     <Phone className="w-6 h-6 text-white" />
                   </div>
                   <div className="flex-1">
-                    <p className="text-emerald-500 font-medium text-sm mb-1">Call Us</p>
+                    <p className="text-emerald-500 font-medium text-sm mb-1">
+                      Call Us
+                    </p>
                     <p className="text-white font-semibold">+256 757 212 246</p>
                   </div>
                   <ArrowRight className="w-5 h-5 text-emerald-500 group-hover:translate-x-1 transition-transform duration-200" />
@@ -186,13 +183,13 @@ export default function LetsWork() {
 
             {/* CTA Button */}
             <div className="pt-4">
-              <a
+              <Link
                 href="/contact"
                 className="btn-primary w-full justify-center"
               >
                 Start Your Project
                 <ArrowRight className="w-5 h-5" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

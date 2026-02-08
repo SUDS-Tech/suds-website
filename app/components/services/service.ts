@@ -29,9 +29,9 @@ const services: Service[] = [
   {
     icon: Globe,
     iconColor: "text-emerald-500",
-    title: "Web Application Development",
+    title: "Web Application Development Services",
     description:
-      "We design and build high-performance web applications that are fast, secure, and scalable.",
+      "We design and build high-performance web applications for businesses that require secure, scalable and modern digital platforms.",
     descriptionTitle: "What we deliver:",
     features: [
       "Custom web platforms and dashboards",
@@ -46,9 +46,9 @@ const services: Service[] = [
   {
     icon: Smartphone,
     iconColor: "text-emerald-500",
-    title: "Mobile Application Development",
+    title: "Mobile Application Development Services",
     description:
-      "We create reliable mobile applications that deliver seamless performance across devices.",
+      "We create reliable mobile applications for businesses and startups, delivering seamless performance across iOS and Android devices.",
     descriptionTitle: "Our capabilities:",
     features: [
       "Android,IOS and cross-platform applications",
@@ -63,9 +63,9 @@ const services: Service[] = [
   {
     icon: Settings,
     iconColor: "text-emerald-500",
-    title: "Custom Software Solutions",
+    title: "Custom Software Development Solutions",
     description:
-      "Every business is unique — we engineer tailor-made software designed specifically for your workflows, scale, and long-term goals.",
+      "Every business is unique — we engineer custom software solutions for enterprises designed around specific workflows, scale and long-term goals.",
     descriptionTitle: "Ideal for:",
     features: [
       "Process automation",
@@ -81,7 +81,7 @@ const services: Service[] = [
     iconColor: "text-emerald-500",
     title: "IT Consultancy & Digital Strategy",
     description:
-      "We act as a strategic technology partner, helping organizations make confident, future-proof decisions.",
+      "We act as a strategic technology partner for organizations, helping leadership teams make confident, future-proof digital and infrastructure decisions.",
     descriptionTitle: "Consulting services include:",
     features: [
       "System architecture design",
@@ -95,9 +95,9 @@ const services: Service[] = [
   {
     icon: Cloud,
     iconColor: "text-emerald-500",
-    title: "DevOps & Cloud Engineering",
+    title: "DevOps & Cloud Engineering Services",
     description:
-      "We streamline software delivery and infrastructure through modern DevOps practices.",
+      "We streamline software delivery and cloud infrastructure for businesses through modern DevOps practices that improve reliability and deployment speed.",
     descriptionTitle: "What we offer:",
     features: [
       "CI/CD pipeline setup and optimization",
@@ -113,7 +113,7 @@ const services: Service[] = [
     iconColor: "text-emerald-500",
     title: "Software Innovation Lab",
     description:
-      "Our Innovation Lab is where ideas evolve into production-ready solutions.",
+      "Our Innovation Lab helps startups and enterprises transform ideas into production-ready software through rapid prototyping and experimentation.",
     descriptionTitle: "Lab services:",
     features: [
       "MVP and prototype development",
