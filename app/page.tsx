@@ -9,15 +9,16 @@
  */
 
 import BusinessProcess from "./components/Homepage/header";
-import ServiceCards from "./components/Homepage/main/main";
+import Services from "./components/Homepage/main/main";
+// import ServiceCards from "./components/Homepage/main/main";
 import Option from "./components/Homepage/main/option";
 
 export default function Home() {
   return (
-    <div className=" min-h-screen  bg-zinc-50 font-sans dark:bg-black">
+    <main className=" min-h-screen  bg-zinc-50 font-sans dark:bg-black">
       <BusinessProcess />
-      <ServiceCards />
+      <Services />
       <Option />
-    </div>
+    </main>
   );
 }

@@ -55,7 +55,7 @@ export default function Option() {
           {industries.map((industry, index) => {
             const IconComponent = industry.icon;
             return (
-              <motion.div
+              <motion.article
                 key={index}
                 variants={cardVariant}
                 whileHover={{
@@ -84,10 +84,10 @@ export default function Option() {
                 <h3 className="text-xl font-bold text-white mb-4">
                   {industry.title}
                 </h3>
-                <p className="text-gray-300 text-sm leading-relaxed">
+                <footer className="text-gray-300 text-sm leading-relaxed">
                   {industry.description}
-                </p>
-              </motion.div>
+                </footer>
+              </motion.article>
             );
           })}
         </motion.div>

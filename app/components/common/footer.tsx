@@ -205,11 +205,11 @@ export function Footer() {
     {
       title: "Services",
       links: [
-        { label: "Web Development", href: "/services" },
-        { label: "Mobile Apps", href: "/services" },
-        { label: "Cloud Solutions", href: "/services" },
-        { label: "Custom Software", href: "/services" },
-        { label: "Consultancy", href: "/services" },
+        { label: "Web Development", href: "/services#web-development" },
+        { label: "Mobile Apps", href: "/services#mobile-app-development" },
+        { label: "Cloud Solutions", href: "/services#cloud-solutions" },
+        { label: "Custom Software", href: "/services#custom-software" },
+        { label: "Consultancy", href: "/services#it-consultancy" },
       ],
     },
     {
@@ -339,7 +339,7 @@ export function Footer() {
         <div className="mt-8 flex justify-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#161b22] border border-gray-800 rounded-full">
             <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
-            <span className="text-gray-600 text-[10px] font-medium uppercase tracking-wider">
+            <span className="text-[#ABABAB] text-[10px] font-medium uppercase tracking-wider">
               Systems Operational
             </span>
           </div>

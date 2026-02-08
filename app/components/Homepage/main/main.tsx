@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ArrowRight, Sparkles, Zap } from "lucide-react";
 import services, { Service } from "./services";
+import Link from "next/link";
 
 export interface ServiceCardProps {
   service: Service;
@@ -14,7 +15,7 @@ const ServiceCard = ({ service, index }: ServiceCardProps) => {
   const IconComponent = service.icon;
 
   return (
-    <div
+    <article
       className="card h-full"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -32,11 +33,11 @@ const ServiceCard = ({ service, index }: ServiceCardProps) => {
           </div>
         </div>
 
-        <h3 className="text-xl font-bold text-white mb-4 group-hover:text-emerald-500 transition-colors duration-200">
+        <h3 className="text-xl font-bold text-[#ABABAB] mb-4 group-hover:text-emerald-500 transition-colors duration-200">
           {service.title}
         </h3>
 
-        <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
+        <p className="text-[#ABABAB] text-sm leading-relaxed mb-6 grow">
           {service.description}
         </p>
 
@@ -46,31 +47,32 @@ const ServiceCard = ({ service, index }: ServiceCardProps) => {
               key={idx}
               className="flex items-start gap-2 text-gray-500 text-xs"
             >
-              <Sparkles className="w-3 h-3 text-emerald-500 mt-0.5 flex-shrink-0" />
-              <span>{feature}</span>
+              <Sparkles className="w-3 h-3 text-emerald-500 mt-0.5 shrink-0" />
+              <span className="text-white">{feature}</span>
             </div>
           ))}
         </div>
 
         {/* CTA */}
-        <div
+        <Link
+          href={service.link}
           className="flex items-center gap-2 text-emerald-500 text-sm font-medium transition-all duration-200"
           style={{
             opacity: isHovered ? 1 : 0,
             transform: isHovered ? "translateY(0)" : "translateY(-8px)",
           }}
         >
-          <span>Learn more</span>
+          <span>Learn more about {service.title}</span>
           <ArrowRight className="w-4 h-4" />
-        </div>
+        </Link>
       </div>
-    </div>
+    </article>
   );
 };
 
 export default function Services() {
   return (
-    <div className="relative w-full bg-[#161b22] py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="relative w-full bg-[#161b22] py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Subtle Grid Pattern */}
       <div className="absolute inset-0 grid-pattern opacity-30" />
 
@@ -83,12 +85,12 @@ export default function Services() {
             </span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
             Services We{" "}
-            <span className="bg-gradient-to-r from-emerald-500 to-emerald-600 bg-clip-text text-transparent">
+            <span className="bg-linear-r from-emerald-500 to-emerald-600 bg-clip-text text-transparent">
               Offer
             </span>
-          </h1>
+          </h2>
 
           <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-6">
             Comprehensive technology solutions designed to transform your
@@ -96,9 +98,9 @@ export default function Services() {
           </p>
 
           <div className="flex items-center justify-center gap-2">
-            <div className="w-12 h-1 bg-gradient-to-r from-transparent to-emerald-500 rounded-full" />
-            <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full" />
-            <div className="w-12 h-1 bg-gradient-to-r from-emerald-600 to-transparent rounded-full" />
+            <div className="w-12 h-1 bg-linear-to-r from-transparent to-emerald-500 rounded-full" />
+            <div className="w-24 h-1 bg-linear-to-r from-emerald-500 to-emerald-600 rounded-full" />
+            <div className="w-12 h-1 bg-linear-to-r from-emerald-600 to-transparent rounded-full" />
           </div>
         </div>
 
@@ -109,24 +111,18 @@ export default function Services() {
         </div>
 
         {/* CTA Section */}
-        <div className="mt-20 text-center">
+        <footer className="mt-20 text-center">
           <div className="inline-flex flex-col sm:flex-row gap-4">
-            <a
-              href="/services"
-              className="btn-primary"
-            >
+            <Link href="/services" className="btn-primary">
               View All Services
               <ArrowRight className="w-5 h-5" />
-            </a>
-            <a
-              href="/contact"
-              className="btn-secondary"
-            >
+            </Link>
+            <Link href="/contact" className="btn-secondary">
               Request a Quote
-            </a>
+            </Link>
           </div>
-        </div>
+        </footer>
       </div>
-    </div>
+    </section>
   );
 }
