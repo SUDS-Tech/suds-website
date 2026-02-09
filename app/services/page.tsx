@@ -10,6 +10,8 @@ import ITConsultancy from "../components/services/serviceinfo/ITConsultancy";
 import Devops from "../components/services/serviceinfo/Devops";
 import SoftwareInnovation from "../components/services/serviceinfo/SoftwareInnovation";
 import CustomSoftware from "../components/services/serviceinfo/customSoftware";
+import FAQSection from "../components/services/faqSection";
+import { FAQSchema } from "../components/services/faqSchema";
 
 export const metadata: Metadata = {
   title: "Software Development Services | SUDS Technologies Ltd",
@@ -46,6 +48,8 @@ function ServicesPage() {
       <SoftwareInnovation />
       <CustomSoftware />
       <LetsWork />
+      <FAQSection />
+      <FAQSchema />
     </main>
   );
 }
