@@ -1,31 +1,34 @@
 import Link from "next/link";
+import { Briefcase } from "lucide-react";
 
-function JoinUs() {
+export default function JoinUs() {
   return (
-    <div className="bg-[#161b22] py-16 w-full flex justify-center items-center px-4">
-      <div className="max-w-3xl text-center space-y-6">
-        <h2 className="text-3xl font-bold text-white">Join Us</h2>
-        <p className="text-xl text-gray-300 font-semibold">
-          We're just getting started.
+    <section className="bg-[#161b22] py-24 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-3xl mx-auto text-center space-y-6">
+        <div className="inline-flex p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 mb-2">
+          <Briefcase className="w-8 h-8 text-emerald-500" strokeWidth={1.5} />
+        </div>
+
+        <h2 className="text-3xl font-bold text-white">We're Hiring Soon</h2>
+
+        <p className="text-gray-400 text-lg leading-relaxed">
+          We're building something exciting at SUDS Technologies Ltd and will be
+          expanding our team soon. If you're passionate about technology, innovation,
+          and solving real-world problems, we'd love to hear from you.
         </p>
-        <p className="text-gray-400 text-base leading-relaxed">
-          If you're passionate about technology, innovation, and solving
-          real-world problems, SUDS Technologies Ltd is building something
-          you'll want to be part of.
-        </p>
-        <div className="pt-4">
-          <p className="text-white mb-4">
-            Interested in working with us or joining the team?
+
+        <div className="card inline-block bg-emerald-500/5 border-emerald-500/20">
+          <p className="text-gray-300 text-sm">
+            Hiring announcements coming soon. In the meantime, feel free to reach out.
           </p>
-          <Link href="/contact">
-            <button className="btn-primary">
-              Get in Touch
-            </button>
+        </div>
+
+        <div className="pt-4">
+          <Link href="/contact" className="btn-primary">
+            Get in Touch
           </Link>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
-
-export default JoinUs;

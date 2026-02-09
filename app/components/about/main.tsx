@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import image from "./images/world.jpg";
+// Using optimized CDN image for the vision section
 import { motion } from "motion/react";
 import { Target, Lightbulb, Users, TrendingUp } from "lucide-react";
 
@@ -108,9 +108,9 @@ export default function Overview() {
             >
               <div className="absolute -inset-1 bg-linear-to-r from-emerald-500/20 to-emerald-600/20 rounded-2xl blur-lg opacity-50" />
               <Image
-                src={image}
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
                 alt="Team collaborating on a project"
-                width={600}
+                width={800}
                 height={400}
                 className="relative rounded-2xl object-cover h-96 w-full border border-gray-800"
               />

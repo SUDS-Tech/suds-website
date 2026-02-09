@@ -45,6 +45,7 @@ export function NavBar() {
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Services", href: "/services" },
+    { label: "Team", href: "/team" },
     { label: "Contact", href: "/contact" },
   ];
 
