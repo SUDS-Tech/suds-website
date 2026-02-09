@@ -12,6 +12,14 @@ export default function ParticleBackground() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    let animationId: number;
+
+    // Detect mobile for performance optimization
+    const isMobile = window.innerWidth < 768;
+    const particleCount = isMobile ? 35 : 70;
+    const connectionDistance = isMobile ? 80 : 120;
+    const speed = isMobile ? 0.4 : 0.6;
+
     // Set canvas size
     const setCanvasSize = () => {
       canvas.width = window.innerWidth;
@@ -20,7 +28,7 @@ export default function ParticleBackground() {
     setCanvasSize();
     window.addEventListener("resize", setCanvasSize);
 
-    // Particle class - like stars moving
+    // Particle class
     class Particle {
       x: number;
       y: number;
@@ -34,10 +42,10 @@ export default function ParticleBackground() {
       constructor(canvasWidth: number, canvasHeight: number) {
         this.x = Math.random() * canvasWidth;
         this.y = Math.random() * canvasHeight;
-        this.size = Math.random() * 2.5 + 0.5; // Larger particles
-        this.speedX = (Math.random() - 0.5) * 0.8; // Faster movement
-        this.speedY = (Math.random() - 0.5) * 0.8;
-        this.opacity = Math.random() * 0.6 + 0.2; // More visible
+        this.size = Math.random() * 2 + 0.5;
+        this.speedX = (Math.random() - 0.5) * speed;
+        this.speedY = (Math.random() - 0.5) * speed;
+        this.opacity = Math.random() * 0.5 + 0.2;
         this.pulseSpeed = Math.random() * 0.02 + 0.01;
         this.pulsePhase = Math.random() * Math.PI * 2;
       }
@@ -46,21 +54,18 @@ export default function ParticleBackground() {
         this.x += this.speedX;
         this.y += this.speedY;
 
-        // Wrap around edges
         if (this.x > canvasWidth) this.x = 0;
         if (this.x < 0) this.x = canvasWidth;
         if (this.y > canvasHeight) this.y = 0;
         if (this.y < 0) this.y = canvasHeight;
 
-        // Pulsing effect
         this.pulsePhase += this.pulseSpeed;
       }
 
       draw() {
         if (!ctx) return;
 
-        // Calculate pulsing opacity
-        const pulseOpacity = this.opacity + Math.sin(this.pulsePhase) * 0.3;
+        const pulseOpacity = this.opacity + Math.sin(this.pulsePhase) * 0.2;
 
         // Draw glow
         const gradient = ctx.createRadialGradient(
@@ -86,9 +91,9 @@ export default function ParticleBackground() {
       }
     }
 
-    // Create more particles for better effect (80 particles)
+    // Create particles
     const particles: Particle[] = [];
-    for (let i = 0; i < 80; i++) {
+    for (let i = 0; i < particleCount; i++) {
       particles.push(new Particle(canvas.width, canvas.height));
     }
 
@@ -102,9 +107,8 @@ export default function ParticleBackground() {
           const dy = particles[i].y - particles[j].y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          // Draw line if particles are close
-          if (distance < 120) {
-            const opacity = (1 - distance / 120) * 0.15;
+          if (distance < connectionDistance) {
+            const opacity = (1 - distance / connectionDistance) * 0.15;
             ctx.strokeStyle = `rgba(16, 185, 129, ${opacity})`;
             ctx.lineWidth = 0.5;
             ctx.beginPath();
@@ -120,21 +124,20 @@ export default function ParticleBackground() {
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Draw connections first (behind particles)
       drawConnections();
 
-      // Update and draw particles
       particles.forEach((particle) => {
         particle.update(canvas.width, canvas.height);
         particle.draw();
       });
 
-      requestAnimationFrame(animate);
+      animationId = requestAnimationFrame(animate);
     };
 
     animate();
 
     return () => {
+      cancelAnimationFrame(animationId);
       window.removeEventListener("resize", setCanvasSize);
     };
   }, []);

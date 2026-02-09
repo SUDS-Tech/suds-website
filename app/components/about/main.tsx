@@ -2,7 +2,7 @@
 import Image from "next/image";
 import image from "./images/world.jpg";
 import { motion } from "motion/react";
-import { Target, Lightbulb, Users, TrendingUp, Heading6 } from "lucide-react";
+import { Target, Lightbulb, Users, TrendingUp } from "lucide-react";
 
 export default function Overview() {
   const values = [

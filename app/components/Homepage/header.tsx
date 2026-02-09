@@ -2,6 +2,7 @@
 
 import { Typewriter } from "./type-writer";
 import Link from "next/link";
+import Image from "next/image";
 import ParticleBackground from "./particle-background";
 
 export default function BusinessProcess() {
@@ -72,10 +73,13 @@ export default function BusinessProcess() {
               <div className="absolute -inset-1 bg-linear-to-r from-emerald-500/20 to-emerald-600/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition duration-300" />
 
               <div className="relative bg-[#161b22] rounded-2xl overflow-hidden border border-gray-800 group-hover:border-emerald-500/50 transition-colors duration-300">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
                   alt="Advanced Technology Dashboard"
+                  width={800}
+                  height={384}
                   className="w-full h-96 object-cover transform group-hover:scale-105 transition-transform duration-500"
+                  priority
                 />
               </div>
             </div>

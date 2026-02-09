@@ -12,10 +12,11 @@ import {
   Code,
   Rocket,
   HeadphonesIcon,
+  type LucideIcon,
 } from "lucide-react";
 
 export interface Service {
-  icon: any;
+  icon: LucideIcon;
   iconColor: string;
   title: string;
   description: string;
@@ -51,7 +52,7 @@ const services: Service[] = [
       "We create reliable mobile applications for businesses and startups, delivering seamless performance across iOS and Android devices.",
     descriptionTitle: "Our capabilities:",
     features: [
-      "Android,IOS and cross-platform applications",
+      "Android, iOS and cross-platform applications",
       "Secure backend integrations",
       "Offline-first and performance-optimized apps",
       "Scalable mobile architectures",
@@ -103,7 +104,7 @@ const services: Service[] = [
       "CI/CD pipeline setup and optimization",
       "Secure cloud deployments",
       "Infrastructure automation",
-      "Monitoring,scaling and reliability engineering",
+      "Monitoring, scaling and reliability engineering",
     ],
     footertitle:
       "The result: faster releases, higher uptime, and lower operational risk.",
@@ -118,7 +119,7 @@ const services: Service[] = [
     features: [
       "MVP and prototype development",
       "Proof-of-concept systems",
-      "AI,automation,data systems",
+      "AI, automation, data systems",
       "Product experimentation and validation",
     ],
     footertitle:

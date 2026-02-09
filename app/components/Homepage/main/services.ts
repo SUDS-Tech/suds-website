@@ -5,10 +5,11 @@ import {
   Cloud,
   Palette,
   Shield,
+  type LucideIcon,
 } from "lucide-react";
 
 export interface Service {
-  icon: any;
+  icon: LucideIcon;
   iconColor: string;
   title: string;
   description: string;

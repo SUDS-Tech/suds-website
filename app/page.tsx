@@ -10,12 +10,11 @@
 
 import BusinessProcess from "./components/Homepage/header";
 import Services from "./components/Homepage/main/main";
-// import ServiceCards from "./components/Homepage/main/main";
 import Option from "./components/Homepage/main/option";
 
 export default function Home() {
   return (
-    <main className=" min-h-screen  bg-zinc-50 font-sans dark:bg-black">
+    <main>
       <BusinessProcess />
       <Services />
       <Option />

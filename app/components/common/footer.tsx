@@ -72,13 +72,16 @@ const FooterLinkItem = ({ link }: FooterLinkItemProps) => {
 
 const NewsletterSection = () => {
   const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleSubscribe = () => {
     if (email && email.includes("@")) {
-      alert("Thank you for subscribing!");
       setEmail("");
+      setMessage("Thank you for subscribing!");
+      setTimeout(() => setMessage(""), 3000);
     } else {
-      alert("Please enter a valid email address");
+      setMessage("Please enter a valid email address");
+      setTimeout(() => setMessage(""), 3000);
     }
   };
 
@@ -99,12 +102,18 @@ const NewsletterSection = () => {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="email@example.com"
             className="w-full px-4 py-3 bg-[#0d1117] border border-gray-700 rounded-lg text-white placeholder-gray-500 text-sm focus:outline-none focus:border-emerald-500/50 transition-all duration-200"
+            aria-label="Email address for newsletter"
           />
         </div>
         <button onClick={handleSubscribe} className="btn-primary w-full">
           Subscribe
           <ArrowUpRight className="w-4 h-4" />
         </button>
+        {message && (
+          <p className={`text-xs font-medium ${message.includes("Thank") ? "text-emerald-500" : "text-red-400"}`}>
+            {message}
+          </p>
+        )}
       </div>
     </div>
   );

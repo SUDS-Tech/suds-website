@@ -1,7 +1,7 @@
-import { Award, Lightbulb, Layers, Rocket, Shield, Target, TrendingUp, Users } from "lucide-react";
+import { Award, Lightbulb, Layers, Rocket, Shield, Target, TrendingUp, Users, type LucideIcon } from "lucide-react";
 
 export interface Option {
-  icon: any;
+  icon: LucideIcon;
   iconColor: string;
   title: string;
   description: string;
