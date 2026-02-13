@@ -9,23 +9,48 @@
  */
 
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import {NavBar} from "@/app/components/common/navBar";
+import { NavBar } from "@/app/components/common/navBar";
 import Footer from "./components/common/footer";
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
   subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
-  title: "SUDS Technologies Ltd",
-  description: "Software Innovation Lab & Technology Solutions Company",
+  title: {
+    default: "SUDS Technologies Ltd | Software & IT Solutions Company",
+    template: "%s | SUDS Technologies Ltd",
+  },
+  description:
+    "SUDS Technologies Ltd is a leading software development and IT solutions company specializing in web, mobile, cloud, and digital transformation.",
+  keywords: [
+    "SUDS",
+    "SUDS Technologies",
+    "SUDS Technologies Ltd",
+    "software company",
+    "IT solutions",
+    "web development",
+    "technology company",
+  ],
+  metadataBase: new URL("https://www.suds-tech.com"),
+  openGraph: {
+    title: "SUDS Technologies Ltd",
+    description:
+      "Innovative software development & technology solutions by SUDS Technologies Ltd.",
+
+    url: "https://www.suds-tech.com",
+    siteName: "SUDS Technologies Ltd",
+    locale: "en_US",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -35,9 +60,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={` ${inter.className} antialiased`}>
         <NavBar />
         {children}
         <Footer />

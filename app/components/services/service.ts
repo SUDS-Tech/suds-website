@@ -2,7 +2,7 @@ import {
   Smartphone,
   Settings,
   Cloud,
-   Sparkles,
+  Sparkles,
   Layers,
   Search,
   PenTool,
@@ -11,11 +11,12 @@ import {
   HandHelping,
   Code,
   Rocket,
-  HeadphonesIcon
+  HeadphonesIcon,
+  type LucideIcon,
 } from "lucide-react";
 
 export interface Service {
-  icon: any;
+  icon: LucideIcon;
   iconColor: string;
   title: string;
   description: string;
@@ -28,10 +29,10 @@ export interface Service {
 const services: Service[] = [
   {
     icon: Globe,
-    iconColor: "text-blue-400",
-    title: "Web Application Development",
+    iconColor: "text-emerald-500",
+    title: "Web Application Development Services",
     description:
-      "We design and build high-performance web applications that are fast, secure, and scalable.",
+      "We design and build high-performance web applications for businesses that require secure, scalable and modern digital platforms.",
     descriptionTitle: "What we deliver:",
     features: [
       "Custom web platforms and dashboards",
@@ -45,13 +46,13 @@ const services: Service[] = [
   },
   {
     icon: Smartphone,
-    iconColor: "text-purple-400",
-    title: "Mobile Application Development",
+    iconColor: "text-emerald-500",
+    title: "Mobile Application Development Services",
     description:
-      "We create reliable mobile applications that deliver seamless performance across devices.",
+      "We create reliable mobile applications for businesses and startups, delivering seamless performance across iOS and Android devices.",
     descriptionTitle: "Our capabilities:",
     features: [
-      "Android,IOS and cross-platform applications",
+      "Android, iOS and cross-platform applications",
       "Secure backend integrations",
       "Offline-first and performance-optimized apps",
       "Scalable mobile architectures",
@@ -62,10 +63,10 @@ const services: Service[] = [
   },
   {
     icon: Settings,
-    iconColor: "text-emerald-400",
-    title: "Custom Software Solutions",
+    iconColor: "text-emerald-500",
+    title: "Custom Software Development Solutions",
     description:
-      "Every business is unique — we engineer tailor-made software designed specifically for your workflows, scale, and long-term goals.",
+      "Every business is unique — we engineer custom software solutions for enterprises designed around specific workflows, scale and long-term goals.",
     descriptionTitle: "Ideal for:",
     features: [
       "Process automation",
@@ -78,10 +79,10 @@ const services: Service[] = [
   },
   {
     icon: HandHelping,
-    iconColor: "text-cyan-400",
+    iconColor: "text-emerald-500",
     title: "IT Consultancy & Digital Strategy",
     description:
-      "We act as a strategic technology partner, helping organizations make confident, future-proof decisions.",
+      "We act as a strategic technology partner for organizations, helping leadership teams make confident, future-proof digital and infrastructure decisions.",
     descriptionTitle: "Consulting services include:",
     features: [
       "System architecture design",
@@ -94,31 +95,31 @@ const services: Service[] = [
   },
   {
     icon: Cloud,
-    iconColor: "text-pink-400",
-    title: "DevOps & Cloud Engineering",
+    iconColor: "text-emerald-500",
+    title: "DevOps & Cloud Engineering Services",
     description:
-      "We streamline software delivery and infrastructure through modern DevOps practices.",
+      "We streamline software delivery and cloud infrastructure for businesses through modern DevOps practices that improve reliability and deployment speed.",
     descriptionTitle: "What we offer:",
     features: [
       "CI/CD pipeline setup and optimization",
       "Secure cloud deployments",
       "Infrastructure automation",
-      "Monitoring,scaling and reliability engineering",
+      "Monitoring, scaling and reliability engineering",
     ],
     footertitle:
       "The result: faster releases, higher uptime, and lower operational risk.",
   },
   {
     icon: Shield,
-    iconColor: "text-red-400",
+    iconColor: "text-emerald-500",
     title: "Software Innovation Lab",
     description:
-      "Our Innovation Lab is where ideas evolve into production-ready solutions.",
+      "Our Innovation Lab helps startups and enterprises transform ideas into production-ready software through rapid prototyping and experimentation.",
     descriptionTitle: "Lab services:",
     features: [
       "MVP and prototype development",
       "Proof-of-concept systems",
-      "AI,automation,data systems",
+      "AI, automation, data systems",
       "Product experimentation and validation",
     ],
     footertitle:
@@ -127,50 +128,51 @@ const services: Service[] = [
 ];
 
 export const philosophy = [
-    {
-      icon: Shield,
-      title: "Secure",
-      description: "Security embedded at every layer of development",
-    },
-    {
-      icon: Sparkles,
-      title: "Unique",
-      description: "Solutions designed for your specific challenges",
-    },
-    {
-      icon: Layers,
-      title: "Durable",
-      description: "Architectures built to scale and last",
-    },
-  ];
+  {
+    icon: Shield,
+    title: "Secure",
+    description: "Security embedded at every layer of development",
+  },
+  {
+    icon: Sparkles,
+    title: "Unique",
+    description: "Solutions designed for your specific challenges",
+  },
+  {
+    icon: Layers,
+    title: "Durable",
+    description: "Architectures built to scale and last",
+  },
+];
 
-  
-  export const processSteps = [
-    {
-      icon: Search,
-      title: "Discovery & Requirements Analysis",
-      description: "Deep dive into your business needs and technical requirements",
-    },
-    {
-      icon: PenTool,
-      title: "Secure Architecture Design",
-      description: "Creating robust blueprints with security as the foundation",
-    },
-    {
-      icon: Code,
-      title: "Agile Development & Testing",
-      description: "Iterative sprints with continuous integration and quality assurance",
-    },
-    {
-      icon: Rocket,
-      title: "Deployment & Optimization",
-      description: "Seamless launch with performance tuning and monitoring",
-    },
-    {
-      icon: HeadphonesIcon,
-      title: "Continuous Support & Improvement",
-      description: "Ongoing maintenance and feature enhancements",
-    },
-  ];
+export const processSteps = [
+  {
+    icon: Search,
+    title: "Discovery & Requirements Analysis",
+    description:
+      "Deep dive into your business needs and technical requirements",
+  },
+  {
+    icon: PenTool,
+    title: "Secure Architecture Design",
+    description: "Creating robust blueprints with security as the foundation",
+  },
+  {
+    icon: Code,
+    title: "Agile Development & Testing",
+    description:
+      "Iterative sprints with continuous integration and quality assurance",
+  },
+  {
+    icon: Rocket,
+    title: "Deployment & Optimization",
+    description: "Seamless launch with performance tuning and monitoring",
+  },
+  {
+    icon: HeadphonesIcon,
+    title: "Continuous Support & Improvement",
+    description: "Ongoing maintenance and feature enhancements",
+  },
+];
 
 export default services;

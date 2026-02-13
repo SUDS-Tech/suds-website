@@ -32,17 +32,17 @@ export default function Option() {
   };
 
   return (
-    <div className="w-full bg-gray-950 py-16 px-10">
+    <div className="w-full bg-[#0d1117] py-16 px-10">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="flex justify-center items-center pb-5"
+        className="flex justify-center items-center pb-8"
       >
-        <h1 className="text-sm sm:text-2xl text-white font-bold border-b border-amber-50">
+        <h2 className="text-2xl md:text-3xl text-white font-bold border-b border-emerald-500/30 pb-2">
           Industries We Serve
-        </h1>
+        </h2>
       </motion.div>
       <div className="max-w-7xl mx-auto">
         <motion.div
@@ -55,7 +55,7 @@ export default function Option() {
           {industries.map((industry, index) => {
             const IconComponent = industry.icon;
             return (
-              <motion.div
+              <motion.article
                 key={index}
                 variants={cardVariant}
                 whileHover={{
@@ -63,7 +63,7 @@ export default function Option() {
                   scale: 1.03,
                   transition: { duration: 0.3 },
                 }}
-                className="bg-linear-to-r from-gray-800 to-gray-950 rounded-b-4xl shadow-2xl shadow-teal-700 hover:shadow-md transition-shadow duration-300 p-8 text-center"
+                className="card text-center"
               >
                 <motion.div
                   initial={{ scale: 0, rotate: -180 }}
@@ -78,16 +78,16 @@ export default function Option() {
                   className="mb-6"
                 >
                   <IconComponent
-                    className={`w-16 h-16 mx-auto ${industry.iconColor} text-shadow-blue-500 text-shadow-2xs stroke-[1.5] hover:text-emerald-400 transition-colors duration-300`}
+                    className={`w-16 h-16 mx-auto ${industry.iconColor} stroke-[1.5] group-hover:text-emerald-500 transition-colors duration-300`}
                   />
                 </motion.div>
-                <h3 className="text-xl font-bold text-white mb-4 text-shadow-[4px] text-shadow-amber-300">
+                <h3 className="text-xl font-bold text-white mb-4">
                   {industry.title}
                 </h3>
-                <p className="text-amber-50 text-sm leading-relaxed">
+                <footer className="text-gray-300 text-sm leading-relaxed">
                   {industry.description}
-                </p>
-              </motion.div>
+                </footer>
+              </motion.article>
             );
           })}
         </motion.div>
