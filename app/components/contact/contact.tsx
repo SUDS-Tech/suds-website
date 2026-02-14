@@ -9,6 +9,7 @@ export default function ContactForm() {
     name: "",
     email: "",
     message: "",
+    honeypot: "",
   });
   const [errors, setErrors] = useState<FormErrors>({
     name: "",
@@ -16,6 +17,7 @@ export default function ContactForm() {
     message: "",
   });
   const [successMessage, setSuccessMessage] = useState<string>("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -59,23 +61,46 @@ export default function ContactForm() {
     return !newErrors.name && !newErrors.email && !newErrors.message;
   };
 
-  //handle submit function
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const isValid = handleValidate();
 
-    if (isValid) {
-      // Handle form submission
-      setForm({ name: "", email: "", message: "" });
-      setSuccessMessage("Form submitted successfully");
-      setTimeout(() => {
-        setSuccessMessage("");
-      }, 3000);
-    } else {
-      setSuccessMessage("Failed to submit form");
-      setTimeout(() => {
-        setSuccessMessage("");
-      }, 3000);
+    if (!isValid) {
+      setSuccessMessage("Please fix the errors above");
+      setTimeout(() => setSuccessMessage(""), 3000);
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSuccessMessage("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          message: form.message,
+          honeypot: form.honeypot,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setForm({ name: "", email: "", message: "", honeypot: "" });
+        setSuccessMessage("Message sent successfully! We'll get back to you soon.");
+      } else {
+        setSuccessMessage(data.error || "Failed to send message. Please try again.");
+      }
+
+      setTimeout(() => setSuccessMessage(""), 5000);
+    } catch {
+      setSuccessMessage("Network error. Please check your connection and try again.");
+      setTimeout(() => setSuccessMessage(""), 5000);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -242,12 +267,28 @@ export default function ContactForm() {
                 )}
               </div>
 
-              <button type="submit" className="btn-primary w-full">
-                Send Message
+              {/* Honeypot — hidden from real users, catches bots */}
+              <div className="absolute opacity-0 -z-10" aria-hidden="true">
+                <input
+                  type="text"
+                  name="honeypot"
+                  value={form.honeypot}
+                  onChange={handleChange}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="btn-primary w-full"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
               </button>
               {successMessage && (
                 <p
-                  className={`text-sm font-medium text-center ${successMessage.includes("success") ? "text-emerald-500" : "text-red-500"}`}
+                  className={`text-sm font-medium text-center ${successMessage.includes("successfully") ? "text-emerald-500" : "text-red-500"}`}
                 >
                   {successMessage}
                 </p>

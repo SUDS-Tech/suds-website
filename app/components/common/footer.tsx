@@ -11,9 +11,9 @@ import {
   MapPin,
   Phone,
   ChevronRight,
-  Zap,
   ArrowUpRight,
 } from "lucide-react";
+import Image from "next/image";
 
 interface SocialLink {
   name: string;
@@ -73,15 +73,40 @@ const FooterLinkItem = ({ link }: FooterLinkItemProps) => {
 const NewsletterSection = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubscribe = () => {
-    if (email && email.includes("@")) {
-      setEmail("");
-      setMessage("Thank you for subscribing!");
-      setTimeout(() => setMessage(""), 3000);
-    } else {
+  const handleSubscribe = async () => {
+    if (!email || !email.includes("@")) {
       setMessage("Please enter a valid email address");
       setTimeout(() => setMessage(""), 3000);
+      return;
+    }
+
+    setIsSubmitting(true);
+    setMessage("");
+
+    try {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setEmail("");
+        setMessage(data.message || "Thank you for subscribing!");
+      } else {
+        setMessage(data.error || "Something went wrong. Please try again.");
+      }
+
+      setTimeout(() => setMessage(""), 3000);
+    } catch {
+      setMessage("Network error. Please try again.");
+      setTimeout(() => setMessage(""), 3000);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -105,12 +130,16 @@ const NewsletterSection = () => {
             aria-label="Email address for newsletter"
           />
         </div>
-        <button onClick={handleSubscribe} className="btn-primary w-full">
-          Subscribe
-          <ArrowUpRight className="w-4 h-4" />
+        <button
+          onClick={handleSubscribe}
+          className="btn-primary w-full"
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? "Subscribing..." : "Subscribe"}
+          {!isSubmitting && <ArrowUpRight className="w-4 h-4" />}
         </button>
         {message && (
-          <p className={`text-xs font-medium ${message.includes("Thank") ? "text-emerald-500" : "text-red-400"}`}>
+          <p className={`text-xs font-medium ${message.includes("Thank") || message.includes("already") ? "text-emerald-500" : "text-red-400"}`}>
             {message}
           </p>
         )}
@@ -241,18 +270,14 @@ export function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
           {/* Brand Section */}
           <div className="lg:col-span-3 space-y-6">
-            <a href="/" className="flex items-center gap-3 group w-fit">
-              <div className="relative bg-[#161b22] p-2 rounded-lg border border-gray-800 group-hover:border-emerald-500/50 transition-colors duration-200">
-                <Zap className="w-5 h-5 text-emerald-500" />
-              </div>
-              <div>
-                <h2 className="text-xl font-bold text-emerald-500 tracking-tight">
-                  SUDS
-                </h2>
-                <p className="text-[10px] text-gray-400 font-medium tracking-widest uppercase">
-                  Technologies Ltd
-                </p>
-              </div>
+            <a href="/" className="flex items-center group w-fit bg-white/90 rounded-lg px-3 py-1.5 hover:bg-white transition-colors duration-200">
+              <Image
+                src="/logo.png"
+                alt="SUDS Technologies Ltd"
+                width={160}
+                height={64}
+                className="h-14 w-auto"
+              />
             </a>
 
             <p className="text-gray-400 text-sm leading-relaxed pr-4">

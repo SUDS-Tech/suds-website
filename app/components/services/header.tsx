@@ -27,7 +27,7 @@ export default function ServicesHeader() {
         {/* Main Content */}
         <div className="text-center max-w-4xl mx-auto space-y-8">
           <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
-            Enterprise-Grade{" "}
+            Production Ready{" "}
             <span className="bg-linear-to-r from-emerald-500 to-emerald-600 bg-clip-text text-transparent">
               Technology Solutions
             </span>

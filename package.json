@@ -9,26 +9,20 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "class-transformer": "^0.5.1",
-    "class-validator": "^0.14.3",
-    "disposable-email": "^0.2.3",
-    "dotenv-gad": "^1.2.2",
+    "dotenv-gad": "^1.4.0",
+    "firebase-admin": "^13.6.1",
     "lucide-react": "^0.562.0",
     "motion": "^12.27.5",
     "next": "16.1.4",
-    "nodemailer": "^7.0.12",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "sanitize-html": "^2.17.0",
-    "typeorm": "^0.3.28"
+    "resend": "^6.9.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
-    "@types/nodemailer": "^7.0.5",
     "@types/react": "^19.2.9",
     "@types/react-dom": "^19",
-    "@types/sanitize-html": "^2.16.0",
     "esbuild": "^0.27.2",
     "eslint": "^9",
     "eslint-config-next": "16.1.4",
