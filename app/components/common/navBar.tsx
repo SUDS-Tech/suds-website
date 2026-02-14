@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 interface NavLink {
   label: string;
@@ -80,17 +81,15 @@ export function NavBar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-3 group">
-            <div className="relative bg-[#161b22] p-2 rounded-lg border border-gray-800 group-hover:border-emerald-500/50 transition-colors duration-200">
-              <Zap className="w-5 h-5 text-emerald-500" />
-            </div>
-
-            <div>
-              <h1 className="text-xl font-bold text-emerald-500">SUDS</h1>
-              <p className="text-[10px] text-gray-400 tracking-wider uppercase">
-                TECHNOLOGIES LTD
-              </p>
-            </div>
+          <a href="/" className="flex items-center group bg-white/90 rounded-lg px-3 py-1.5 hover:bg-white transition-colors duration-200">
+            <Image
+              src="/logo.png"
+              alt="SUDS Technologies Ltd"
+              width={160}
+              height={64}
+              priority
+              className="h-14 w-auto"
+            />
           </a>
 
           {/* Desktop Navigation */}

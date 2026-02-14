@@ -9,17 +9,21 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "dotenv-gad": "^1.4.0",
+    "firebase-admin": "^13.6.1",
     "lucide-react": "^0.562.0",
     "motion": "^12.27.5",
     "next": "16.1.4",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "resend": "^6.9.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19.2.9",
     "@types/react-dom": "^19",
+    "esbuild": "^0.27.2",
     "eslint": "^9",
     "eslint-config-next": "16.1.4",
     "tailwindcss": "^4",
