@@ -1,8 +1,5 @@
-import React from "react";
 import Header from "../components/services/header";
-import Services from "../components/services/serviceCards";
 import LetsWork from "../components/services/letsWork";
-
 import type { Metadata } from "next";
 import Webapp from "../components/services/serviceinfo/web";
 import MobileApp from "../components/services/serviceinfo/mobile";
