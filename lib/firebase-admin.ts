@@ -1,19 +1,17 @@
 import { initializeApp, getApps, cert } from "firebase-admin/app";
 import { getFirestore, Firestore } from "firebase-admin/firestore";
-import { loadEnv } from "dotenv-gad";
-import schema from "../env.schema";
 
 let _db: Firestore;
 
 export function getDb() {
   if (!_db) {
-    const env = loadEnv(schema);
     if (getApps().length === 0) {
+      const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, "\n");
       initializeApp({
         credential: cert({
-          projectId: env.FIREBASE.PROJECT_ID,
-          clientEmail: env.FIREBASE.CLIENT_EMAIL,
-          privateKey: env.FIREBASE.PRIVATE_KEY,
+          projectId: process.env.FIREBASE_PROJECT_ID!,
+          clientEmail: process.env.FIREBASE_CLIENT_EMAIL!,
+          privateKey,
         }),
       });
     }

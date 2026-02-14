@@ -3,8 +3,6 @@ import { getDb } from "@/lib/firebase-admin";
 import { getResend } from "@/lib/resend";
 import { checkRateLimit } from "@/lib/rate-limit";
 import { validateContact } from "@/lib/validation";
-import { loadEnv } from "dotenv-gad";
-import schema from "@/env.schema";
 
 export async function POST(request: NextRequest) {
   try {
@@ -36,7 +34,6 @@ export async function POST(request: NextRequest) {
     }
 
     const db = getDb();
-    const env = loadEnv(schema);
 
     // Write to Firestore
     const docRef = await db.collection("contacts").add({
@@ -50,7 +47,7 @@ export async function POST(request: NextRequest) {
 
     // Send notification email (fire-and-forget)
     const resend = getResend();
-    const notificationEmail = env.NOTIFICATION_EMAIL;
+    const notificationEmail = process.env.NOTIFICATION_EMAIL || "info@suds-tech.com";
 
     resend.emails
       .send({
