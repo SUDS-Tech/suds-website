@@ -1,12 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
-import { db } from "@/lib/firebase-admin";
-import { resend } from "@/lib/resend";
+import { getDb } from "@/lib/firebase-admin";
+import { getResend } from "@/lib/resend";
 import { checkRateLimit } from "@/lib/rate-limit";
 import { validateContact } from "@/lib/validation";
 import { loadEnv } from "dotenv-gad";
 import schema from "@/env.schema";
-
-const env = loadEnv(schema);
 
 export async function POST(request: NextRequest) {
   try {
@@ -37,6 +35,9 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ success: false, errors }, { status: 400 });
     }
 
+    const db = getDb();
+    const env = loadEnv(schema);
+
     // Write to Firestore
     const docRef = await db.collection("contacts").add({
       name: sanitized.name,
@@ -48,6 +49,7 @@ export async function POST(request: NextRequest) {
     });
 
     // Send notification email (fire-and-forget)
+    const resend = getResend();
     const notificationEmail = env.NOTIFICATION_EMAIL;
 
     resend.emails

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { db } from "@/lib/firebase-admin";
+import { getDb } from "@/lib/firebase-admin";
 import { checkRateLimit } from "@/lib/rate-limit";
 import { validateEmail } from "@/lib/validation";
 
@@ -26,6 +26,8 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
+
+    const db = getDb();
 
     // Check for duplicate subscription
     const existing = await db
