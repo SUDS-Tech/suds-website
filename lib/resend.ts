@@ -2,6 +2,12 @@ import { Resend } from "resend";
 import { loadEnv } from "dotenv-gad";
 import schema from "../env.schema";
 
-const env = loadEnv(schema);
+let _resend: Resend;
 
-export const resend = new Resend(env.RESEND.API_KEY);
+export function getResend() {
+  if (!_resend) {
+    const env = loadEnv(schema);
+    _resend = new Resend(env.RESEND.API_KEY);
+  }
+  return _resend;
+}
