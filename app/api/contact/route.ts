@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getDb } from "@/lib/firebase-admin";
 import { getResend } from "@/lib/resend";
+import { getEnv } from "@/lib/env";
 import { checkRateLimit } from "@/lib/rate-limit";
 import { validateContact } from "@/lib/validation";
 
@@ -34,6 +35,7 @@ export async function POST(request: NextRequest) {
     }
 
     const db = getDb();
+    const env = getEnv();
 
     // Write to Firestore
     const docRef = await db.collection("contacts").add({
@@ -47,12 +49,11 @@ export async function POST(request: NextRequest) {
 
     // Send notification email (fire-and-forget)
     const resend = getResend();
-    const notificationEmail = process.env.NOTIFICATION_EMAIL || "info@suds-tech.com";
 
     resend.emails
       .send({
         from: "SUDS Website <noreply@suds-tech.com>",
-        to: notificationEmail,
+        to: env.NOTIFICATION_EMAIL,
         subject: `New Contact Form Submission from ${sanitized.name}`,
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
