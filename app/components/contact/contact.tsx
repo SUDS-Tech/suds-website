@@ -36,8 +36,8 @@ export default function ContactForm() {
     // Name validation
     if (!form.name.trim()) {
       newErrors.name = "Name is required";
-    } else if (form.name.length < 5) {
-      newErrors.name = "Name must be more than 5 characters";
+    } else if (form.name.trim().length < 2) {
+      newErrors.name = "Name must be at least 2 characters";
     }
 
     // Email validation
@@ -51,8 +51,8 @@ export default function ContactForm() {
     // Message validation
     if (!form.message) {
       newErrors.message = "Please enter a message";
-    } else if (form.message.length < 2) {
-      newErrors.message = "Message is too short";
+    } else if (form.message.trim().length < 10) {
+      newErrors.message = "Message must be at least 10 characters";
     }
 
     setErrors(newErrors);
@@ -75,15 +75,20 @@ export default function ContactForm() {
     setSuccessMessage("");
 
     try {
+      const payload: Record<string, string> = {
+        name: form.name,
+        email: form.email,
+        message: form.message,
+      };
+      // Only include honeypot if filled (bot detection)
+      if (form.honeypot) {
+        payload.honeypot = form.honeypot;
+      }
+
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          message: form.message,
-          honeypot: form.honeypot,
-        }),
+        body: JSON.stringify(payload),
       });
 
       const data = await response.json();

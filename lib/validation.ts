@@ -23,8 +23,8 @@ export function validateContact(data: unknown): {
 
   const { name, email, message, honeypot } = data as Record<string, unknown>;
 
-  // Honeypot — if filled, it's a bot
-  if (honeypot && typeof honeypot === "string" && honeypot.trim().length > 0) {
+  // Honeypot — only present in payload if a bot filled it
+  if (typeof honeypot === "string" && honeypot.trim().length > 0) {
     return { valid: false, errors: [{ field: "honeypot", message: "Bot detected" }] };
   }
 

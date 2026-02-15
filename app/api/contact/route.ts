@@ -47,11 +47,11 @@ export async function POST(request: NextRequest) {
       ip,
     });
 
-    // Send notification email (fire-and-forget)
+    // Send notification email
     const resend = getResend();
 
-    resend.emails
-      .send({
+    try {
+      await resend.emails.send({
         from: "SUDS Website <noreply@suds-tech.com>",
         to: env.NOTIFICATION_EMAIL,
         subject: `New Contact Form Submission from ${sanitized.name}`,
@@ -69,8 +69,10 @@ export async function POST(request: NextRequest) {
             </p>
           </div>
         `,
-      })
-      .catch((err: unknown) => console.error("Failed to send notification email:", err));
+      });
+    } catch (emailErr) {
+      console.error("Failed to send notification email:", emailErr);
+    }
 
     return NextResponse.json({
       success: true,
