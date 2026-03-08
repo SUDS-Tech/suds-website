@@ -123,10 +123,10 @@ export default function SUDSWhyChoose() {
         {/* Stats Section */}
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
-            { value: "50+", label: "Projects Delivered" },
+         
             { value: "98%", label: "Client Satisfaction" },
             { value: "24/7", label: "Support Available" },
-            { value: "10+", label: "Years Experience" },
+           
           ].map((stat, index) => (
             <div
               key={index}
