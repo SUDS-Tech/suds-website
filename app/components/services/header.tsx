@@ -77,10 +77,10 @@ export default function ServicesHeader() {
         {/* Stats Section */}
         <footer className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
           {[
-      {/**{ value: "50+", label: "Projects Delivered" },*/}
+      
             { value: "98%", label: "Client Satisfaction" },
-            { value: "24/7", label: "Support Available" },
-      {/**{ value: "10+", label: "Years Experience" },*/}
+            { value: "24/7", label: "Support Available" }
+      
           ].map((stat, index) => (
             <div
               key={index}
