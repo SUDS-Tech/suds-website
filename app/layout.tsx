@@ -123,6 +123,7 @@ export default function RootLayout({
         <NavBar />
         {children}
         <Footer />
+        <script src="https://api.msgine.net/api/v1/bots/widget.js" data-bot-id="995cf77b-4c7d-44e9-88ee-bea05c612286"></script>
       </body>
     </html>
   );
