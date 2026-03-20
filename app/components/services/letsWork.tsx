@@ -2,13 +2,10 @@
 
 import { useState } from "react";
 import {
-  Shield,
-  Code,
-  Rocket,
-  HeadphonesIcon,
   ArrowRight,
   Mail,
   Phone,
+  type LucideIcon,
 } from "lucide-react";
 import { philosophy, processSteps } from "./service";
 import Link from "next/link";
@@ -17,7 +14,7 @@ interface ProcessStepProps {
   step: {
     title: string;
     description: string;
-    icon: any;
+    icon: LucideIcon;
   };
   index: number;
 }
@@ -26,7 +23,7 @@ interface PhilosophyCardProps {
   item: {
     title: string;
     description: string;
-    icon: any;
+    icon: LucideIcon;
   };
   index: number;
 }

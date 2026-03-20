@@ -1,6 +1,6 @@
 import { StaticImageData } from "next/image";
-import image1 from "@/app/components/team/images/kasim.jpeg";
-import image2 from "@/app/components/team/images/isaac.jpeg";
+import image1 from "@/app/components/team/images/kasim_512x512_px.png";
+import image2 from "@/app/components/team/images/isaac_512x512_px.png";
 
 interface Team {
   id: number;

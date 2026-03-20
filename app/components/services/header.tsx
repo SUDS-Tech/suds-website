@@ -27,7 +27,7 @@ export default function ServicesHeader() {
         {/* Main Content */}
         <div className="text-center max-w-4xl mx-auto space-y-8">
           <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
-            Enterprise-Grade{" "}
+            Production Ready{" "}
             <span className="bg-linear-to-r from-emerald-500 to-emerald-600 bg-clip-text text-transparent">
               Technology Solutions
             </span>
@@ -77,10 +77,11 @@ export default function ServicesHeader() {
         {/* Stats Section */}
         <footer className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
           {[
-            { value: "50+", label: "Projects Delivered" },
+            { value: "Agile", label: "Development Process" },
             { value: "98%", label: "Client Satisfaction" },
             { value: "24/7", label: "Support Available" },
-            { value: "10+", label: "Years Experience" },
+            { value: "Secure", label: "Secure Systems" }
+      
           ].map((stat, index) => (
             <div
               key={index}
