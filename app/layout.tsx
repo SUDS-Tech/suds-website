@@ -41,7 +41,6 @@ export const metadata: Metadata = {
     title: "SUDS Technologies Ltd",
     description:
       "Innovative software development & technology solutions by SUDS Technologies Ltd.",
-
     url: "https://www.suds-tech.com",
     siteName: "SUDS Technologies Ltd",
     locale: "en_US",

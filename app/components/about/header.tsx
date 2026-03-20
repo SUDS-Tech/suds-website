@@ -7,7 +7,7 @@ import ParticleBackground from "../Homepage/particle-background";
 
 function Header() {
   return (
-    <div className="relative bg-[#0d1117] pt-20 pb-10 overflow-hidden">
+    <header className="relative bg-[#0d1117] pt-20 pb-10 overflow-hidden">
       {/* Particle Background */}
       <ParticleBackground />
 
@@ -59,7 +59,7 @@ function Header() {
           </motion.div>
         </div>
       </div>
-    </div>
+    </header>
   );
 }
 
