@@ -36,6 +36,7 @@ export const metadata: Metadata = {
 function ServicesPage() {
   return (
     <main>
+      <FAQSchema />
       <Header />
       {/* <Services /> */}
       <Webapp />
@@ -46,7 +47,6 @@ function ServicesPage() {
       <CustomSoftware />
       <LetsWork />
       <FAQSection />
-      <FAQSchema />
     </main>
   );
 }
