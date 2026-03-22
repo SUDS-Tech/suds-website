@@ -1,12 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {
-  ArrowRight,
-  Mail,
-  Phone,
-  type LucideIcon,
-} from "lucide-react";
+import { ArrowRight, Mail, Phone, type LucideIcon } from "lucide-react";
 import { philosophy, processSteps } from "./service";
 import Link from "next/link";
 

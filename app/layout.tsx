@@ -13,7 +13,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { NavBar } from "@/app/components/common/navBar";
 import Footer from "./components/common/footer";
-import Script from 'next/script'
+import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -124,7 +124,7 @@ export default function RootLayout({
         <NavBar />
         {children}
         <Footer />
-         <Script
+        <Script
           src="https://api.msgine.net/api/v1/bots/widget.js"
           data-bot-id="995cf77b-4c7d-44e9-88ee-bea05c612286"
           strategy="afterInteractive"
