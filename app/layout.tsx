@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2026 SUDS Technologies Ltd.
+ * Copyright (c) 2026 SUDS Tech Company Ltd.
  *
  * All rights reserved.
  *
@@ -23,13 +23,15 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "SUDS Technologies Ltd | Software & IT Solutions Company",
-    template: "%s | SUDS Technologies Ltd",
+    default: "SUDS Tech Company Ltd | Software & IT Solutions Company",
+    template: "%s | SUDS Tech Company Ltd",
   },
   description:
-    "SUDS Technologies Ltd is a leading software development and IT solutions company in Kampala, Uganda — specializing in web, mobile, cloud, and digital transformation.",
+    "SUDS Tech Company Ltd is a leading software development and IT solutions company in Kampala, Uganda — specializing in web, mobile, cloud, and digital transformation.",
   keywords: [
     "SUDS",
+    "SUDS Tech Company",
+    "SUDS Tech Company Ltd",
     "SUDS Technologies",
     "SUDS Technologies Ltd",
     "software company Uganda",
@@ -39,23 +41,30 @@ export const metadata: Metadata = {
     "cloud engineering",
     "custom software development",
     "technology company",
+    "digital transformation services",
+    "IT consultancy services",
+    "SUDS software development",
+    "SUDS IT solutions",
+    "SUDS web development",
+    "SUDS mobile app development",
+    "SUDS cloud engineering",
   ],
   metadataBase: new URL("https://www.suds-tech.com"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "SUDS Technologies Ltd | Software & IT Solutions",
+    title: "SUDS Tech Company Ltd | Software & IT Solutions",
     description:
-      "Innovative software development & technology solutions — web, mobile, cloud, and enterprise systems by SUDS Technologies Ltd.",
+      "Innovative software development & technology solutions — web, mobile, cloud, and enterprise systems by SUDS Tech Company Ltd.",
     url: "https://www.suds-tech.com",
-    siteName: "SUDS Technologies Ltd",
+    siteName: "SUDS Tech Company Ltd",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SUDS Technologies Ltd",
+    title: "SUDS Tech Company Ltd",
     description:
       "Secure, Unique, Durable Systems — custom software development & IT solutions in Kampala, Uganda.",
   },
@@ -75,7 +84,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "SUDS Technologies Ltd",
+  name: "SUDS Tech Company Ltd",
   url: "https://www.suds-tech.com",
   logo: "https://www.suds-tech.com/logo.png",
   description:

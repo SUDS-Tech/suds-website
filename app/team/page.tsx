@@ -7,19 +7,20 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Our Team",
   description:
-    "Meet the team behind SUDS Technologies Ltd. Our experienced engineers, designers, and strategists build enterprise-grade software solutions.",
+    "Meet the team behind SUDS Tech Company Ltd. Our experienced engineers, designers, and strategists build enterprise-grade software solutions.",
   keywords: [
     "SUDS Technologies team",
+      "SUDS Tech Company team",
     "software development team",
     "tech leadership",
     "engineering team",
   ],
   openGraph: {
-    title: "Our Team | SUDS Technologies Ltd",
+    title: "Our Team | SUDS Tech Company Ltd",
     description:
-      "Meet the innovators behind SUDS Technologies Ltd's enterprise-grade software solutions.",
+      "Meet the innovators behind SUDS Tech Company Ltd's enterprise-grade software solutions.",
     url: "https://www.suds-tech.com/team",
-    siteName: "SUDS Technologies Ltd",
+    siteName: "SUDS Tech Company Ltd",
     type: "website",
   },
 };

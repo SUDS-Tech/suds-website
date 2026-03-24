@@ -11,9 +11,9 @@ import FAQSection from "../components/services/faqSection";
 import { FAQSchema } from "../components/services/faqSchema";
 
 export const metadata: Metadata = {
-  title: "Software Development Services | SUDS Technologies Ltd",
+  title: "Software Development Services | SUDS Tech Company Ltd",
   description:
-    "SUDS Technologies Ltd provides custom software development services including web applications, mobile apps, cloud engineering, DevOps, and IT consultancy for businesses and enterprises.",
+    "SUDS Tech Company Ltd provides custom software development services including web applications, mobile apps, cloud engineering, DevOps, and IT consultancy for businesses and enterprises.",
   keywords: [
     "software development services",
     "web application development",
@@ -24,11 +24,11 @@ export const metadata: Metadata = {
     "IT consultancy services",
   ],
   openGraph: {
-    title: "Software Development Services | SUDS Technologies Ltd",
+    title: "Software Development Services | SUDS Tech Company Ltd",
     description:
       "Custom web, mobile, cloud, and enterprise software development services for businesses and organizations.",
     url: "https://www.suds-tech.com/services",
-    siteName: "SUDS Technologies Ltd",
+    siteName: "SUDS Tech Company Ltd",
     type: "website",
   },
 };

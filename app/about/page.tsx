@@ -4,15 +4,15 @@ import Overview from "../components/about/main";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us | SUDS Technologies Ltd",
+  title: "About Us | SUDS Tech Company Ltd",
   description:
-    "Learn about SUDS Technologies Ltd — an innovation-driven software lab building secure, unique, and durable digital solutions for businesses and enterprises.",
+    "Learn about SUDS Tech Company Ltd — an innovation-driven software lab building secure, unique, and durable digital solutions for businesses and enterprises.",
   openGraph: {
-    title: "About Us | SUDS Technologies Ltd",
+    title: "About Us | SUDS Tech Company Ltd",
     description:
-      "Learn about SUDS Technologies Ltd — building secure, unique, and durable systems through rigorous R&D and bespoke software engineering.",
+      "Learn about SUDS Tech Company Ltd — building secure, unique, and durable systems through rigorous R&D and bespoke software engineering.",
     url: "https://www.suds-tech.com/about",
-    siteName: "SUDS Technologies Ltd",
+    siteName: "SUDS Tech Company Ltd",
     type: "website",
   },
 };

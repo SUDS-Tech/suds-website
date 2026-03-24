@@ -50,7 +50,7 @@ function Header() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-gray-400 text-lg leading-relaxed max-w-3xl mx-auto"
           >
-            At SUDS Technologies Ltd, we believe software should be more than
+            At SUDS Tech Company Ltd, we believe software should be more than
             just functional — it should be a resilient asset. We go beyond
             traditional outsourcing, acting as a strategic technology partner
             helping clients navigate digital transformation through rigorous

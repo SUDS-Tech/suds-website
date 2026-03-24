@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2026 SUDS Technologies Ltd.
+ * Copyright (c) 2026 SUDS Tech Company Ltd.
  *
  * All rights reserved.
  *

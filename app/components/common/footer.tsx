@@ -5,8 +5,6 @@ import {
   Facebook,
   Instagram,
   Linkedin,
-  Youtube,
-  Github,
   Mail,
   MapPin,
   Phone,
@@ -247,7 +245,7 @@ export function Footer() {
             <a href="/" className="flex items-center group w-fit bg-white/90 rounded-lg px-3 py-1.5 hover:bg-white transition-colors duration-200">
               <Image
                 src="/logo.png"
-                alt="SUDS Technologies Ltd"
+                alt="SUDS Techn Company Ltd"
                 width={160}
                 height={64}
                 className="h-14 w-auto"
@@ -319,7 +317,7 @@ export function Footer() {
 
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-          <p>© {new Date().getFullYear()} SUDS Technologies Ltd.</p>
+          <p>© {new Date().getFullYear()} SUDS Techn Company Ltd.</p>
 
           <div className="flex gap-6">
             <a

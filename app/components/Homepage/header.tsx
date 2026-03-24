@@ -41,7 +41,7 @@ export default function BusinessProcess() {
                   <span className="bg-linear-to-r from-emerald-500 to-emerald-600 bg-clip-text text-transparent">
                     SUDS
                   </span>
-                  <span className="text-gray-300">Technologies</span>
+                  <span className="text-gray-300">Tech Company</span>
                 </div>
               </h1>
 

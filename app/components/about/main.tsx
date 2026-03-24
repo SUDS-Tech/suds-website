@@ -158,7 +158,7 @@ export default function Overview() {
               className="bg-[#161b22] border border-gray-800 rounded-2xl p-8 md:p-12 space-y-6"
             >
               <p className="text-gray-300 text-lg leading-relaxed">
-                As we look toward the future, SUDS Technologies Ltd is committed
+                As we look toward the future, SUDS Tech Company Ltd is committed
                 to expanding its global footprint. We are investing heavily in
                 AI-driven automation and sustainable tech practices.
               </p>

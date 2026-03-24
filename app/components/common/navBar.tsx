@@ -84,7 +84,7 @@ export function NavBar() {
           <a href="/" className="flex items-center group bg-white/90 rounded-lg px-3 py-1.5 hover:bg-white transition-colors duration-200">
             <Image
               src="/logo.png"
-              alt="SUDS Technologies Ltd"
+              alt="SUDS Techn Company Ltd"
               width={160}
               height={64}
               priority

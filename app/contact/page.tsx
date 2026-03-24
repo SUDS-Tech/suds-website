@@ -4,20 +4,20 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with SUDS Technologies Ltd. Contact us for custom software development, web and mobile app development, cloud engineering, and IT consultancy services.",
+    "Get in touch with SUDS Tech Company Ltd. Contact us for custom software development, web and mobile app development, cloud engineering, and IT consultancy services.",
   keywords: [
-    "contact SUDS Technologies",
+    "contact SUDS Tech Company Ltd",
     "software development inquiry",
     "IT consultancy contact",
     "hire software developers",
     "get a quote",
   ],
   openGraph: {
-    title: "Contact Us | SUDS Technologies Ltd",
+    title: "Contact Us | SUDS Tech Company Ltd",
     description:
-      "Reach out to SUDS Technologies Ltd for your software development and IT solutions needs.",
+      "Reach out to SUDS Tech Company Ltd for your software development and IT solutions needs.",
     url: "https://www.suds-tech.com/contact",
-    siteName: "SUDS Technologies Ltd",
+    siteName: "SUDS Tech Company Ltd",
     type: "website",
   },
 };
