@@ -317,7 +317,7 @@ export function Footer() {
 
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-          <p>© {new Date().getFullYear()} SUDS Techn Company Ltd.</p>
+          <p>© {new Date().getFullYear()} SUDS Tech Company Ltd.</p>
 
           <div className="flex gap-6">
             <a
