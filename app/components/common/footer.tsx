@@ -137,7 +137,9 @@ const NewsletterSection = () => {
           {!isSubmitting && <ArrowUpRight className="w-4 h-4" />}
         </button>
         {message && (
-          <p className={`text-xs font-medium ${message.includes("Thank") || message.includes("already") ? "text-emerald-500" : "text-red-400"}`}>
+          <p
+            className={`text-xs font-medium ${message.includes("Thank") || message.includes("already") ? "text-emerald-500" : "text-red-400"}`}
+          >
             {message}
           </p>
         )}
@@ -191,16 +193,16 @@ export function Footer() {
         />
       ),
     },
-   // {
-   //   name: "Youtube",
+    // {
+    //   name: "Youtube",
     //  href: "https://youtube.com",
     //  icon: (
-     //   <Youtube
+    //   <Youtube
     //      size={18}
     //      className="text-gray-400 group-hover:text-emerald-500 transition-colors duration-200"
-     //   />
+    //   />
     //  ),
-  //  },
+    //  },
   ];
 
   const footerSections: FooterSection[] = [
@@ -242,7 +244,10 @@ export function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
           {/* Brand Section */}
           <div className="lg:col-span-3 space-y-6">
-            <a href="/" className="flex items-center group w-fit bg-white/90 rounded-lg px-3 py-1.5 hover:bg-white transition-colors duration-200">
+            <a
+              href="/"
+              className="flex items-center group w-fit  px-3 py-1.5 transition-colors duration-200"
+            >
               <Image
                 src="/logo.png"
                 alt="SUDS Techn Company Ltd"
