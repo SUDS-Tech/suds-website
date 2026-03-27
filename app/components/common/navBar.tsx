@@ -81,7 +81,10 @@ export function NavBar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="/" className="flex items-center group bg-white/90 rounded-lg px-3 py-1.5 hover:bg-white transition-colors duration-200">
+          <a
+            href="/"
+            className="flex items-center group  px-3 py-1.5 hover:text-white transition-colors duration-200"
+          >
             <Image
               src="/logo.png"
               alt="SUDS Techn Company Ltd"
