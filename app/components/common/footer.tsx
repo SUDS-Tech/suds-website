@@ -250,7 +250,7 @@ export function Footer() {
             >
               <Image
                 src="/logo.png"
-                alt="SUDS Techn Company Ltd"
+                alt="SUDS Tech Company Ltd"
                 width={160}
                 height={64}
                 className="h-14 w-auto"
