@@ -109,7 +109,7 @@ function Header() {
           {[
             { value: "2026", label: "Founded" },
             { value: "2", label: "Projects Delivered" },
-            { value: "95%", label: "Client Satisfaction" },
+            { value: "98%", label: "Client Satisfaction" },
             { value: "24/7", label: "Support Available" },
           ].map((stat, index) => (
             <div
