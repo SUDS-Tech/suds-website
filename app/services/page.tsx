@@ -11,7 +11,10 @@ import FAQSection from "../components/services/faqSection";
 import { FAQSchema } from "../components/services/faqSchema";
 
 export const metadata: Metadata = {
-  title: "Software Development Services | SUDS Tech Company Ltd",
+  title: "Software Development Services",
+  alternates: {
+    canonical: "/services",
+  },
   description:
     "SUDS Tech Company Ltd provides custom software development services including web applications, mobile apps, cloud engineering, DevOps, and IT consultancy for businesses and enterprises.",
   keywords: [

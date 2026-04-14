@@ -4,7 +4,10 @@ import Overview from "../components/about/main";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us | SUDS Tech Company Ltd",
+  title: "About Us",
+  alternates: {
+    canonical: "/about",
+  },
   description:
     "Learn about SUDS Tech Company Ltd — an innovation-driven software lab building secure, unique, and durable digital solutions for businesses and enterprises.",
   openGraph: {
