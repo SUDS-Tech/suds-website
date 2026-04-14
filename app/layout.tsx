@@ -10,6 +10,7 @@
 
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+
 import "./globals.css";
 import { NavBar } from "@/app/components/common/navBar";
 import Footer from "./components/common/footer";
@@ -83,38 +84,66 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "SUDS Tech Company Ltd",
-  url: "https://www.suds-tech.com",
-  logo: "https://www.suds-tech.com/logo.png",
-  description:
-    "Innovation-driven software lab building secure, unique, and durable digital solutions for businesses and enterprises.",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Kampala",
-    addressCountry: "UG",
-  },
-  contactPoint: [
+  "@graph": [
     {
-      "@type": "ContactPoint",
-      telephone: "+256-757-212-246",
-      contactType: "sales",
-      email: "info@suds-tech.com",
-      availableLanguage: "English",
+      "@type": "Organization",
+      "@id": "https://www.suds-tech.com/#organization",
+      name: "SUDS Tech Company Ltd",
+      url: "https://www.suds-tech.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.suds-tech.com/logo.png",
+      },
+      description:
+        "Innovation-driven software lab building secure, unique, and durable digital solutions for businesses and enterprises.",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Kampala",
+        addressCountry: "UG",
+      },
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          telephone: "+256-757-212-246",
+          contactType: "sales",
+          email: "info@suds-tech.com",
+          availableLanguage: "English",
+        },
+        {
+          "@type": "ContactPoint",
+          telephone: "+256-701-521-269",
+          contactType: "sales",
+          email: "info@suds-tech.com",
+          availableLanguage: "English",
+        },
+      ],
+      sameAs: [
+        "https://www.facebook.com/share/17ZCFenDMb/",
+        "https://x.com/sudstech26",
+        "https://www.linkedin.com/company/suds-technologies-ltd/",
+        "https://www.instagram.com/sudstechnologies",
+      ],
     },
     {
-      "@type": "ContactPoint",
-      telephone: "+256-701-521-269",
-      contactType: "sales",
-      email: "info@suds-tech.com",
-      availableLanguage: "English",
+      "@type": "WebSite",
+      "@id": "https://www.suds-tech.com/#website",
+      url: "https://www.suds-tech.com",
+      name: "SUDS Tech Company Ltd",
+      description:
+        "Custom software development & IT solutions in Kampala, Uganda.",
+      publisher: {
+        "@id": "https://www.suds-tech.com/#organization",
+      },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate:
+            "https://www.suds-tech.com/?s={search_term_string}",
+        },
+        "query-input": "required name=search_term_string",
+      },
     },
-  ],
-  sameAs: [
-    "https://www.facebook.com/share/17ZCFenDMb/",
-    "https://x.com/sudstech26",
-    "https://www.linkedin.com/company/suds-technologies-ltd/",
-    "https://www.instagram.com/sudstechnologies",
   ],
 };
 
@@ -136,7 +165,7 @@ export default function RootLayout({
         <Script
           src="https://api.msgine.net/api/v1/bots/widget.js"
           data-bot-id="995cf77b-4c7d-44e9-88ee-bea05c612286"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
       </body>
     </html>

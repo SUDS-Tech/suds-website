@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact Us",
+  alternates: {
+    canonical: "/contact",
+  },
   description:
     "Get in touch with SUDS Tech Company Ltd. Contact us for custom software development, web and mobile app development, cloud engineering, and IT consultancy services.",
   keywords: [

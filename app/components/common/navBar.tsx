@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface NavLink {
   label: string;
@@ -21,7 +22,7 @@ export function NavLinkItem({
   isMobile = false,
 }: NavLinkItemProps) {
   return (
-    <a
+    <Link
       href={link.href}
       onClick={onClick}
       className={`
@@ -34,7 +35,7 @@ export function NavLinkItem({
         {link.label}
       </span>
       <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-500 group-hover:w-full transition-all duration-200" />
-    </a>
+    </Link>
   );
 }
 
@@ -81,7 +82,7 @@ export function NavBar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a
+          <Link
             href="/"
             className="flex items-center group  px-3 py-1.5 hover:text-white transition-colors duration-200"
           >
@@ -93,7 +94,7 @@ export function NavBar() {
               priority
               className="h-14 w-auto"
             />
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
@@ -104,9 +105,9 @@ export function NavBar() {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <a href="/contact" className="btn-primary">
+            <Link href="/contact" className="btn-primary">
               Get Started
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -171,13 +172,13 @@ export function NavBar() {
               }
             `}
           >
-            <a
+            <Link
               href="/contact"
               onClick={handleLinkClick}
               className="btn-primary w-full justify-center"
             >
               Get Started
-            </a>
+            </Link>
           </div>
         </div>
       </div>
