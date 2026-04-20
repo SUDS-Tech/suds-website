@@ -40,6 +40,30 @@ export default defineSchema({
     default: '*',
     docs: 'allowed CORS origins'
   },
+  GOOGLE:{
+    type: 'object',
+    envPrefix: 'GOOGLE_',
+    properties:{
+      CLIENT_ID:{
+        type: 'string',
+        required: true,
+      },
+      CLIENT_SECRET:{
+        type: 'string',
+        required: true,
+      }
+    }
+  },
+  NEXTAUTH_SECRET:{
+    type: 'string',
+    required: true,
+    docs: 'secret for signing NextAuth JWTs'
+  },
+  TEAM_EMAILS:{
+    type: 'string',
+    default: '',
+    docs: 'comma-separated list of team email addresses that receive the blue tick'
+  },
   NODE_ENV:{
     type: 'string',
     enum: ['development', 'production', 'test'],

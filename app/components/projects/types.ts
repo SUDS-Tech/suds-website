@@ -16,6 +16,8 @@ export interface Project {
 export interface Reply {
   id: string;
   authorName: string;
+  authorPhoto?: string | null;
+  verified?: "team" | "client" | null;
   content: string;
   createdAt: string;
 }
@@ -24,6 +26,9 @@ export interface Review {
   id: string;
   projectId: string;
   authorName: string;
+  authorEmail: string;
+  authorPhoto?: string | null;
+  verified?: "team" | "client" | null;
   rating: number;
   content: string;
   likes: number;
