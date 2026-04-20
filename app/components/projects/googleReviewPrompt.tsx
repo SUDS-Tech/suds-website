@@ -1,8 +1,7 @@
 "use client";
 
 
-const GOOGLE_REVIEW_URL =
-  "https://www.google.com/search?sca_esv=021f5a51eeaaf027&rlz=1C1FKPE_enUG1188UG1188&sxsrf=ANbL-n59fm3vgnVPB0bD1lJuhbktI4ZYYg:1776620205065&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qORnfpASwcZqZ6zGsZaLuU9RVewRP_vby1B1B_Ro4oY7XgiO9ZV7N6EBpjiKejd_H_NsV_W5_AihIQGCUrDJkaO6eQtnSS32VsPdqMBg1rsqN2r6eBw%3D%3D&q=Suds+Tech+Company+Ltd+Reviews&sa=X&ved=2ahUKEwib5OSBuvqTAxXjUEEAHZtyA4gQ0bkNegQINxAF&biw=1920&bih=911&dpr=1#";
+const GOOGLE_REVIEW_URL = "https://g.page/r/Cf2hrUzaa0e_EBM/review";
 
 import { X, ExternalLink, Star } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
