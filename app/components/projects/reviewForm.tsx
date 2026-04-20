@@ -90,7 +90,7 @@ export default function ReviewForm({ projectId, onReviewSubmitted }: ReviewFormP
           from Google will appear on your review.
         </p>
         <button
-          onClick={() => signIn("google")}
+          onClick={() => signIn("google", { callbackUrl: window.location.href })}
           className="inline-flex items-center justify-center gap-3 w-full px-4 py-2.5 bg-white hover:bg-gray-100 text-gray-800 font-medium text-sm rounded-lg transition-colors"
         >
           <svg viewBox="0 0 24 24" className="w-5 h-5" aria-hidden>

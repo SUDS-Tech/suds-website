@@ -49,7 +49,7 @@ function ReplyForm({ reviewId, projectId, onReplied }: ReplyFormProps) {
     return (
       <div className="mt-3">
         <button
-          onClick={() => signIn("google")}
+          onClick={() => signIn("google", { callbackUrl: window.location.href })}
           className="inline-flex items-center gap-2 text-xs text-gray-400 hover:text-white transition-colors"
         >
           <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" aria-hidden>
