@@ -19,10 +19,11 @@ export async function GET(
     const snap = await db
       .collection("reviews")
       .where("projectId", "==", id)
-      .orderBy("createdAt", "desc")
       .get();
 
-    const reviews = snap.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+    const reviews = snap.docs
+      .map((doc) => ({ id: doc.id, ...doc.data() } as { id: string; createdAt: string; [key: string]: unknown }))
+      .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
     return NextResponse.json({ success: true, reviews });
   } catch (err) {
     console.error("Failed to fetch reviews:", err);

@@ -36,10 +36,11 @@ async function getReviews(projectId: string): Promise<Review[]> {
     const snap = await db
       .collection("reviews")
       .where("projectId", "==", projectId)
-      .orderBy("createdAt", "desc")
       .get();
 
-    return snap.docs.map((doc) => ({ id: doc.id, ...doc.data() } as Review));
+    return snap.docs
+      .map((doc) => ({ id: doc.id, ...doc.data() } as Review))
+      .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
   } catch {
     return [];
   }

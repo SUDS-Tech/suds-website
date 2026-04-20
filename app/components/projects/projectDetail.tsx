@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { ArrowLeft, ExternalLink, CheckCircle } from "lucide-react";
 import Link from "next/link";
 import { motion } from "motion/react";
@@ -33,16 +33,21 @@ export default function ProjectDetail({
       if (data.success) {
         const fresh: Review[] = data.reviews;
         setReviews(fresh);
-        if (fresh.length > 0) {
-          const a = fresh.reduce((s: number, r: Review) => s + r.rating, 0) / fresh.length;
-          setAvg(Math.round(a * 10) / 10);
-          setCount(fresh.length);
-        }
+        setCount(fresh.length);
+        setAvg(
+          fresh.length > 0
+            ? Math.round((fresh.reduce((s: number, r: Review) => s + r.rating, 0) / fresh.length) * 10) / 10
+            : 0
+        );
       }
     } catch {
       // silently ignore — stale data is acceptable
     }
   }, [project.id]);
+
+  useEffect(() => {
+    refetch();
+  }, [refetch]);
 
   const statusColors = {
     completed: "text-emerald-400 bg-emerald-500/10 border-emerald-500/20",
