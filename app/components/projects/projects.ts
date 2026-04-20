@@ -22,10 +22,33 @@ export const PROJECTS: Project[] = [
       "Integrated CMS for easy content updates",
     ],
     link: "https://generation2040.org",
-  }
+  },
 
-
- 
+  // ──────────────── COMPANY PROJECTS ────────────────
+  {
+    id: "suds-tech-website",
+    title: "SUDS Tech Company Website",
+    shortDescription:
+      "The official company website for SUDS Tech Company Ltd — showcasing services, projects, and client work.",
+    fullDescription:
+      "The official digital presence of SUDS Tech Company Ltd, built entirely in-house. The website serves as a showcase for our services, project portfolio, and company story. It features a verified review system powered by Google OAuth, an animated testimonials section, a newsletter with verified client badges, and a contact system all backed by Firebase and delivered via a high-performance Next.js App Router architecture with ISR and SWR-style client revalidation.",
+    category: "company",
+    tags: ["Web", "Next.js", "Firebase", "Auth"],
+    status: "ongoing",
+    year: 2026,
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Firebase",
+    ],
+    outcomes: [
+      "Google OAuth verified review system with trust badges",
+      "Dual-row infinite marquee testimonials on homepage",
+      "Newsletter subscription with verified client perks",
+      "ISR + SWR data strategy for always-fresh content",
+    ],
+    link: "https://suds-tech.com",
+  },
 ];
 
 export function getProjectById(id: string): Project | undefined {
