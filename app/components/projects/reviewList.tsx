@@ -112,6 +112,10 @@ interface ReviewCardProps {
 
 function ReviewCard({ review, projectId }: ReviewCardProps) {
   const [likes, setLikes] = useState(review.likes);
+
+  useEffect(() => {
+    setLikes(review.likes);
+  }, [review.likes]);
   const [liked, setLiked] = useState(false);
   const [likeLoading, setLikeLoading] = useState(false);
   const [showReplyForm, setShowReplyForm] = useState(false);
@@ -121,6 +125,10 @@ function ReviewCard({ review, projectId }: ReviewCardProps) {
   useEffect(() => {
     setLiked(getLiked().has(review.id));
   }, [review.id]);
+
+  useEffect(() => {
+    setReplies(review.replies ?? []);
+  }, [review.replies]);
 
   async function handleLike() {
     if (liked || likeLoading) return;
