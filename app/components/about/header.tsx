@@ -64,9 +64,9 @@ function Header() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-wrap gap-4 justify-center pt-4"
           >
-            <Link href="/contact">
+            <Link href="/team">
               <button className="btn-primary">
-                Work With Us
+                Meet Our Team
                 <ArrowRight className="w-5 h-5" />
               </button>
             </Link>

@@ -39,6 +39,70 @@ export function NavLinkItem({
   );
 }
 
+// Dropdown component for Services
+function ServicesDropdown() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="relative" onMouseEnter={() => setIsOpen(true)}>
+      <button
+        className={`
+          relative group px-4 py-2 rounded-lg transition-all duration-200
+          hover:bg-emerald-500/10 text-gray-300 hover:text-white
+        `}
+      >
+        <Link href={"/services"} className="relative z-10">
+          Our Services
+        </Link>
+        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-500 group-hover:w-full transition-all duration-200" />
+      </button>
+      {isOpen && (
+        <div
+          onMouseLeave={() => setIsOpen(false)}
+          className="absolute left-0 mt-1 w-56 bg-[#0d1117] border border-gray-800 rounded-lg shadow-lg overflow-hidden z-20"
+        >
+          <Link
+            href="/services/web"
+            className="block px-4 py-2 text-gray-300 hover:bg-emerald-500/10 hover:text-white transition-colors"
+          >
+            Web Development
+          </Link>
+          <Link
+            href="/services/mobile"
+            className="block px-4 py-2 text-gray-300 hover:bg-emerald-500/10 hover:text-white transition-colors"
+          >
+            Mobile Apps
+          </Link>
+          <Link
+            href="/services/customsoftware"
+            className="block px-4 py-2 text-gray-300 hover:bg-emerald-500/10 hover:text-white transition-colors"
+          >
+            Custom Software
+          </Link>
+          <Link
+            href="/services/devops"
+            className="block px-4 py-2 text-gray-300 hover:bg-emerald-500/10 hover:text-white transition-colors"
+          >
+            DevOps
+          </Link>
+          <Link
+            href="/services/ITConsultancy"
+            className="block px-4 py-2 text-gray-300 hover:bg-emerald-500/10 hover:text-white transition-colors"
+          >
+            IT Consultancy
+          </Link>
+          <Link
+            href="/services/softwareInnovation"
+            className="block px-4 py-2 text-gray-300 hover:bg-emerald-500/10 hover:text-white transition-colors"
+          >
+            Software Innovation
+          </Link>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export function NavBar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
@@ -46,12 +110,10 @@ export function NavBar() {
   const navLinks: NavLink[] = [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
-    { label: "Services", href: "/services" },
-    { label: "Projects", href: "/projects" },
-    { label: "Team", href: "/team" },
+    // "Our Services" handled separately in JS
+    { label: "Our Projects", href: "/projects" },
     { label: "Contact", href: "/contact" },
   ];
-
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -85,7 +147,7 @@ export function NavBar() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center group  px-3 py-1.5 hover:text-white transition-colors duration-200"
+            className="flex items-center group px-3 py-1.5 hover:text-white transition-colors duration-200"
           >
             <Image
               src="/logo.png"
@@ -102,6 +164,7 @@ export function NavBar() {
             {navLinks.map((link) => (
               <NavLinkItem key={link.label} link={link} />
             ))}
+            <ServicesDropdown />
           </div>
 
           {/* CTA Button */}
@@ -141,6 +204,7 @@ export function NavBar() {
       >
         <div className="mx-auto px-4 py-8 bg-[rgba(0,0,0,0.8)]">
           <div className="flex flex-col gap-6 mb-8">
+            {/* Standard links */}
             {navLinks.map((link, index) => (
               <div
                 key={link.label}
@@ -163,6 +227,66 @@ export function NavBar() {
                 />
               </div>
             ))}
+            {/* Services sub‑links for mobile */}
+            <div
+              style={{
+                transitionDelay: isOpen ? `${navLinks.length * 50}ms` : "0ms",
+              }}
+              className={`
+                transform transition-all duration-200 flex flex-col gap-3
+                ${
+                  isOpen
+                    ? "translate-x-0 opacity-100"
+                    : "-translate-x-8 opacity-0"
+                }
+              `}
+            >
+              <div className="text-gray-400 font-medium px-4 py-2">
+                Our Services
+              </div>
+              <Link
+                href="/services/web"
+                onClick={handleLinkClick}
+                className="pl-8 py-2 text-gray-300 hover:text-white transition-colors"
+              >
+                Web Development
+              </Link>
+              <Link
+                href="/services/mobile"
+                onClick={handleLinkClick}
+                className="pl-8 py-2 text-gray-300 hover:text-white transition-colors"
+              >
+                Mobile Apps
+              </Link>
+              <Link
+                href="/services/devops"
+                onClick={handleLinkClick}
+                className="pl-8 py-2 text-gray-300 hover:text-white transition-colors"
+              >
+                DevOps
+              </Link>
+              <Link
+                href="/services/ITConsultancy"
+                onClick={handleLinkClick}
+                className="pl-8 py-2 text-gray-300 hover:text-white transition-colors"
+              >
+                IT Consultancy
+              </Link>
+              <Link
+                href="/services/softwareInnvation"
+                onClick={handleLinkClick}
+                className="pl-8 py-2 text-gray-300 hover:text-white transition-colors"
+              >
+                Software Innovation
+              </Link>
+              <Link
+                href="/services/customsoftware"
+                onClick={handleLinkClick}
+                className="pl-8 py-2 text-gray-300 hover:text-white transition-colors"
+              >
+                Custom Software
+              </Link>
+            </div>
           </div>
 
           <div
