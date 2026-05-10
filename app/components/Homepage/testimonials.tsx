@@ -1,5 +1,3 @@
-
-
 import { unstable_cache } from "next/cache";
 import { getDb } from "@/lib/firebase-admin";
 import { getProjectById } from "@/app/components/projects/projects";
@@ -54,8 +52,8 @@ export default async function Testimonials() {
       <div className="absolute inset-0 grid-pattern opacity-20" />
 
       {/* Fade edges */}
-      <div className="absolute inset-y-0 left-0 w-8 sm:w-20 lg:w-32 bg-linear-to-r from-[#0d1117] to-transparent z-10 pointer-events-none" />
-      <div className="absolute inset-y-0 right-0 w-8 sm:w-20 lg:w-32 bg-linear-to-l from-[#0d1117] to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-y-0 left-0 w-32 bg-linear-to-r from-[#0d1117] to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-32 bg-linear-to-l from-[#0d1117] to-transparent z-10 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 text-center relative z-10">
         <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full mb-4">
