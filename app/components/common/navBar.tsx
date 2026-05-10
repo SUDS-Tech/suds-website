@@ -52,7 +52,7 @@ function ServicesDropdown() {
         `}
       >
         <Link href={"/services"} className="relative z-10">
-          Our Services
+          Services
         </Link>
         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-500 group-hover:w-full transition-all duration-200" />
       </button>
@@ -111,7 +111,7 @@ export function NavBar() {
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     // "Our Services" handled separately in JS
-    { label: "Our Projects", href: "/projects" },
+    { label: "Projects", href: "/projects" },
     { label: "Contact", href: "/contact" },
   ];
   useEffect(() => {

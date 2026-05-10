@@ -60,3 +60,7 @@ export function getProjectsByCategory(
 ): Project[] {
   return PROJECTS.filter((p) => p.category === category);
 }
+
+export function totalProjects(): number {
+  return PROJECTS.length;
+}

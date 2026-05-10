@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ParticleBackground from "../Homepage/particle-background";
+import { totalProjects } from "../projects/projects";
 
 function Header() {
   return (
@@ -108,7 +109,7 @@ function Header() {
         >
           {[
             { value: "2026", label: "Founded" },
-            { value: "2", label: "Projects Delivered" },
+            { value: totalProjects(), label: "Projects Delivered" },
             { value: "98%", label: "Client Satisfaction" },
             { value: "24/7", label: "Support Available" },
           ].map((stat, index) => (
