@@ -1,27 +1,40 @@
-import { Users, Code2, Lightbulb } from "lucide-react";
+import { Users, Code2, Briefcase, Palette, Settings } from "lucide-react";
 import rose from "./images/rose.jpg";
 import Image from "next/image";
 
-const teamMembers = [
+const team = [
   {
+    id: 1,
     name: "Ssekindi Kasim",
-    title: "Co-Founder",
-    description: "Technical Lead & Architect",
+    title: "Co-Founder & CTO",
+    description: "Lead Architect & Systems Engineering",
     icon: Code2,
+   // image: kasim, // Recommended: Add image references for all
   },
   {
+    id: 2,
     name: "Matovu Isaac",
-    title: "Co-Founder",
-    description: "Managing Director",
-    icon: Lightbulb,
+    title: "Co-Founder & MD",
+    description: "Business Strategy & Strategic Partnerships",
+    icon: Briefcase, // Changed for variety
+  //  image: isaac,
   },
   {
+    id: 3,
     name: "Namubiru Rose",
-    title: "Creative Director & UX Visionary",
-    description: "UI / UX Designer",
-    icon: Lightbulb,
-    image: rose,
+    title: "Creative Director",
+    description: "UI/UX Design & Brand Identity",
+    icon: Palette, // Changed to reflect "Creative"
+  //  image: rose,
   },
+  {
+    id: 4,
+    name: "Lubega Benjamin",
+    title: "Operations Manager",
+    description: "Operational Excellence & Product Growth", 
+    icon: Settings, // Changed to reflect "Operations"
+  //  image: benjamin,
+  }
 ];
 
 export default function TeamSection() {
@@ -45,7 +58,7 @@ export default function TeamSection() {
         </div>
 
         <div className="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
-          {teamMembers.map((member, index) => {
+          {team.map((member, index) => {
             const IconComponent = member.icon;
             return (
               <div key={index} className="card text-center group">

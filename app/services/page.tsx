@@ -1,14 +1,14 @@
 import Header from "../components/services/header";
 import LetsWork from "../components/services/letsWork";
 import type { Metadata } from "next";
-import Webapp from "../components/services/serviceinfo/web";
-import MobileApp from "../components/services/serviceinfo/mobile";
-import ITConsultancy from "../components/services/serviceinfo/ITConsultancy";
-import Devops from "../components/services/serviceinfo/Devops";
-import SoftwareInnovation from "../components/services/serviceinfo/SoftwareInnovation";
-import CustomSoftware from "../components/services/serviceinfo/customSoftware";
+import Webapp from "./web/page";
+import ITConsultancy from "./ITConsultancy/page";
+import Devops from "./devops/page";
+import SoftwareInnovation from "./softwareInnovation/page";
+import CustomSoftware from "./customsoftware/page";
 import FAQSection from "../components/services/faqSection";
 import { FAQSchema } from "../components/services/faqSchema";
+import MobileApp from "./mobile/page";
 
 export const metadata: Metadata = {
   title: "Software Development Services",
@@ -42,12 +42,19 @@ function ServicesPage() {
       <FAQSchema />
       <Header />
       {/* <Services /> */}
+
       <Webapp />
+
       <MobileApp />
+
       <ITConsultancy />
+
       <Devops />
+
       <SoftwareInnovation />
+
       <CustomSoftware />
+
       <LetsWork />
       <FAQSection />
     </main>

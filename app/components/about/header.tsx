@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ParticleBackground from "../Homepage/particle-background";
+import { totalProjects } from "../projects/projects";
 
 function Header() {
   return (
@@ -64,9 +65,9 @@ function Header() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-wrap gap-4 justify-center pt-4"
           >
-            <Link href="/contact">
+            <Link href="/team">
               <button className="btn-primary">
-                Work With Us
+                Meet Our Team
                 <ArrowRight className="w-5 h-5" />
               </button>
             </Link>
@@ -108,7 +109,7 @@ function Header() {
         >
           {[
             { value: "2026", label: "Founded" },
-            { value: "2", label: "Projects Delivered" },
+            { value: totalProjects(), label: "Projects Delivered" },
             { value: "98%", label: "Client Satisfaction" },
             { value: "24/7", label: "Support Available" },
           ].map((stat, index) => (
