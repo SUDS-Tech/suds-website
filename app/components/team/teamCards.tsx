@@ -1,5 +1,6 @@
 import { Users, Code2, Briefcase, Palette, Settings } from "lucide-react";
 import rose from "./images/rose.jpg";
+import benja from "./images/benja.jpeg";
 import Image from "next/image";
 
 const team = [
@@ -25,7 +26,7 @@ const team = [
     title: "Creative Director",
     description: "UI/UX Design & Brand Identity",
     icon: Palette, // Changed to reflect "Creative"
-  //  image: rose,
+    image: rose,
   },
   {
     id: 4,
@@ -33,7 +34,7 @@ const team = [
     title: "Operations Manager",
     description: "Operational Excellence & Product Growth", 
     icon: Settings, // Changed to reflect "Operations"
-  //  image: benjamin,
+    image: benja,
   }
 ];
 
@@ -65,9 +66,9 @@ export default function TeamSection() {
                 <div className="mb-6 flex justify-center">
                   {/* /**rose profile picture displays conditionally to cofounders icon placeholders */}
                   <div>
-                    {member.name === "Namubiru Rose" ? (
+                    {member.image  ? (
                       <div className="w-75 h-75 rounded-full overflow-hidden shrink-0">
-                        <Image src={rose} alt="Rose" width={300} height={300} />
+                        <Image src={member.image} alt={member.name} width={300} height={300} />
                       </div>
                     ) : (
                       <div className="w-20 h-20 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center group-hover:bg-emerald-500/20 transition-colors duration-300">

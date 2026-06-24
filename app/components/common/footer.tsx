@@ -317,6 +317,45 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Partners & Recognition */}
+        <div className="mb-10">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="flex-1 h-px bg-gray-800" />
+            <p className="text-gray-600 text-[10px] uppercase tracking-widest whitespace-nowrap">
+              Partners &amp; Recognition
+            </p>
+            <div className="flex-1 h-px bg-gray-800" />
+          </div>
+          <div className="flex flex-wrap justify-center items-center gap-10">
+            <a
+              href="https://www.goodfirms.co/resources/website-construction-cost-survey"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center gap-3"
+              aria-label="GoodFirms Research Partner"
+            >
+              <div className="relative">
+                <div className="absolute inset-0 rounded-2xl bg-emerald-500/15 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative bg-white rounded-2xl p-3">
+                  <Image
+                    src="https://assets.goodfirms.co/badges/icon/research-partner-badge.svg"
+                    alt="GoodFirms Research Partner"
+                    width={64}
+                    height={64}
+                    className="w-16 h-16 drop-shadow-sm"
+                  />
+                </div>
+              </div>
+              <div className="text-center">
+                <p className="text-gray-400 text-xs font-medium group-hover:text-emerald-400 transition-colors duration-200">
+                  GoodFirms
+                </p>
+                <p className="text-gray-600 text-[10px] mt-0.5">Research Partner</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
         {/* Divider */}
         <div className="h-px w-full bg-gradient-to-r from-transparent via-gray-800 to-transparent my-8" />
 
