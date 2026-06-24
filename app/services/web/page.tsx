@@ -1,6 +1,11 @@
 import { ArrowRight, CheckCircle, Globe } from "lucide-react";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Web Application Development | SUDS Tech",
+  description: "Custom scalable web application development services...",
+};
+
 export default function Webapp() {
   return (
     <section

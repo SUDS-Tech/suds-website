@@ -14,7 +14,7 @@ const getTopReviews = unstable_cache(
         .get();
 
       return snap.docs
-        .map((doc) => ({ id: doc.id, ...doc.data() } as Review))
+        .map((doc) => ({ id: doc.id, ...doc.data() }) as Review)
         .filter((r) => r.verified !== "team" && (r.content?.length ?? 0) >= 30)
         .sort((a, b) => b.rating - a.rating || (b.likes ?? 0) - (a.likes ?? 0))
         .slice(0, 16)
@@ -25,14 +25,15 @@ const getTopReviews = unstable_cache(
           verified: r.verified === "client" ? "client" : null,
           rating: r.rating,
           content: r.content,
-          projectTitle: getProjectById(r.projectId)?.title ?? "SUDS Tech Project",
+          projectTitle:
+            getProjectById(r.projectId)?.title ?? "SUDS Tech Project",
         }));
     } catch {
       return [];
     }
   },
   ["homepage-testimonials"],
-  { revalidate: 3600 }
+  { revalidate: 3600 },
 );
 
 export default async function Testimonials() {
